@@ -1,0 +1,44 @@
+//bridge-file-version: #0
+{
+	"format_version": "1.10.0",
+	"minecraft:client_entity": {
+		"description": {
+			"identifier": "exdrill:goblin_beast",
+			"materials": {
+				"default": "entity_alphatest"
+			},
+			"textures": {
+				"default": "textures/entity/goblin_beast"
+			},
+			"geometry": {
+				"default": "geometry.goblin_beast"
+			},
+			"animations": {
+				"move": "animation.goblin_beast.move",
+				"head_scale": "animation.goblin_beast.head_scale",
+				"look_at_target": "animation.common.look_target",
+				"attack": "animation.goblin_beast.attack"
+			},
+			"scripts": {
+				"animate": [
+					"head_scale",
+					"look_at_target",
+					{
+						"move": "query.modified_move_speed"
+					},
+					{
+						"attack": "variable.attack_time"
+					}
+				]
+			},
+			"render_controllers": [
+				"controller.render.default"
+			],
+			"spawn_egg": {
+				"texture_index": 0,
+				"base_color": "#004B08",
+				"overlay_color": "#01007A"
+			}
+		}
+	}
+}

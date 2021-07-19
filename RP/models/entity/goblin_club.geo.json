@@ -1,0 +1,47 @@
+{
+	"format_version": "1.12.0",
+	"minecraft:geometry": [
+		{
+			"description": {
+				"identifier": "geometry.goblin_club",
+				"texture_width": 32,
+				"texture_height": 32,
+				"visible_bounds_width": 2,
+				"visible_bounds_height": 2,
+				"visible_bounds_offset": [0, 1, 0]
+			},
+			"bones": [
+				{
+					"name": "rightItem",
+					"pivot": [-6, 15, 0],
+					"cubes": [
+						{
+							"origin": [-7, 13, -6],
+							"size": [2, 2, 10],
+							"uv": {
+								"north": {"uv": [16, 14], "uv_size": [2, 2]},
+								"east": {"uv": [12, 12], "uv_size": [10, 2]},
+								"south": {"uv": [3, 18], "uv_size": [2, 2]},
+								"west": {"uv": [12, 0], "uv_size": [10, 2]},
+								"up": {"uv": [12, 14], "uv_size": [2, 10]},
+								"down": {"uv": [14, 24], "uv_size": [2, -10]}
+							}
+						},
+						{
+							"origin": [-7.5, 12.5, -18],
+							"size": [3, 3, 12],
+							"uv": {
+								"north": {"uv": [12, 2], "uv_size": [3, 3]},
+								"east": {"uv": [0, 0], "uv_size": [12, 3]},
+								"south": {"uv": [15, 2], "uv_size": [3, 3]},
+								"west": {"uv": [0, 3], "uv_size": [12, 3]},
+								"up": {"uv": [0, 6], "uv_size": [3, 12]},
+								"down": {"uv": [3, 18], "uv_size": [3, -12]}
+							}
+						}
+					]
+				}
+			]
+		}
+	]
+}

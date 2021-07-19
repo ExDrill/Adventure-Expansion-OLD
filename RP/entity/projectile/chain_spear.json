@@ -1,0 +1,31 @@
+//bridge-file-version: #1
+{
+	"format_version": "1.10.0",
+	"minecraft:client_entity": {
+		"description": {
+			"identifier": "exdrill:chain_spear",
+			"materials": {
+				"default": "entity_alphatest"
+			},
+			"textures": {
+				"default": "textures/entity/chain_spear"
+			},
+			"geometry": {
+				"default": "geometry.chain_spear"
+			},
+			"animations": {
+				"alive": "animation.chain_spear.fly",
+				"fly": "animation.actor.billboard"
+			},
+			"scripts": {
+				"animate": [
+					"alive",
+					"fly"
+				]
+			},
+			"render_controllers": [
+				"controller.render.default"
+			]
+		}
+	}
+}

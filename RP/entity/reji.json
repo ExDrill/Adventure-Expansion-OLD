@@ -1,0 +1,47 @@
+//bridge-file-version: #7
+{
+	"format_version": "1.10.0",
+	"minecraft:client_entity": {
+		"description": {
+			"identifier": "exdrill:reji",
+			"materials": {
+				"default": "entity_alphatest"
+			},
+			"textures": {
+				"default": "textures/entity/reji"
+			},
+			"geometry": {
+				"default": "geometry.reji"
+			},
+			"animations": {
+				"walk": "animation.reji.walk",
+				"attack": "animation.reji.attack",
+				"jump": "animation.reji.jump",
+				"look_at_target": "animation.common.look_at_target"
+			},
+			"scripts": {
+				"animate": [
+					{
+						"walk": "query.modified_move_speed"
+					},
+					"look_at_target",
+					{
+						"attack": "variable.attack_time"
+					},
+					{
+						"jump": "query.is_jumping"
+					}
+				]
+			},
+			"render_controllers": [
+				"controller.render.default"
+			],
+			"spawn_egg": {
+				"texture_index": 0,
+				"base_color": "#1FFF00",
+				"overlay_color": "#F3FF9D",
+				"texture": "spawn_egg"
+			}
+		}
+	}
+}

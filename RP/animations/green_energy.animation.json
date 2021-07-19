@@ -1,0 +1,17 @@
+{
+	"format_version": "1.8.0",
+	"animations": {
+		"animation.green_energy.general": {
+			"loop": true,
+			"animation_length": 1.44,
+			"bones": {
+				"main": {
+					"rotation": {
+						"0.0": [0, 0, 0],
+						"1.44": [580, -270, -230]
+					}
+				}
+			}
+		}
+	}
+}

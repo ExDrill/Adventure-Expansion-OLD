@@ -1,0 +1,14 @@
+//bridge-file-version: #13
+{
+	"format_version": "1.16.100",
+	"minecraft:block": {
+		"description": {
+			"identifier": "exdrill:locked_darkbrick"
+		},
+		"components": {
+			"minecraft:explosion_resistance": 100,
+			"minecraft:destroy_time": 1000
+		},
+		"events": {}
+	}
+}

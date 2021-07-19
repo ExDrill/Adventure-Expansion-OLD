@@ -1,0 +1,41 @@
+//bridge-file-version: #8
+{
+	"format_version": "1.10.0",
+	"minecraft:client_entity": {
+		"description": {
+			"identifier": "exdrill:goblin_ranger",
+			"materials": {
+				"default": "entity_alphatest"
+			},
+			"textures": {
+				"default": "textures/entity/goblin"
+			},
+			"geometry": {
+				"default": "geometry.goblin"
+			},
+			"render_controllers": [
+				"controller.render.default"
+			],
+			"spawn_egg": {
+				"texture_index": 0,
+				"base_color": "#09631C",
+				"overlay_color": "#52361B"
+			},
+			"enable_attachables": true,
+			"animations": {
+				"move": "animation.goblin_ranger.walk",
+				"hold_crossbow": "animation.goblin_ranger.hold",
+				"look_at_target": "animation.common.look_at_target"
+			},
+			"scripts": {
+				"animate": [
+					{
+						"move": "query.modified_move_speed"
+					},
+					"hold_crossbow",
+					"look_at_target"
+				]
+			}
+		}
+	}
+}

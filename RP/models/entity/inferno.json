@@ -1,0 +1,75 @@
+{
+	"format_version": "1.12.0",
+	"minecraft:geometry": [
+		{
+			"description": {
+				"identifier": "geometry.inferno",
+				"texture_width": 128,
+				"texture_height": 128,
+				"visible_bounds_width": 2,
+				"visible_bounds_height": 3.5,
+				"visible_bounds_offset": [0, 1.25, 0]
+			},
+			"bones": [
+				{
+					"name": "bb_main",
+					"pivot": [0, 0, 0],
+					"cubes": [
+						{"origin": [-3, 14, -3], "size": [6, 14, 6], "uv": [0, 108]}
+					]
+				},
+				{
+					"name": "head",
+					"pivot": [0, 0, 0],
+					"cubes": [
+						{"origin": [-4, 30, -4], "size": [8, 8, 8], "uv": [44, 26]}
+					]
+				},
+				{
+					"name": "hat",
+					"parent": "head",
+					"pivot": [0, 0, 0],
+					"cubes": [
+						{"origin": [-4, 30, -4], "size": [8, 8, 8], "inflate": 0.25, "uv": [96, 0]}
+					]
+				},
+				{
+					"name": "shields",
+					"pivot": [0, 28, 0]
+				},
+				{
+					"name": "shield0",
+					"parent": "shields",
+					"pivot": [7, 28, 0],
+					"cubes": [
+						{"origin": [6, 6, -6], "size": [2, 24, 12], "uv": [16, 24]}
+					]
+				},
+				{
+					"name": "shield1",
+					"parent": "shields",
+					"pivot": [0, 28, -7],
+					"cubes": [
+						{"origin": [-6, 6, -8], "size": [12, 24, 2], "uv": [44, 44]}
+					]
+				},
+				{
+					"name": "shield2",
+					"parent": "shields",
+					"pivot": [-7, 28, 0],
+					"cubes": [
+						{"origin": [-8, 6, -6], "size": [2, 24, 12], "uv": [0, 0]}
+					]
+				},
+				{
+					"name": "shield3",
+					"parent": "shields",
+					"pivot": [0, 28, 7],
+					"cubes": [
+						{"origin": [-6, 6, 6], "size": [12, 24, 2], "uv": [32, 0]}
+					]
+				}
+			]
+		}
+	]
+}

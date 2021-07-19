@@ -1,0 +1,19 @@
+{
+    "format_version": "1.16.100",
+    "minecraft:item": {
+        "description": {
+            "identifier": "exdrill:glow_crystal.item"
+        },
+        "components": {
+            "minecraft:display_name": {
+                "value": "Glow Crystal"
+            },
+            "minecraft:icon": {
+                "texture": "glow_crystal"
+            },
+            "minecraft:block_placer": {
+                "block": "exdrill:glow_crystal"
+            }
+        }
+    }
+}

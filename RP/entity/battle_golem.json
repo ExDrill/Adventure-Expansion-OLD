@@ -1,0 +1,40 @@
+//bridge-file-version: #1
+{
+	"format_version": "1.10.0",
+	"minecraft:client_entity": {
+		"description": {
+			"identifier": "exdrill:battle_golem",
+			"materials": {
+				"default": "entity_alphatest"
+			},
+			"textures": {
+				"default": "textures/entity/battle_golem"
+			},
+			"geometry": {
+				"default": "geometry.battle_golem"
+			},
+			"animations": {
+				"move": "animation.battle_golem.move",
+				"attack": "animation.battle_golem.attack"
+			},
+			"scripts": {
+				"animate": [
+					{
+						"move": "query.modified_move_speed"
+					},
+					{
+						"attack": "variable.attack_time"
+					}
+				]
+			},
+			"render_controllers": [
+				"controller.render.default"
+			],
+			"spawn_egg": {
+				"texture_index": 0,
+				"base_color": "#6C6C6C",
+				"overlay_color": "#0D1476"
+			}
+		}
+	}
+}

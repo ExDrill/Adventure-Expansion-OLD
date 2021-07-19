@@ -1,0 +1,35 @@
+//bridge-file-version: #2
+{
+	"format_version": "1.16.100",
+	"minecraft:entity": {
+		"description": {
+			"identifier": "exdrill:green_energy",
+			"runtime_identifier": "minecraft:snowball",
+			"is_summonable": true
+		},
+		"components": {
+			"minecraft:projectile": {
+				"power": 1.6,
+				"gravity": 0.05,
+				"uncertainty_base": 16,
+				"uncertainty_multiplier": 8,
+				"offset": [
+					0,
+					-0.1,
+					0
+				],
+				"on_hit": {
+					"impact_damage": {
+						"damage": 10,
+						"knockback": false,
+						"destroy_on_hit": true
+					},
+					"remove_on_hit": {}
+				}
+			},
+			"minecraft:physics": {}
+		},
+		"events": {},
+		"component_groups": {}
+	}
+}

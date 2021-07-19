@@ -1,0 +1,20 @@
+//bridge-file-version: #2
+{
+	"format_version": "1.16.100",
+	"minecraft:item": {
+		"description": {
+			"identifier": "exdrill:dragon_bone"
+		},
+		"components": {
+			"minecraft:icon": {
+				"texture": "dragon_bone"
+			},
+			"minecraft:max_stack_size": 64,
+			"minecraft:display_name": {
+				"value": "Dragon Bone"
+			},
+			"minecraft:explodable": false
+		},
+		"events": {}
+	}
+}

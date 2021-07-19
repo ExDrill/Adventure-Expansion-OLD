@@ -1,0 +1,236 @@
+//bridge-file-version: #28
+{
+	"format_version": "1.16.100",
+	"minecraft:entity": {
+		"description": {
+			"identifier": "exdrill:goblin_banner",
+			"is_summonable": true,
+			"is_spawnable": true
+		},
+		"component_groups": {
+			"interact": {
+				"minecraft:interact": {
+					"interactions": [
+						{
+							"interact_text": "Start the Raid",
+							"on_interact": {
+								"event": "exdrill:begin_normalmode",
+								"target": "self",
+								"filters": {
+									"all_of": [
+										{
+											"test": "has_equipment",
+											"subject": "other",
+											"domain": "hand",
+											"operator": "!=",
+											"value": "exdrill:totem_of_enraging"
+										},
+										{
+											"test": "is_family",
+											"subject": "other",
+											"value": "player"
+										}
+									]
+								}
+							},
+							"swing": true
+						},
+						{
+							"use_item": true,
+							"interact_text": "Start the Hardmode Raid",
+							"swing": true,
+							"on_interact": {
+								"event": "exdrill:begin_hardmode",
+								"target": "self",
+								"filters": {
+									"all_of": [
+										{
+											"test": "has_equipment",
+											"subject": "other",
+											"domain": "hand",
+											"value": "exdrill:totem_of_enraging"
+										},
+										{
+											"test": "is_family",
+											"subject": "other",
+											"value": "player"
+										}
+									]
+								}
+							}
+						}
+					]
+				}
+			},
+			"hardmode": {
+				"minecraft:timer": {
+					"looping": false,
+					"time": 300,
+					"time_down_event": {
+						"event": "exdrill:summon_boss"
+					}
+				},
+				"minecraft:spawn_entity": {
+					"entities": [
+						{
+							"spawn_entity": "exdrill:goblin_warrior",
+							"num_to_spawn": 2,
+							"spawn_event": "exdrill:hardmode_configuration",
+							"min_wait_time": 8,
+							"max_wait_time": 10,
+							"single_use": false
+						},
+						{
+							"spawn_entity": "exdrill:goblin_ranger",
+							"num_to_spawn": 1,
+							"spawn_event": "exdrill:hardmode_configuration",
+							"min_wait_time": 8,
+							"max_wait_time": 10,
+							"single_use": false
+						},
+						{
+							"spawn_entity": "exdrill:goblin_grunt",
+							"num_to_spawn": 1,
+							"spawn_event": "exdrill:hardmode_configuration",
+							"min_wait_time": 12,
+							"max_wait_time": 15,
+							"single_use": false
+						},
+						{
+							"spawn_entity": "exdrill:goblin_summoner",
+							"num_to_spawn": 1,
+							"spawn_event": "exdrill:hardmode_configuration",
+							"min_wait_time": 15,
+							"max_wait_time": 20,
+							"single_use": false
+						}
+					]
+				}
+			},
+			"normalmode": {
+				"minecraft:timer": {
+					"looping": false,
+					"time": 300,
+					"time_down_event": {
+						"event": "exdrill:summon_boss"
+					}
+				},
+				"minecraft:spawn_entity": {
+					"entities": [
+						{
+							"spawn_entity": "exdrill:goblin_warrior",
+							"num_to_spawn": 2,
+							"spawn_event": "exdrill:spread",
+							"min_wait_time": 8,
+							"max_wait_time": 10,
+							"single_use": false
+						},
+						{
+							"spawn_entity": "exdrill:goblin_ranger",
+							"num_to_spawn": 1,
+							"spawn_event": "exdrill:spread",
+							"min_wait_time": 8,
+							"max_wait_time": 10,
+							"single_use": false
+						},
+						{
+							"spawn_entity": "exdrill:goblin_grunt",
+							"num_to_spawn": 1,
+							"spawn_event": "exdrill:spread",
+							"min_wait_time": 12,
+							"max_wait_time": 15,
+							"single_use": false
+						},
+						{
+							"spawn_entity": "exdrill:goblin_summoner",
+							"num_to_spawn": 1,
+							"spawn_event": "exdrill:spread",
+							"min_wait_time": 15,
+							"max_wait_time": 20,
+							"single_use": false
+						}
+					]
+				}
+			}
+		},
+		"components": {
+			"minecraft:collision_box": {
+				"width": 0.5,
+				"height": 1.8
+			},
+			"minecraft:health": {
+				"value": 10,
+				"max": 10
+			},
+			"minecraft:boss": {
+				"should_darken_sky": false,
+				"hud_range": 50,
+				"name": "Goblin Raid"
+			},
+			"minecraft:persistent": {},
+			"minecraft:physics": {},
+			"minecraft:knockback_resistance": {
+				"value": 10,
+				"max": 10
+			},
+			"minecraft:damage_sensor": {
+				"triggers": [
+					{
+						"cause": "all",
+						"deals_damage": false
+					}
+				]
+			}
+		},
+		"events": {
+			"exdrill:summon_boss": {
+				"run_command": {
+					"command": [
+						"summon exdrill:goblin_beast ~ ~ ~",
+						"kill @s"
+					]
+				}
+			},
+			"minecraft:entity_spawned": {
+				"add": {
+					"component_groups": [
+						"interact"
+					]
+				}
+			},
+			"exdrill:begin_hardmode": {
+				"add": {
+					"component_groups": [
+						"hardmode"
+					]
+				},
+				"remove": {
+					"component_groups": [
+						"interact"
+					]
+				},
+				"trigger": "sound"
+			},
+			"exdrill:begin_normalmode": {
+				"add": {
+					"component_groups": [
+						"normalmode"
+					]
+				},
+				"remove": {
+					"component_groups": [
+						"interact"
+					]
+				}
+			},
+			"sound": {
+				"run_command": {
+					"command": [
+						"title @a[r=20] title Hardmode Raid!",
+						"playsound mob.wither.spawn @a ~ ~ ~"
+					]
+				}
+			}
+		}
+	}
+}

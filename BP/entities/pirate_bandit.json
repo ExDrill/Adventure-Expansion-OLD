@@ -1,0 +1,257 @@
+//bridge-file-version: #26
+{
+	"format_version": "1.16.100",
+	"minecraft:entity": {
+		"description": {
+			"identifier": "exdrill:pirate_bandit",
+			"is_summonable": true,
+			"is_spawnable": true
+		},
+		"component_groups": {
+			"red": {
+				"minecraft:variant": {
+					"value": 0
+				}
+			},
+			"blue": {
+				"minecraft:variant": {
+					"value": 1
+				}
+			},
+			"green": {
+				"minecraft:variant": {
+					"value": 2
+				}
+			},
+			"ranged_unit": {
+				"minecraft:shooter": {
+					"def": "exdrill:chain_spear"
+				},
+				"minecraft:equipment": {
+					"table": "loot_tables/equipment/ranged_bandit.json",
+					"slot_drop_chance": [
+						{
+							"slot": "slot.weapon.mainhand",
+							"drop_chance": 0.01
+						}
+					]
+				},
+				"minecraft:behavior.ranged_attack": {
+					"priority": 0,
+					"attack_interval_min": 1,
+					"attack_interval_max": 3,
+					"attack_radius": 8
+				},
+				"minecraft:movement": {
+					"value": 0.25
+				}
+			},
+			"melee_unit": {
+				"minecraft:behavior.melee_attack": {
+					"priority": 3,
+					"attack_once": false,
+					"target_dist": 30,
+					"track_target": true
+				},
+				"minecraft:attack": {
+					"damage": 7
+				},
+				"minecraft:equipment": {
+					"table": "loot_tables/equipment/melee_bandit.json",
+					"slot_drop_chance": [
+						{
+							"slot": "slot.weapon.mainhand",
+							"drop_chance": 0.01
+						}
+					]
+				},
+				"minecraft:movement": {
+					"value": 0.35
+				}
+			}
+		},
+		"components": {
+			"minecraft:health": {
+				"value": 40,
+				"max": 40
+			},
+			"minecraft:collision_box": {
+				"width": 0.6,
+				"height": 1.8
+			},
+			"minecraft:behavior.random_stroll": {
+				"interval": 5,
+				"priority": 1,
+				"speed_multiplier": 1,
+				"xz_dist": 10
+			},
+			"minecraft:physics": {},
+			"minecraft:behavior.look_at_player": {
+				"priority": 3,
+				"look_distance": 5,
+				"probability": 0.8,
+				"look_time": [
+					3,
+					5
+				]
+			},
+			"minecraft:movement.generic": {},
+			"minecraft:behavior.nearest_attackable_target": {
+				"priority": 6,
+				"must_see": true,
+				"reselect_targets": true,
+				"within_radius": 25,
+				"must_see_forget_duration": 17,
+				"entity_types": [
+					{
+						"filters": {
+							"any_of": [
+								{
+									"test": "is_family",
+									"subject": "other",
+									"value": "player"
+								},
+								{
+									"test": "is_family",
+									"subject": "other",
+									"value": "snowgolem"
+								},
+								{
+									"test": "is_family",
+									"subject": "other",
+									"value": "irongolem"
+								}
+							]
+						},
+						"max_dist": 35
+					},
+					{
+						"filters": {
+							"any_of": [
+								{
+									"test": "is_family",
+									"subject": "other",
+									"value": "villager"
+								},
+								{
+									"test": "is_family",
+									"subject": "other",
+									"value": "wandering_trader"
+								}
+							]
+						},
+						"max_dist": 35,
+						"must_see": false
+					},
+					{
+						"filters": {
+							"all_of": [
+								{
+									"test": "is_family",
+									"subject": "other",
+									"value": "baby_turtle"
+								},
+								{
+									"test": "in_water",
+									"subject": "other",
+									"operator": "!=",
+									"value": true
+								}
+							]
+						},
+						"max_dist": 35
+					}
+				]
+			},
+			"minecraft:behavior.hurt_by_target": {
+				"alert_same_type": true,
+				"entity_types": [
+					{
+						"filters": {
+							"test": "is_family",
+							"subject": "other",
+							"operator": "!=",
+							"value": "pirate"
+						}
+					}
+				],
+				"priority": 2
+			},
+			"minecraft:type_family": {
+				"family": [
+					"pirate",
+					"mob",
+					"monster"
+				]
+			},
+			"minecraft:jump.static": {},
+			"minecraft:floats_in_liquid": {},
+			"minecraft:breathable": {
+				"total_supply": 15,
+				"suffocate_time": 0
+			},
+			"minecraft:navigation.walk": {
+				"is_amphibious": true,
+				"can_sink": false,
+				"can_open_doors": true,
+				"can_break_doors": true,
+				"avoid_water": true,
+				"avoid_damage_blocks": true
+			}
+		},
+		"events": {
+			"minecraft:entity_spawned": {
+				"sequence": [
+					{
+						"randomize": [
+							{
+								"weight": 1,
+								"add": {
+									"component_groups": [
+										"red"
+									]
+								}
+							},
+							{
+								"weight": 1,
+								"add": {
+									"component_groups": [
+										"blue"
+									]
+								}
+							},
+							{
+								"weight": 1,
+								"add": {
+									"component_groups": [
+										"green"
+									]
+								}
+							}
+						]
+					},
+					{
+						"randomize": [
+							{
+								"weight": 1,
+								"add": {
+									"component_groups": [
+										"ranged_unit"
+									]
+								}
+							},
+							{
+								"weight": 1,
+								"add": {
+									"component_groups": [
+										"melee_unit"
+									]
+								}
+							}
+						]
+					}
+				]
+			}
+		}
+	}
+}

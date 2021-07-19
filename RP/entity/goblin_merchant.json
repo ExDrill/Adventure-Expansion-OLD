@@ -1,0 +1,70 @@
+//bridge-file-version: #8
+{
+	"format_version": "1.10.0",
+	"minecraft:client_entity": {
+		"description": {
+			"identifier": "exdrill:goblin_merchant",
+			"materials": {
+				"default": "entity_alphatest"
+			},
+			"textures": {
+				"default": "textures/entity/goblin_merchant"
+			},
+			"geometry": {
+				"default": "geometry.goblin"
+			},
+			"scripts": {
+				"animate": [
+					{
+						"admire": "query.is_admiring"
+					},
+					{
+						"humanoid_big_head": "query.is_baby"
+					},
+					{
+						"celebrate_hunt": "query.is_celebrating"
+					},
+					{
+						"celebrate_hunt_special": "query.is_celebrating_special"
+					},
+					"bob",
+					"look_at_target_controller",
+					"piglin_attack_controller",
+					"riding_controller",
+					{
+						"move": "query.modified_move_speed"
+					}
+				]
+			},
+			"animations": {
+				"move": "animation.goblin.walk",
+				"bob": "animation.humanoid.bob",
+				"humanoid_big_head": "animation.humanoid.big_head",
+				"admire": "animation.piglin.admire",
+				"celebrate_hunt": "animation.piglin.celebrate_hunt",
+				"celebrate_hunt_special": "animation.piglin.celebrate_hunt_special",
+				"look_at_target_controller": "controller.animation.humanoid.look_at_target",
+				"look_at_target_default": "animation.humanoid.look_at_target.default",
+				"look_at_target_gliding": "animation.humanoid.look_at_target.gliding",
+				"look_at_target_swimming": "animation.humanoid.look_at_target.swimming",
+				"piglin_attack_controller": "controller.animation.piglin.attack",
+				"crossbow_hold": "animation.piglin.crossbow.hold",
+				"crossbow_charge": "animation.piglin.crossbow.charge",
+				"melee_attack": "animation.piglin.sword.attack",
+				"hand_attack": "animation.piglin.hand.attack",
+				"riding_controller": "controller.animation.humanoid.riding",
+				"riding.arms": "animation.humanoid.riding.arms",
+				"riding.legs": "animation.humanoid.riding.legs"
+			},
+			"render_controllers": [
+				"controller.render.default"
+			],
+			"spawn_egg": {
+				"texture_index": 0,
+				"base_color": "#09631C",
+				"overlay_color": "#52361B"
+			},
+			"enable_attachables": true
+		}
+	}
+}

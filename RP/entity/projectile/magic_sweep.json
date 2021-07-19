@@ -1,0 +1,35 @@
+//bridge-file-version: #0
+{
+	"format_version": "1.10.0",
+	"minecraft:client_entity": {
+		"description": {
+			"identifier": "exdrill:magic_sweep",
+			"textures": {
+				"default": "textures/entity/sweep"
+			},
+			"materials": {
+				"default": "entity_alphatest"
+			},
+			"geometry": {
+				"default": "geometry.magic_sweep"
+			},
+			"animations": {
+				"fly": "animation.actor.billboard",
+				"particle_config": "controller.animation.sweep"
+			},
+			"scripts": {
+				"animate": [
+					"fly",
+					"particle_config"
+				],
+				"scale": 0.6
+			},
+			"render_controllers": [
+				"controller.render.default"
+			],
+			"particle_effects": {
+				"aura": "minecraft:enchanting_table_particle"
+			}
+		}
+	}
+}

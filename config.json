@@ -1,0 +1,15 @@
+{
+	"type": "minecraftBedrock",
+	"name": "Adventure Expansion",
+	"namespace": "exdrill",
+	"author": "ExDrill",
+	"targetVersion": "1.17.10",
+	"description": "",
+	"capabilities": [
+		"gameTestAPI"
+	],
+	"packs": {
+		"behaviorPack": "./BP",
+		"resourcePack": "./RP"
+	}
+}

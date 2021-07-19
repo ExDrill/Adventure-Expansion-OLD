@@ -1,0 +1,31 @@
+{
+	"format_version": "1.16.100",
+	"minecraft:block": {
+		"description": {
+			"identifier": "exdrill:cracked_darkbrick"
+		},
+		"components": {
+			"minecraft:destroy_time": 2,
+			"minecraft:immovable": true,
+			"minecraft:on_player_destroyed": {
+				"event": "on_player_destroyed",
+				"target": "self",
+				"condition": "query.get_equipped_item_name != 'diamond_pickaxe'"
+			},
+			"minecraft:loot": "loot_tables/empty.json"
+		},
+		"events": {
+			"on_player_destroyed": {
+				"set_block": {
+					"block_type": "exdrill:cracked_darkbrick"
+				},
+				"run_command": {
+					"command": [
+						"title @p actionbar Seems like you might need a stronger tool."
+					],
+					"target": "self"
+				}
+			}
+		}
+	}
+}

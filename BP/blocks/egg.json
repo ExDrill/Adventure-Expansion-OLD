@@ -1,0 +1,65 @@
+{
+	"format_version": "1.16.100",
+	"minecraft:block": {
+		"description": {
+			"identifier": "exdrill:egg"
+		},
+		"components": {
+			"minecraft:destroy_time": 1,
+			"minecraft:block_light_absorption": 0,
+			"minecraft:geometry": "geometry.egg",
+			"minecraft:material_instances": {
+				"*": {
+					"texture": "egg",
+					"render_method": "alpha_test"
+				}
+			},
+			"minecraft:pick_collision": {
+				"origin": [
+					-4,
+					0,
+					-4
+				],
+				"size": [
+					8,
+					12,
+					8
+				]
+			},
+			"minecraft:entity_collision": {
+				"origin": [
+					-4,
+					0,
+					-4
+				],
+				"size": [
+					8,
+					12,
+					8
+				]
+			},
+			"minecraft:ticking": {
+				"looping": false,
+				"range": [
+					200,
+					300
+				],
+				"on_tick": {
+					"event": "exdrill:hatch",
+					"target": "self"
+				}
+			}
+		},
+		"events": {
+			"exdrill:hatch": {
+				"run_command": {
+					"command": [
+						"setblock ~ ~ ~ air",
+						"summon exdrill:wagi ~ ~ ~ minecraft:entity_born"
+					],
+					"target": "self"
+				}
+			}
+		}
+	}
+}

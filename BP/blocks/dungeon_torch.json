@@ -1,0 +1,116 @@
+//bridge-file-version: #9
+{
+	"format_version": "1.16.100",
+	"minecraft:block": {
+		"description": {
+			"identifier": "exdrill:dungeon_torch",
+			"properties": {
+				"bridge:block_rotation": [
+					2,
+					3,
+					4,
+					5,
+					0,
+					1
+				]
+			}
+		},
+		"permutations": [
+			{
+				"condition": "query.block_property('bridge:block_rotation') == 2",
+				"components": {
+					"minecraft:rotation": [
+						0,
+						180,
+						0
+					],
+					"minecraft:geometry": "geometry.wall_torch"
+				}
+			},
+			{
+				"condition": "query.block_property('bridge:block_rotation') == 3",
+				"components": {
+					"minecraft:rotation": [
+						0,
+						0,
+						0
+					],
+					"minecraft:geometry": "geometry.wall_torch"
+				}
+			},
+			{
+				"condition": "query.block_property('bridge:block_rotation') == 4",
+				"components": {
+					"minecraft:rotation": [
+						0,
+						270,
+						0
+					],
+					"minecraft:geometry": "geometry.wall_torch"
+				}
+			},
+			{
+				"condition": "query.block_property('bridge:block_rotation') == 5",
+				"components": {
+					"minecraft:rotation": [
+						0,
+						90,
+						0
+					],
+					"minecraft:geometry": "geometry.wall_torch"
+				}
+			},
+			{
+				"condition": "query.block_property('bridge:block_rotation') == 0",
+				"components": {
+					"minecraft:geometry": "geometry.floor_torch"
+				}
+			},
+			{
+				"condition": "query.block_property('bridge:block_rotation') == 1",
+				"components": {
+					"minecraft:rotation": [
+						0,
+						0,
+						180
+					],
+					"minecraft:geometry": "geometry.floor_torch"
+				}
+			}
+		],
+		"components": {
+			"minecraft:on_player_placing": {
+				"event": "bridge:update_rotation"
+			},
+			"minecraft:destroy_time": 0,
+			"minecraft:block_light_absorption": 0,
+			"minecraft:block_light_emission": 0.4,
+			"minecraft:material_instances": {
+				"*": {
+					"texture": "dungeon_torch",
+					"render_method": "opaque"
+				}
+			},
+			"minecraft:entity_collision": false,
+			"minecraft:pick_collision": {
+				"origin": [
+					-1,
+					0,
+					-1
+				],
+				"size": [
+					2,
+					10,
+					2
+				]
+			}
+		},
+		"events": {
+			"bridge:update_rotation": {
+				"set_block_property": {
+					"bridge:block_rotation": "query.cardinal_facing"
+				}
+			}
+		}
+	}
+}

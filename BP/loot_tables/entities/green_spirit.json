@@ -1,0 +1,30 @@
+//bridge-file-version: #0
+{
+	"pools": [
+		{
+			"rolls": 1,
+			"entries": [
+				{
+					"type": "item",
+					"name": "exdrill:green_mana",
+					"functions": [
+						{
+							"function": "looting_enchant",
+							"count": {
+								"min": 0,
+								"max": 10
+							}
+						},
+						{
+							"function": "set_count",
+							"count": {
+								"min": 8,
+								"max": 12
+							}
+						}
+					]
+				}
+			]
+		}
+	]
+}

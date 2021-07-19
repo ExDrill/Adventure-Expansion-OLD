@@ -1,0 +1,264 @@
+//bridge-file-version: #38
+{
+	"format_version": "1.16.100",
+	"minecraft:entity": {
+		"description": {
+			"identifier": "exdrill:wagi",
+			"is_summonable": true,
+			"is_spawnable": true,
+			"animations": {
+				"fly_system": "controller.animation.wagi"
+			},
+			"scripts": {
+				"animate": [
+					"fly_system"
+				]
+			}
+		},
+		"component_groups": {
+			"exdrill:wagi_baby": {
+				"minecraft:is_baby": {},
+				"minecraft:ageable": {
+					"duration": 1000,
+					"feed_items": [
+						{
+							"item": "minecraft:cooked_beef",
+							"growth": 0.1
+						},
+						{
+							"item": "minecraft:cooked_porkchop",
+							"growth": 0.1
+						}
+					],
+					"grow_up": {
+						"event": "minecraft:grow_up",
+						"target": "self"
+					}
+				},
+				"minecraft:scale_by_age": {
+					"start_scale": 0.5,
+					"end_scale": 1.5
+				}
+			},
+			"exdrill:wagi_adult": {
+				"minecraft:scale": {
+					"value": 1.5
+				}
+			},
+			"exdrill:wagi_tamed": {
+				"minecraft:is_tamed": {},
+				"minecraft:sittable": {},
+				"minecraft:rideable": {
+					"seat_count": 1,
+					"interact_text": "interact.wagi.ride",
+					"seats": [
+						{
+							"position": [
+								0,
+								0.6,
+								-0.2
+							]
+						}
+					]
+				},
+				"minecraft:input_ground_controlled": {},
+				"minecraft:can_power_jump": {},
+				"minecraft:horse.jump_strength": {
+					"value": 2
+				},
+				"minecraft:behavior.stay_while_sitting": {
+					"priority": 1
+				},
+				"minecraft:behavior.follow_owner": {
+					"priority": 1,
+					"speed_multiplier": 1.2,
+					"start_distance": 8
+				},
+				"minecraft:can_fly": true,
+				"minecraft:flying_speed": {
+					"value": 1.5
+				}
+			},
+			"exdrill:wagi_wild": {
+				"minecraft:tameable": {
+					"probability": 1,
+					"tame_items": [
+						"minecraft:cooked_porkchop",
+						"minecraft:cooked_beef"
+					],
+					"tame_event": {
+						"event": "minecraft:tamed",
+						"target": "self"
+					}
+				}
+			},
+			"exdrill:glide": {
+				"minecraft:spell_effects": {
+					"add_effects": [
+						{
+							"effect": "slow_falling",
+							"duration": 9999,
+							"amplifier": 1,
+							"visible": false
+						},
+						{
+							"effect": "speed",
+							"duration": 99999,
+							"amplifier": 25,
+							"visible": false
+						}
+					]
+				}
+			},
+			"exdrill:remove_glide": {
+				"minecraft:spell_effects": {
+					"remove_effects": [
+						"slow_falling",
+						"speed"
+					]
+				}
+			}
+		},
+		"components": {
+			"minecraft:health": {
+				"value": 80,
+				"max": 80
+			},
+			"minecraft:movement": {
+				"value": 0.2
+			},
+			"minecraft:movement.basic": {},
+			"minecraft:physics": {
+				"has_gravity": true,
+				"has_collision": true
+			},
+			"minecraft:collision_box": {
+				"width": 0.5,
+				"height": 0.5
+			},
+			"minecraft:damage_sensor": {
+				"triggers": [
+					{
+						"cause": "fall",
+						"deals_damage": false
+					}
+				]
+			},
+			"minecraft:behavior.random_stroll": {
+				"priority": 6,
+				"speed_multiplier": 1
+			},
+			"minecraft:behavior.look_at_player": {
+				"priority": 7,
+				"look_distance": 6,
+				"probability": 0.02
+			},
+			"minecraft:behavior.random_look_around": {
+				"priority": 7
+			},
+			"minecraft:jump.static": {
+				"jump_power": 0.5
+			},
+			"minecraft:leashable": {},
+			"minecraft:nameable": {
+				"allow_name_tag_renaming": true,
+				"always_show": false
+			},
+			"minecraft:environment_sensor": {
+				"triggers": [
+					{
+						"filters": {
+							"test": "on_ground",
+							"subject": "self",
+							"operator": "==",
+							"value": true
+						},
+						"event": "exdrill:remove_glide"
+					},
+					{
+						"filters": {
+							"test": "on_ground",
+							"subject": "self",
+							"operator": "!=",
+							"value": true
+						},
+						"event": "exdrill:glide"
+					}
+				]
+			},
+			"minecraft:flying_speed": {
+				"value": 2
+			},
+			"minecraft:behavior.panic": {
+				"priority": 1,
+				"damage_sources": "entity_attack"
+			}
+		},
+		"events": {
+			"minecraft:entity_spawned": {
+				"add": {
+					"component_groups": [
+						"exdrill:wagi_adult",
+						"exdrill:wagi_wild"
+					]
+				}
+			},
+			"minecraft:entity_born": {
+				"add": {
+					"component_groups": [
+						"exdrill:wagi_baby"
+					]
+				}
+			},
+			"minecraft:grow_up": {
+				"add": {
+					"component_groups": [
+						"exdrill:wagi_adult",
+						"exdrill:wagi_wild"
+					]
+				},
+				"remove": {
+					"component_groups": [
+						"exdrill:wagi_baby"
+					]
+				}
+			},
+			"minecraft:tamed": {
+				"add": {
+					"component_groups": [
+						"exdrill:wagi_tamed"
+					]
+				},
+				"remove": {
+					"component_groups": [
+						"exdrill:wagi_wild"
+					]
+				}
+			},
+			"exdrill:glide": {
+				"add": {
+					"component_groups": [
+						"exdrill:glide"
+					]
+				},
+				"remove": {
+					"component_groups": [
+						"exdrill:glide"
+					]
+				}
+			},
+			"exdrill:remove_glide": {
+				"add": {
+					"component_groups": [
+						"exdrill:remove_glide"
+					]
+				},
+				"remove": {
+					"component_groups": [
+						"exdrill:glide"
+					]
+				}
+			}
+		}
+	}
+}

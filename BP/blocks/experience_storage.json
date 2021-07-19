@@ -1,0 +1,128 @@
+//bridge-file-version: #31
+{
+	"format_version": "1.16.100",
+	"minecraft:block": {
+		"description": {
+			"identifier": "exdrill:experience_storage",
+			"properties": {
+				"exdrill:xp_filled": [
+					0,
+					1
+				]
+			}
+		},
+		"components": {
+			"minecraft:material_instances": {
+				"*": {
+					"texture": "experience_storage_filled",
+					"render_method": "alpha_test"
+				}
+			},
+			"minecraft:block_light_absorption": 0,
+			"minecraft:on_interact": {
+				"event": "exdrill:empty",
+				"target": "self"
+			},
+			"minecraft:geometry": "geometry.experience_storage",
+			"minecraft:pick_collision": {
+				"origin": [
+					-4,
+					0,
+					-4
+				],
+				"size": [
+					8,
+					10,
+					8
+				]
+			},
+			"minecraft:entity_collision": {
+				"origin": [
+					-4,
+					0,
+					-4
+				],
+				"size": [
+					8,
+					10,
+					8
+				]
+			},
+			"minecraft:loot": "loot_tables/experience_storage/experience_storage.json"
+		},
+		"permutations": [
+			{
+				"condition": "query.block_property('exdrill:xp_filled') == 0",
+				"components": {
+					"minecraft:material_instances": {
+						"*": {
+							"texture": "experience_storage_empty",
+							"render_method": "alpha_test"
+						}
+					},
+					"minecraft:block_light_emission": 0,
+					"minecraft:block_light_absorption": 0,
+					"minecraft:on_interact": {
+						"event": "exdrill:filled",
+						"target": "self",
+						"condition": "query.player_level >= 5"
+					}
+				}
+			},
+			{
+				"condition": "query.block_property('exdrill:xp_filled') == 1",
+				"components": {
+					"minecraft:material_instances": {
+						"*": {
+							"texture": "experience_storage_filled",
+							"render_method": "blend"
+						}
+					},
+					"minecraft:block_light_emission": 0.5,
+					"minecraft:block_light_absorption": 0,
+					"minecraft:on_interact": {
+						"event": "exdrill:empty",
+						"target": "self"
+					}
+				}
+			}
+		],
+		"events": {
+			"exdrill:empty": {
+				"set_block_property": {
+					"exdrill:xp_filled": 0
+				},
+				"run_command": {
+					"command": [
+						"xp 5L @s"
+					],
+					"target": "other"
+				},
+				"play_sound": {
+					"target": "self",
+					"sound": "conduit.deactivate"
+				}
+			},
+			"exdrill:filled": {
+				"set_block_property": {
+					"exdrill:xp_filled": 1
+				},
+				"run_command": {
+					"command": [
+						"xp -5L @s"
+					],
+					"target": "other"
+				},
+				"play_sound": {
+					"target": "self",
+					"sound": "conduit.activate"
+				}
+			},
+			"exdrill:activate": {
+				"set_block_property": {
+					"exdrill:xp_filled": 0
+				}
+			}
+		}
+	}
+}

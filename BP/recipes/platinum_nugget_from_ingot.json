@@ -1,0 +1,21 @@
+{
+    "format_version": "1.12.0",
+    "minecraft:recipe_shapeless": {
+        "description": {
+            "identifier": "exdrill:platinum_nugget_from_ingot"
+        },
+        "ingredients": [
+            {
+                "count": 1,
+                "item": "exdrill:platinum_ingot"
+            }
+        ],
+        "tags": [
+            "crafting_table"
+        ],
+        "result": {
+            "item": "exdrill:platinum_nugget",
+            "count": 9
+        }
+    }
+}

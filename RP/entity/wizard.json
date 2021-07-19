@@ -1,0 +1,38 @@
+//bridge-file-version: #1
+{
+	"format_version": "1.10.0",
+	"minecraft:client_entity": {
+		"description": {
+			"identifier": "exdrill:wizard",
+			"materials": {
+				"default": "witch"
+			},
+			"textures": {
+				"default": "textures/entity/wizard"
+			},
+			"geometry": {
+				"default": "geometry.wizard"
+			},
+			"scripts": {
+				"animate": [
+					"bob",
+					{"walk": "query.is_moving"},
+					"look_at_target"
+				]
+			},
+			"animations": {
+				"walk": "animation.wizard.walk",
+				"look_at_target": "animation.common.look_at_target",
+				"bob": "animation.wizard.bob"
+			},
+			"render_controllers": [
+				"controller.render.default"
+			],
+			"spawn_egg": {
+				"texture_index": 0,
+				"base_color": "#700C94",
+				"overlay_color": "#FD75B6"
+			}
+		}
+	}
+}

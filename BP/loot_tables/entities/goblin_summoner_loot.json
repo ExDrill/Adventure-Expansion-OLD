@@ -1,0 +1,19 @@
+//bridge-file-version: #0
+{
+	"pools": [
+		{
+			"rolls": 1,
+			"entries": [
+				{
+					"type": "item",
+					"name": "exdrill:blockling_staff",
+					"weight": 1
+				},
+				{
+					"type": "empty",
+					"weight": 29
+				}
+			]
+		}
+	]
+}

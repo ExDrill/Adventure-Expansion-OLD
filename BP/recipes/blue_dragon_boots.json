@@ -1,0 +1,27 @@
+//bridge-file-version: #0
+{
+	"format_version": "1.16.100",
+	"minecraft:recipe_shaped": {
+		"description": {
+			"identifier": "exdrill:blue_dragon_boots"
+		},
+		"tags": [
+			"crafting_table"
+		],
+		"pattern": [
+			"A A",
+			"A A"
+		],
+		"key": {
+			"A": {
+				"item": "exdrill:blue_dragon_scale"
+			}
+		},
+		"result": [
+			{
+				"item": "exdrill:blue_dragon_boots",
+				"count": 1
+			}
+		]
+	}
+}

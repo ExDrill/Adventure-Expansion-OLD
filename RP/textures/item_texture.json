@@ -1,0 +1,281 @@
+{
+	"resource_pack_name": "bridgeRP",
+	"texture_name": "atlas.items",
+	"texture_data": {
+		"enderite": {
+			"textures": [
+				"textures/items/enderite"
+			]
+		},
+		"war": {
+			"textures": [
+				"textures/items/war"
+			]
+		},
+		"enderite_hammer": {
+			"textures": [
+				"textures/items/enderite_hammer"
+			]
+		},
+		"goblin_dagger": {
+			"textures": [
+				"textures/items/goblin_dagger"
+			]
+		},
+		"enderite_collecter": {
+			"textures": [
+				"textures/items/enderite_collecter"
+			]
+		},
+		"goblin_banner": {
+			"textures": [
+				"textures/items/goblin_banner"
+			]
+		},
+		"orange_sapphire": {
+			"textures": [
+				"textures/items/orange_sapphire"
+			]
+		},
+		"enhanced_steak": {
+			"textures": [
+				"textures/items/enhanced_steak"
+			]
+		},
+		"cake_ball": {
+			"textures": [
+				"textures/items/cake_ball"
+			]
+		},
+		"friendly_blockling": {
+			"textures": [
+				"textures/items/friendly_blockling_item"
+			]
+		},
+		"key": {
+			"textures": [
+				"textures/items/tower_key"
+			]
+		},
+		"totem_head": {
+			"textures": [
+				"textures/items/totem_head"
+			]
+		},
+		"totem_base": {
+			"textures": [
+				"textures/items/totem_base"
+			]
+		},
+		"goblin_summoner_hat": {
+			"textures": [
+				"textures/items/witch_helmet"
+			]
+		},
+		"darkbrick_harvester": {
+			"textures": [
+				"textures/items/darkbrick_harvester"
+			]
+		},
+		"goblin_club": {
+			"textures": [
+				"textures/items/goblin_club"
+			]
+		},
+		"inferno_shield_item": {
+			"textures": [
+				"textures/items/inferno_shield"
+			]
+		},
+		"inferno_fragment": {
+			"textures": [
+				"textures/items/inferno_fragment"
+			]
+		},
+		"green_energy_staff": {
+			"textures": [
+				"textures/items/green_energy_staff"
+			]
+		},
+		"green_mana": {
+			"textures": [
+				"textures/items/green_mana"
+			]
+		},
+		"magic_cell": {
+			"textures": [
+				"textures/items/magic_cell"
+			]
+		},
+		"magic_berries": {
+			"textures": [
+				"textures/items/magic_berries"
+			]
+		},
+		"tower_key_mold": {
+			"textures": [
+				"textures/items/tower_key_mold"
+			]
+		},
+		"flame_staff": {
+			"textures": [
+				"textures/items/flame_staff"
+			]
+		},
+		"exdrill_blue_dragon_helmet": {
+			"textures": [
+				"textures/items/blue_dragon_helmet"
+			]
+		},
+		"exdrill_blue_dragon_chestplate": {
+			"textures": [
+				"textures/items/blue_dragon_chestplate"
+			]
+		},
+		"exdrill_blue_dragon_leggings": {
+			"textures": [
+				"textures/items/blue_dragon_leggings"
+			]
+		},
+		"exdrill_blue_dragon_boots": {
+			"textures": [
+				"textures/items/blue_dragon_boots"
+			]
+		},
+		"blue_dragon_scale": {
+			"textures": [
+				"textures/items/blue_dragon_scale"
+			]
+		},
+		"cloud_walker_boots": {
+			"textures": [
+				"textures/items/cloud_walker_boots"
+			]
+		},
+		"dragon_bone": {
+			"textures": [
+				"textures/items/dragon_bone"
+			]
+		},
+		"platinum_ingot": {
+			"textures": [
+				"textures/items/platinum_ingot"
+			]
+		},
+		"castle_key": {
+			"textures": [
+				"textures/items/castle_key"
+			]
+		},
+		"castle_key_mold": {
+			"textures": [
+				"textures/items/castle_key_mold"
+			]
+		},
+		"exdrill_platinum_helmet": {
+			"textures": [
+				"textures/items/platinum_helmet"
+			]
+		},
+		"exdrill_platinum_chestplate": {
+			"textures": [
+				"textures/items/platinum_chestplate"
+			]
+		},
+		"exdrill_platinum_leggings": {
+			"textures": [
+				"textures/items/platinum_leggings"
+			]
+		},
+		"exdrill_platinum_boots": {
+			"textures": [
+				"textures/items/platinum_boots"
+			]
+		},
+		"harpoon_gun": {
+			"textures": [
+				"textures/items/harpoon_gun"
+			]
+		},
+		"magic_blade": {
+			"textures": [
+				"textures/items/magic_blade"
+			]
+		},
+		"dragon_bane": {
+			"textures": [
+				"textures/items/dragon_bane"
+			]
+		},
+		"totem_of_enraging": {
+			"textures": [
+				"textures/items/totem_of_enraging"
+			]
+		},
+		"slimy_bucket": {
+			"textures": [
+				"textures/items/slimy_bucket"
+			]
+		},
+		"knight_chestplate": {
+			"textures": [
+				"textures/items/knight_chestplate"
+			]
+		},
+		"mage_robe": {
+			"textures": [
+				"textures/items/mage_robe"
+			]
+		},
+		"wind_staff": {
+			"textures": [
+				"textures/items/wind_staff"
+			]
+		},
+		"platinum_pickaxe": {
+			"textures": [
+				"textures/items/platinum_pickaxe"
+			]
+		},
+		"blockling_staff": {
+			"textures": [
+				"textures/items/blockling_staff"
+			]
+		},
+		"tough_glove": {
+			"textures": [
+				"textures/items/tough_glove"
+			]
+		},
+		"jumper_bottle": {
+			"textures": [
+				"textures/items/jumper_bottle"
+			]
+		},
+		"cutlass": {
+			"textures": [
+				"textures/items/cutlass"
+			]
+		},
+		"heal_pastry": {
+			"textures": [
+				"textures/items/heal_bread"
+			]
+		},
+		"raw_platinum": {
+			"textures": [
+				"textures/items/raw_platinum"
+			]
+		},
+		"platinum_nugget": {
+			"textures": [
+				"textures/items/platinum_nugget"
+			]
+		},
+		"glow_crystal": {
+			"textures": [
+				"textures/blocks/glow_crystal"
+			]
+		}
+	}
+}

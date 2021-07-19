@@ -1,0 +1,16 @@
+{
+    "format_version": "1.16.100",
+    "minecraft:item": {
+        "description": {
+            "identifier": "exdrill:raw_platinum"
+        },
+        "components": {
+            "minecraft:display_name": {
+                "value": "Raw Platinum"
+            },
+            "minecraft:icon": {
+                "texture": "raw_platinum"
+            }
+        }
+    }
+}

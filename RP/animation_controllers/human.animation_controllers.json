@@ -1,0 +1,43 @@
+//bridge-file-version: #0
+{
+	"format_version": "1.10.0",
+	"animation_controllers": {
+		"controller.animation.human": {
+			"states": {
+				"default": {
+					"animations": [
+						{
+							"move_legs": "query.modified_move_speed"
+						},
+						{
+							"move_arms": "query.modified_move_speed"
+						},
+						"bob",
+						"look_at_target"
+					],
+					"transitions": [
+						{
+							"has_target": "query.has_target"
+						}
+					]
+				},
+				"has_target": {
+					"animations": [
+						"has_target",
+						"bob",
+						"look_at_target",
+						{
+							"move_legs": "query.modified_move_speed"
+						}
+					],
+					"transitions": [
+						{
+							"default": "!query.has_target"
+						}
+					]
+				}
+			},
+			"initial_state": "default"
+		}
+	}
+}

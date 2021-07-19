@@ -1,0 +1,59 @@
+//bridge-file-version: #5
+{
+	"format_version": "1.16.100",
+	"sound_definitions": {
+		"mob.blockling.enemy": {
+			"category": "hostile",
+			"min_distance": 12,
+			"sounds": [
+				"sounds/mob/blockling/glow_crystal/break1",
+				"sounds/mob/blockling/glow_crystal/break2",
+				"sounds/mob/blockling/glow_crystal/break3",
+				"sounds/mob/blockling/glow_crystal/break4"
+			]
+		},
+		"mob.blockling.friendly": {
+			"category": "neutral",
+			"min_distance": 12,
+			"sounds": [
+				"sounds/mob/blockling/glow_crystal/place1",
+				"sounds/mob/blockling/glow_crystal/place2",
+				"sounds/mob/blockling/glow_crystal/place3",
+				"sounds/mob/blockling/glow_crystal/place4"
+			]
+		},
+		"harpoon.hit": {
+			"category": "player",
+			"min_distance": 12,
+			"sounds": [
+				"sounds/harpoon/hit"
+			]
+		},
+		"harpoon.shoot": {
+			"category": "player",
+			"min_distance": 12,
+			"sounds": [
+				"sounds/harpoon/shoot"
+			]
+		},
+		"hit.sweep": {
+			"category": "player",
+			"min_distance": 12,
+			"sounds": [
+				"sounds/hit/sweep1",
+				"sounds/hit/sweep2",
+				"sounds/hit/sweep3",
+				"sounds/hit/sweep4",
+				"sounds/hit/sweep5",
+				"sounds/hit/sweep6"
+			]
+		},
+		"hit.punch": {
+			"category": "player",
+			"min_distance": 12,
+			"sounds": [
+				"sounds/hit/punch"
+			]
+		}
+	}
+}

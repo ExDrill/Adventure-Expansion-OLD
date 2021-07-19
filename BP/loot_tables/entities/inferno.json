@@ -1,0 +1,19 @@
+//bridge-file-version: #1
+{
+	"pools": [
+		{
+			"rolls": 1,
+			"entries": [
+				{
+					"type": "item",
+					"name": "exdrill:inferno_fragment",
+					"weight": 1
+				},
+				{
+					"type": "empty",
+					"weight": 9
+				}
+			]
+		}
+	]
+}

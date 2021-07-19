@@ -1,0 +1,54 @@
+//bridge-file-version: #3
+{
+	"format_version": "1.16.100",
+	"minecraft:item": {
+		"description": {
+			"identifier": "exdrill:harpoon_gun"
+		},
+		"components": {
+			"minecraft:max_stack_size": 1,
+			"minecraft:hand_equipped": true,
+			"minecraft:on_use": {
+				"on_use": {
+					"event": "shoot",
+					"target": "self"
+				}
+			},
+			"minecraft:display_name": {
+				"value": "Harpoon Gun"
+			},
+			"minecraft:icon": {
+				"texture": "harpoon_gun"
+			},
+			"minecraft:durability": {
+				"max_durability": 500,
+				"damage_chance": {
+					"min": 60,
+					"max": 100
+				}
+			},
+			"minecraft:cooldown": {
+				"category": "harpoon",
+				"duration": 1
+			}
+		},
+		"events": {
+			"shoot": {
+				"shoot": {
+					"projectile": "exdrill:chain_spear",
+					"launch_power": 1
+				},
+				"damage": {
+					"type": "entity_attack",
+					"amount": 1,
+					"target": "self"
+				},
+				"run_command": {
+					"command": [
+						"playsound harpoon.shoot @a ~ ~ ~"
+					]
+				}
+			}
+		}
+	}
+}

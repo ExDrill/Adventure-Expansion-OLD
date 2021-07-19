@@ -1,0 +1,65 @@
+{
+	"format_version": [
+		1,
+		1,
+		0
+	],
+	"exdrill:glow_crystal": {
+		"sound": "glass"
+	},
+	"exdrill:darkbrick": {
+		"textures": "darkbrick",
+		"sound": "nether_brick"
+	},
+	"exdrill:locked_darkbrick": {
+		"sound": "stone",
+		"textures": "darkbrick_locked"
+	},
+	"exdrill:battle_golem_summoner": {
+		"sound": "stone",
+		"textures": "darkbrick"
+	},
+	"exdrill:goblin_banner_block": {
+		"sound": "wood"
+	},
+	"exdrill:experience_storage": {
+		"sound": "glass"
+	},
+	"exdrill:small_experience_storage": {
+		"sound": "glass"
+	},
+	"exdrill:large_experience_storage": {
+		"sound": "glass"
+	},
+	"exdrill:platinum_block": {
+		"textures": "platinum_block",
+		"sound": "metal"
+	},
+	"exdrill:platinum_ore": {
+		"textures": "platinum_ore",
+		"sound": "stone"
+	},
+	"exdrill:lightbrick": {
+		"sound": "stone",
+		"textures": "lightbrick"
+	},
+	"exdrill:cracked_darkbrick": {
+		"sound": "nether_brick",
+		"textures": "cracked_darkbrick"
+	},
+	"exdrill:dark_tiling": {
+		"textures": "dark_tiling",
+		"sound": "netherrack"
+	},
+	"exdrill:deepslate_platinum_ore": {
+		"textures": "deepslate_platinum_ore",
+		"sound": "deepslate"
+	},
+	"exdrill:raw_platinum_block": {
+		"textures": "raw_platinum_block",
+		"sound": "stone"
+	},
+	"exdrill:magic_berry_bush": {
+		"sound": "grass"
+	}
+}

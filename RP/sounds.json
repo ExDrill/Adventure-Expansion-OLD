@@ -1,0 +1,221 @@
+//bridge-file-version: #16
+{
+	"individual_event_sounds": {
+		"events": {
+			"harpoon.hit": {
+				"sound": "harpoon.hit",
+				"volume": 1,
+				"pitch": 1
+			}
+		}
+	},
+	"block_sounds": {
+		"glow_crystal": {
+			"volume": 1,
+			"pitch": 1,
+			"events": {
+				"break": "block.glow_crystal.break",
+				"place": "block.glow_crystal.place",
+				"hit": "block.glow_crystal.place"
+			}
+		}
+	},
+	"entity_sounds": {
+		"defaults": {
+			"volume": 1,
+			"pitch": [
+				0.8,
+				1.2
+			],
+			"events": {
+				"fall.big": {
+					"sound": "damage.fallbig",
+					"volume": 0.75,
+					"pitch": 1
+				},
+				"fall.small": {
+					"sound": "damage.fallsmall",
+					"volume": 0.75,
+					"pitch": 1
+				},
+				"splash": {
+					"sound": "random.splash",
+					"pitch": [
+						0.6,
+						1.4
+					]
+				},
+				"swim": {
+					"sound": "random.swim",
+					"pitch": [
+						0.6,
+						1.4
+					]
+				},
+				"fizz": {
+					"sound": "random.fizz",
+					"volume": 0.7,
+					"pitch": [
+						1.2,
+						2
+					]
+				},
+				"drink": {
+					"sound": "random.drink",
+					"volume": 0.5,
+					"pitch": [
+						0.9,
+						1
+					]
+				},
+				"eat": {
+					"sound": "random.eat",
+					"volume": [
+						0.5,
+						1.5
+					],
+					"pitch": [
+						0.8,
+						1.2
+					]
+				},
+				"ambient": {},
+				"flop": {},
+				"hurt": "game.player.hurt",
+				"death": "game.player.die",
+				"ambient.in.water": {},
+				"hurt.in.water": {},
+				"death.in.water": {},
+				"ambient.in.raid": {}
+			}
+		},
+		"entities": {
+			"exdrill:blockling": {
+				"volume": 1,
+				"pitch": 1,
+				"events": {
+					"hurt": "mob.blockling.enemy",
+					"ambient": "mob.blockling.enemy",
+					"death": "mob.blockling.enemy"
+				}
+			},
+			"exdrill:friendly_blockling": {
+				"volume": 1,
+				"pitch": 1,
+				"events": {
+					"hurt": "mob.blockling.enemy",
+					"ambient": "mob.blockling.enemy",
+					"death": "mob.blockling.enemy"
+				}
+			},
+			"exdrill:inferno": {
+				"volume": 1,
+				"pitch": 0.8,
+				"events": {
+					"shoot": "mob.blaze.shoot",
+					"hurt": "mob.blaze.hit",
+					"death": "mob.blaze.death",
+					"breathe": {
+						"sound": "mob.blaze.breathe",
+						"volume": 1,
+						"pitch": 0.8
+					},
+					"ambient": "mob.blaze.breathe"
+				}
+			},
+			"exdrill:goblin_beast": {
+				"volume": 1,
+				"pitch": 0.6,
+				"events": {
+					"hurt": "mob.vindicator.hurt",
+					"death": "mob.vindicator.death",
+					"ambient": "mob.vindicator.idle"
+				}
+			},
+			"exdrill:goblin_warrior": {
+				"volume": 1,
+				"pitch": 0.8,
+				"events": {
+					"hurt": "mob.vindicator.hurt",
+					"death": "mob.vindicator.death",
+					"ambient": "mob.vindicator.idle"
+				}
+			},
+			"exdrill:goblin_ranger": {
+				"events": {
+					"hurt": "mob.vindicator.hurt",
+					"death": "mob.vindicator.death",
+					"ambient": "mob.vindicator.idle"
+				},
+				"pitch": 0.9,
+				"volume": 1
+			},
+			"exdrill:goblin_summoner": {
+				"volume": 1,
+				"pitch": 0.9,
+				"events": {
+					"ambient": "mob.evocation_illager.ambient",
+					"death": "mob.evocation_illager.death",
+					"hurt": "mob.evocation_illager.hurt",
+					"cast.spell": "mob.evocation_illager.cast_spell",
+					"prepare.summon": "mob.evocation_illager.prepare_summon"
+				}
+			},
+			"exdrill:goblin_grunt": {
+				"volume": 1,
+				"pitch": 1.3,
+				"events": {
+					"hurt": "mob.vindicator.hurt",
+					"death": "mob.vindicator.death",
+					"ambient": "mob.vindicator.idle"
+				}
+			},
+			"exdrill:goblin_merchant": {
+				"volume": 1,
+				"pitch": 0.9,
+				"events": {
+					"hurt": "mob.vindicator.hurt",
+					"death": "mob.vindicator.death",
+					"ambient": "mob.vindicator.idle"
+				}
+			},
+			"exdrill:battle_golem": {
+				"volume": 1,
+				"pitch": 0.7,
+				"events": {
+					"step": "mob.irongolem.walk",
+					"death": "mob.irongolem.death",
+					"attack": "mob.irongolem.throw",
+					"hurt": "mob.irongolem.hit"
+				}
+			},
+			"exdrill:evil_parrot": {
+				"volume": 1,
+				"pitch": 0.8,
+				"events": {
+					"hurt": "mob.parrot.hurt",
+					"death": "mob.parrot.death",
+					"ambient": "mob.parrot.idle"
+				}
+			},
+			"exdrill:pirate_bandit": {
+				"volume": 1,
+				"pitch": 1,
+				"events": {
+					"hurt": "mob.pillager.hurt",
+					"death": "mob.pillager.death",
+					"ambient": "mob.pillager.idle"
+				}
+			},
+			"exdrill:pirate_captain": {
+				"volume": 1,
+				"pitch": 1,
+				"events": {
+					"hurt": "mob.pillager.hurt",
+					"death": "mob.pillager.death",
+					"ambient": "mob.pillager.idle"
+				}
+			}
+		}
+	}
+}

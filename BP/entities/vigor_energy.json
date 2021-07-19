@@ -1,0 +1,56 @@
+//bridge-file-version: #21
+{
+	"format_version": "1.16.100",
+	"minecraft:entity": {
+		"description": {
+			"identifier": "exdrill:vigor_energy",
+			"is_spawnable": false,
+			"is_summonable": true,
+			"is_experimental": false,
+			"runtime_identifier": "minecraft:snowball"
+		},
+		"components": {
+			"minecraft:mob_effect": {
+				"effect_range": 1,
+				"mob_effect": "fatal_poison",
+				"effect_time": 5,
+				"entity_filter": {
+					"test": "is_family",
+					"subject": "other",
+					"value": "player"
+				}
+			},
+			"minecraft:physics": {},
+			"minecraft:damage_sensor": {
+				"triggers": [
+					{
+						"cause": "fall",
+						"deals_damage": false
+					}
+				]
+			},
+			"minecraft:health": {
+				"value": 10,
+				"max": 10
+			},
+			"minecraft:timer": {
+				"looping": true,
+				"time": 0.01,
+				"time_down_event": {
+					"event": "spawn_particle",
+					"target": "self"
+				}
+			}
+		},
+		"events": {
+			"spawn_particle": {
+				"run_command": {
+					"command": [
+						"particle exdrill:vigor_energy ~~~"
+					]
+				}
+			}
+		},
+		"component_groups": {}
+	}
+}

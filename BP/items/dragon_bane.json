@@ -1,0 +1,51 @@
+//bridge-file-version: #6
+{
+	"format_version": "1.16.100",
+	"minecraft:item": {
+		"description": {
+			"identifier": "exdrill:dragon_bane",
+			"category": "equipment"
+		},
+		"components": {
+			"minecraft:icon": {
+				"texture": "dragon_bane"
+			},
+			"minecraft:display_name": {
+				"value": "Dragon Bane"
+			},
+			"minecraft:hand_equipped": true,
+			"minecraft:weapon": {
+				"on_hurt_entity": {
+					"event": "damage",
+					"target": "self"
+				}
+			},
+			"minecraft:damage": 10,
+			"minecraft:can_destroy_in_creative": false,
+			"minecraft:creative_category": {
+				"parent": "itemGroup.name.sword"
+			},
+			"minecraft:enchantable": {
+				"slot": "sword",
+				"value": 10
+			},
+			"minecraft:max_stack_size": 1,
+			"minecraft:durability": {
+				"damage_chance": {
+					"min": 60,
+					"max": 100
+				},
+				"max_durability": 3400
+			}
+		},
+		"events": {
+			"damage": {
+				"damage": {
+					"type": "all",
+					"amount": 1,
+					"target": "self"
+				}
+			}
+		}
+	}
+}

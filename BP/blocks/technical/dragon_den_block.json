@@ -1,0 +1,33 @@
+{
+	"format_version": "1.16.100",
+	"minecraft:block": {
+		"description": {
+			"identifier": "exdrill:dragon_den_summoner"
+		},
+		"components": {
+			"minecraft:ticking": {
+				"range": [
+					1000,
+					1001
+				],
+				"looping": true,
+				"on_tick": {
+					"event": "structure",
+					"target": "self"
+				}
+			}
+		},
+		"events": {
+			"structure": {
+				"run_command": {
+					"command": [
+						"structure load mystructure:dragon_den ~-10 ~-20 ~-10"
+					]
+				},
+				"set_block": {
+					"block_type": "minecraft:air"
+				}
+			}
+		}
+	}
+}

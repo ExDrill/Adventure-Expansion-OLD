@@ -1,0 +1,31 @@
+//bridge-file-version: #1
+{
+	"format_version": "1.16.100",
+	"minecraft:attachable": {
+		"description": {
+			"identifier": "exdrill:goblin_club",
+			"materials": {
+				"default": "entity_alphatest"
+			},
+			"textures": {
+				"default": "textures/models/items/goblin_club"
+			},
+			"geometry": {
+				"default": "geometry.goblin_club"
+			},
+			"render_controllers": [
+				"controller.render.default"
+			],
+			"scripts": {
+				"animate": [
+					{
+						"first_person_offset": "c.is_first_person"
+					}
+				]
+			},
+			"animations": {
+				"first_person_offset": "animation.goblin_club.first_person_offset"
+			}
+		}
+	}
+}

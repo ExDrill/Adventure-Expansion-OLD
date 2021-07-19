@@ -1,0 +1,51 @@
+{
+	"format_version": "1.16.100",
+	"minecraft:feature_rules": {
+		"description": {
+			"identifier": "exdrill:battle_tower_feature",
+			"places_feature": "exdrill:battle_tower"
+		},
+		"conditions": {
+			"minecraft:biome_filter": [
+				{
+					"any_of": [
+						{
+							"test": "has_biome_tag",
+							"operator": "==",
+							"value": "overworld_generation"
+						},
+						{
+							"test": "has_biome_tag",
+							"operator": "==",
+							"value": "overworld"
+						}
+					]
+				}
+			],
+			"placement_pass": "surface_pass"
+		},
+		"distribution": {
+			"coordinate_eval_order": "zyx",
+			"iterations": 1,
+			"x": {
+				"extent": [
+					0,
+					32
+				],
+				"distribution": "gaussian"
+			},
+			"y": "(query.heightmap(variable.worldx, variable.worldz))-1",
+			"z": {
+				"extent": [
+					0,
+					32
+				],
+				"distribution": "gaussian"
+			},
+			"scatter_chance": {
+				"numerator": 1,
+				"denominator": 100
+			}
+		}
+	}
+}

@@ -1,0 +1,30 @@
+//bridge-file-version: #0
+{
+	"format_version": "1.10.0",
+	"minecraft:client_entity": {
+		"description": {
+			"identifier": "minecraft:wither_skull",
+			"materials": {
+				"default": "wither_skull"
+			},
+			"textures": {
+				"default": "textures/entity/wither_boss/wither",
+				"dragon": "textures/entity/wither_boss/dragon_skull"
+			},
+			"geometry": {
+				"default": "geometry.wither_skull"
+			},
+			"animations": {
+				"move": "animation.wither_skull.move"
+			},
+			"scripts": {
+				"animate": [
+					"move"
+				]
+			},
+			"render_controllers": [
+				"controller.render.wither_skull"
+			]
+		}
+	}
+}

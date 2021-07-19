@@ -1,0 +1,152 @@
+//bridge-file-version: #38
+{
+	"format_version": "1.16.0",
+	"minecraft:entity": {
+		"description": {
+			"identifier": "exdrill:blue_dragon_phase2",
+			"is_spawnable": false,
+			"is_summonable": true,
+			"is_experimental": false,
+			"runtime_identifier": "minecraft:parrot"
+		},
+		"component_groups": {
+			"exdrill:scale_on_spawn": {
+				"minecraft:scale": {
+					"value": 2.5
+				},
+				"minecraft:spell_effects": {
+					"add_effects": [
+						{
+							"effect": "regeneration",
+							"amplifier": 0,
+							"duration": 999999,
+							"visible": false
+						}
+					]
+				}
+			}
+		},
+		"components": {
+			"minecraft:behavior.ranged_attack": {
+				"priority": 3,
+				"burst_shots": 7,
+				"burst_interval": 0.3,
+				"attack_interval_min": 1,
+				"attack_interval_max": 3,
+				"attack_radius": 16
+			},
+			"minecraft:shooter": {
+				"def": "minecraft:wither_skull"
+			},
+			"minecraft:behavior.random_hover": {
+				"priority": 12,
+				"xz_dist": 8,
+				"y_dist": 8,
+				"y_offset": -1,
+				"interval": 1,
+				"hover_height": [
+					1,
+					8
+				]
+			},
+			"minecraft:behavior.float": {
+				"priority": 19
+			},
+			"minecraft:type_family": {
+				"family": [
+					"mob",
+					"boss",
+					"phase_two"
+				]
+			},
+			"minecraft:breathable": {
+				"totalSupply": 15,
+				"suffocateTime": 0
+			},
+			"minecraft:conditional_bandwidth_optimization": {},
+			"minecraft:follow_range": {
+				"value": 1024
+			},
+			"minecraft:damage_sensor": {
+				"triggers": {
+					"cause": "fall",
+					"deals_damage": false
+				}
+			},
+			"minecraft:movement": {
+				"value": 0.3
+			},
+			"minecraft:flying_speed": {
+				"value": 0.15
+			},
+			"minecraft:navigation.hover": {
+				"can_path_over_water": true,
+				"can_sink": false,
+				"can_pass_doors": false,
+				"can_path_from_air": true,
+				"avoid_water": true,
+				"avoid_damage_blocks": true,
+				"avoid_sun": false
+			},
+			"minecraft:movement.hover": {},
+			"minecraft:jump.static": {},
+			"minecraft:can_fly": true,
+			"minecraft:health": {
+				"value": 300,
+				"max": 300
+			},
+			"minecraft:nameable": {},
+			"minecraft:physics": {},
+			"minecraft:pushable": {
+				"is_pushable": true,
+				"is_pushable_by_piston": true
+			},
+			"minecraft:knockback_resistance": {
+				"value": 1
+			},
+			"minecraft:behavior.nearest_attackable_target": {
+				"priority": 3,
+				"entity_types": [
+					{
+						"filters": {
+							"test": "is_family",
+							"subject": "other",
+							"value": "player"
+						}
+					}
+				]
+			},
+			"minecraft:collision_box": {
+				"width": 2,
+				"height": 1
+			},
+			"minecraft:boss": {
+				"should_darken_sky": true,
+				"hud_range": 100,
+				"name": "Blue Dragon"
+			},
+			"minecraft:spawn_entity": {
+				"entities": [
+					{
+						"num_to_spawn": 3,
+						"min_wait_time": 10,
+						"max_wait_time": 20,
+						"spawn_entity": "exdrill:crystal_minion"
+					}
+				]
+			},
+			"minecraft:loot": {
+				"table": "loot_tables/entities/blue_dragon.json"
+			}
+		},
+		"events": {
+			"minecraft:entity_spawned": {
+				"add": {
+					"component_groups": [
+						"exdrill:scale_on_spawn"
+					]
+				}
+			}
+		}
+	}
+}

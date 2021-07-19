@@ -1,0 +1,45 @@
+{
+	"pools": [
+		{
+			"rolls": 1,
+			"entries": [
+				{
+					"type": "item",
+					"name": "exdrill:goblin_club"
+				}
+			]
+		},
+		{
+			"rolls": 1,
+			"entries": [
+				{
+					"type": "item",
+					"name": "exdrill:castle_key_mold"
+				}
+			]
+		},
+		{
+			"rolls": 1,
+			"entries": [
+				{
+					"type": "item",
+					"name": "exdrill:goblin_banner_block",
+					"weight": 1
+				},
+				{
+					"type": "empty",
+					"weight": 9
+				}
+			]
+		},
+		{
+			"rolls": 1,
+			"entries": [
+				{
+					"type": "item",
+					"name": "exdrill:goblin_raid_trophy"
+				}
+			]
+		}
+	]
+}

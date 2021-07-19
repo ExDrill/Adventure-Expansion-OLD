@@ -1,0 +1,38 @@
+//bridge-file-version: #5
+{
+	"format_version": "1.16.100",
+	"minecraft:attachable": {
+		"description": {
+			"identifier": "exdrill:harpoon_gun",
+			"materials": {
+				"default": "entity_alphatest"
+			},
+			"textures": {
+				"default": "textures/models/items/harpoon_gun"
+			},
+			"geometry": {
+				"default": "geometry.harpoon_gun"
+			},
+			"render_controllers": [
+				"controller.render.default"
+			],
+			"animations": {
+				"third_person_main_hand": "animation.harpoon_gun.third_person_main_hand",
+				"first_person_main_hand": "animation.harpoon_gun.first_person_main_hand"
+			},
+			"scripts": {
+				"pre_animation": [
+					"v.main_hand = c.item_slot == 'main_hand';"
+				],
+				"animate": [
+					{
+						"third_person_main_hand": "v.main_hand && !c.is_first_person"
+					},
+					{
+						"first_person_main_hand": "v.main_hand && c.is_first_person"
+					}
+				]
+			}
+		}
+	}
+}

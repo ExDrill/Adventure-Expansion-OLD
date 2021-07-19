@@ -1,0 +1,168 @@
+{
+	"resource_pack_name": "bridgeRP",
+	"texture_name": "atlas.terrain",
+	"padding": 8,
+	"num_mip_levels": 4,
+	"texture_data": {
+		"enderite_ore": {
+			"textures": [
+				"textures/blocks/enderite_ore"
+			]
+		},
+		"enderite_block": {
+			"textures": [
+				"textures/blocks/enderite_block"
+			]
+		},
+		"egg": {
+			"textures": [
+				"textures/blocks/egg"
+			]
+		},
+		"glow_crystal": {
+			"textures": [
+				"textures/blocks/glow_crystal"
+			]
+		},
+		"darkbrick": {
+			"textures": [
+				"textures/blocks/darkbrick"
+			]
+		},
+		"darkbrick_locked": {
+			"textures": [
+				"textures/blocks/darkbrick_locked"
+			]
+		},
+		"dungeon_pot": {
+			"textures": [
+				"textures/blocks/dungeon_pot"
+			]
+		},
+		"goblin_banner": {
+			"textures": [
+				"textures/blocks/goblin_banner"
+			]
+		},
+		"experience_storage_empty": {
+			"textures": [
+				"textures/blocks/experience_storage"
+			]
+		},
+		"experience_storage_filled": {
+			"textures": [
+				"textures/blocks/experience_storage_filled"
+			]
+		},
+		"small_experience_storage_empty": {
+			"textures": [
+				"textures/blocks/small_experience_storage"
+			]
+		},
+		"small_experience_storage_filled": {
+			"textures": [
+				"textures/blocks/small_experience_storage_filled"
+			]
+		},
+		"large_experience_storage_empty": {
+			"textures": [
+				"textures/blocks/large_experience_storage"
+			]
+		},
+		"large_experience_storage_filled": {
+			"textures": [
+				"textures/blocks/large_experience_storage_filled"
+			]
+		},
+		"metal_pole": {
+			"textures": [
+				"textures/blocks/metal_pole"
+			]
+		},
+		"mana_generator_empty": {
+			"textures": [
+				"textures/blocks/mana_generator"
+			]
+		},
+		"mana_generator_filled": {
+			"textures": [
+				"textures/blocks/mana_generator_filled"
+			]
+		},
+		"magic_berry_bush_stage1": {
+			"textures": [
+				"textures/blocks/magic_berry_bush/magic_berry_bush_stage_1"
+			]
+		},
+		"magic_berry_bush_stage2": {
+			"textures": [
+				"textures/blocks/magic_berry_bush/magic_berry_bush_stage_2"
+			]
+		},
+		"magic_berry_bush_stage3": {
+			"textures": [
+				"textures/blocks/magic_berry_bush/magic_berry_bush_stage_3"
+			]
+		},
+		"magic_berry_bush_stage4": {
+			"textures": [
+				"textures/blocks/magic_berry_bush/magic_berry_bush_stage_4"
+			]
+		},
+		"platinum_ore": {
+			"textures": [
+				"textures/blocks/platinum_ore"
+			]
+		},
+		"platinum_block": {
+			"textures": [
+				"textures/blocks/platinum_block"
+			]
+		},
+		"platinum_locked_darkbrick": {
+			"textures": [
+				"textures/blocks/platinum_locked_darkbrick"
+			]
+		},
+		"lightbrick": {
+			"textures": [
+				"textures/blocks/lightbrick"
+			]
+		},
+		"dungeon_torch": {
+			"textures": [
+				"textures/blocks/dungeon_torch"
+			]
+		},
+		"goblin_raid_trophy": {
+			"textures": [
+				"textures/blocks/goblin_raid_trophy"
+			]
+		},
+		"golem_trophy": {
+			"textures": [
+				"textures/blocks/golem_trophy"
+			]
+		},
+		"cracked_darkbrick": {
+			"textures": [
+				"textures/blocks/cracked_darkbrick"
+			]
+		},
+		"dark_tiling": {
+			"textures": [
+				"textures/blocks/dark_tiling"
+			]
+		},
+		"deepslate_platinum_ore": {
+			"textures": [
+				"textures/blocks/deepslate_platinum_ore"
+			]
+		},
+		"raw_platinum_block": {
+			"textures": [
+				"textures/blocks/raw_platinum_block"
+			]
+		}
+	}
+}

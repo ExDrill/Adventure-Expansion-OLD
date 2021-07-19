@@ -1,0 +1,31 @@
+//bridge-file-version: #1
+{
+	"format_version": "1.16.100",
+	"minecraft:recipe_shaped": {
+		"description": {
+			"identifier": "exdrill:blue_dragon_leggings"
+		},
+		"tags": [
+			"crafting_table"
+		],
+		"pattern": [
+			"AAA",
+			"B B",
+			"A A"
+		],
+		"key": {
+			"A": {
+				"item": "exdrill:blue_dragon_scale"
+			},
+			"B": {
+				"item": "exdrill:dragon_bone"
+			}
+		},
+		"result": [
+			{
+				"item": "exdrill:blue_dragon_leggings",
+				"count": 1
+			}
+		]
+	}
+}

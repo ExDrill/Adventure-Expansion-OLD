@@ -1,0 +1,36 @@
+//bridge-file-version: #2
+{
+	"format_version": "1.16.100",
+	"minecraft:block": {
+		"description": {
+			"identifier": "exdrill:battle_golem_summoner"
+		},
+		"components": {
+			"minecraft:destroy_time": 2000,
+			"minecraft:ticking": {
+				"looping": true,
+				"range": [
+					10000,
+					10001
+				],
+				"on_tick": {
+					"event": "exdrill:summon_boss",
+					"target": "self"
+				}
+			}
+		},
+		"events": {
+			"exdrill:summon_boss": {
+				"run_command": {
+					"command": [
+						"summon exdrill:battle_golem"
+					],
+					"target": "self"
+				},
+				"set_block": {
+					"block_type": "minecraft:air"
+				}
+			}
+		}
+	}
+}

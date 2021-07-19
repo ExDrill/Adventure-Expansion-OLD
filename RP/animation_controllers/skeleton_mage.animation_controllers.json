@@ -1,0 +1,46 @@
+//bridge-file-version: #0
+{
+	"format_version": "1.10.0",
+	"animation_controllers": {
+		"controller.animation.mage_skeleton": {
+			"states": {
+				"default": {
+					"animations": [
+						{
+							"move_legs": "query.modified_move_speed"
+						},
+						{
+							"move_arms": "query.modified_move_speed"
+						}
+					],
+					"transitions": [
+						{
+							"casting": "query.is_casting"
+						}
+					]
+				},
+				"casting": {
+					"animations": [
+						"cast"
+					],
+					"particle_effects": [
+						{
+							"effect": "spell",
+							"locator": "left_hand"
+						},
+						{
+							"effect": "spell",
+							"locator": "right_hand"
+						}
+					],
+					"transitions": [
+						{
+							"default": "!query.is_casting"
+						}
+					]
+				}
+			},
+			"initial_state": "default"
+		}
+	}
+}

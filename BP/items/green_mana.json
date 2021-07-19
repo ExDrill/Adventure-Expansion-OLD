@@ -1,0 +1,23 @@
+{
+	"format_version": "1.16.100",
+	"minecraft:item": {
+		"description": {
+			"identifier": "exdrill:green_mana",
+			"category": "equipment"
+		},
+		"components": {
+			"minecraft:max_stack_size": 64,
+			"minecraft:render_offsets": "apple",
+			"minecraft:creative_category": {
+				"parent": "itemGroup.name.totem"
+			},
+			"minecraft:icon": {
+				"texture": "green_mana"
+			},
+			"minecraft:display_name": {
+				"value": "Green Orb"
+			}
+		},
+		"events": {}
+	}
+}

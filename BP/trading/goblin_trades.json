@@ -1,0 +1,91 @@
+//bridge-file-version: #6
+{
+	"tiers": [
+		{
+			"trades": [
+				{
+					"wants": [
+						{
+							"item": "exdrill:orange_sapphire",
+							"quantity": 10
+						}
+					],
+					"gives": [
+						{
+							"item": "exdrill:goblin_dagger",
+							"quantity": 1,
+							"functions": [
+								{
+									"function": "set_lore",
+									"lore": [
+										"A weapon that gives poison on hit!"
+									]
+								}
+							]
+						}
+					]
+				},
+				{
+					"wants": [
+						{
+							"item": "exdrill:orange_sapphire",
+							"quantity": 3
+						}
+					],
+					"gives": [
+						{
+							"item": "exdrill:cake_ball",
+							"quantity": 2,
+							"functions": [
+								{
+									"function": "set_lore",
+									"lore": [
+										"A insta-eat food",
+										"that is very",
+										"yummy."
+									]
+								}
+							]
+						}
+					]
+				},
+				{
+					"wants": [
+						{
+							"item": "exdrill:orange_sapphire",
+							"quantity": 5
+						}
+					],
+					"gives": [
+						{
+							"item": "exdrill:glistering_pastry",
+							"quantity": 8,
+							"functions": [
+								{
+									"function": "set_lore",
+									"lore": [
+										"A nice glistering melon pastry! Heals one heart on consume!"
+									]
+								}
+							]
+						}
+					]
+				},
+				{
+					"wants": [
+						{
+							"item": "exdrill:orange_sapphire",
+							"quantity": 50
+						}
+					],
+					"gives": [
+						{
+							"item": "exdrill:friendly_blockling_item",
+							"quantity": 1
+						}
+					]
+				}
+			]
+		}
+	]
+}

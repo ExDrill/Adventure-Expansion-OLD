@@ -1,0 +1,55 @@
+//bridge-file-version: #6
+{
+	"format_version": "1.16.100",
+	"minecraft:entity": {
+		"description": {
+			"identifier": "exdrill:magic_sweep",
+			"runtime_identifier": "minecraft:snowball",
+			"is_summonable": true
+		},
+		"component_groups": {
+			"despawn": {
+				"minecraft:instant_despawn": {}
+			}
+		},
+		"components": {
+			"minecraft:projectile": {
+				"power": 0.6,
+				"gravity": 0.01,
+				"uncertainty_base": 1,
+				"uncertainty_multiplier": 0,
+				"offset": [
+					0,
+					-0.1,
+					0
+				],
+				"on_hit": {
+					"impact_damage": {
+						"damage": 10,
+						"knockback": false,
+						"destroy_on_hit": true
+					},
+					"remove_on_hit": {}
+				}
+			},
+			"minecraft:physics": {},
+			"minecraft:timer": {
+				"looping": true,
+				"time": 0.6,
+				"time_down_event": {
+					"event": "despawn",
+					"target": "self"
+				}
+			}
+		},
+		"events": {
+			"despawn": {
+				"add": {
+					"component_groups": [
+						"despawn"
+					]
+				}
+			}
+		}
+	}
+}

@@ -1,0 +1,52 @@
+{
+	"format_version": "1.13.0",
+	"minecraft:feature_rules": {
+		"description": {
+			"identifier": "exdrill:dragon_den_feature",
+			"places_feature": "exdrill:dragon_den"
+		},
+		"conditions": {
+			"placement_pass": "surface_pass",
+			"minecraft:biome_filter": [
+				{
+					"any_of": [
+						{
+							"test": "has_biome_tag",
+							"operator": "==",
+							"value": "overworld_generation"
+						},
+						{
+							"test": "has_biome_tag",
+							"operator": "==",
+							"value": "overworld"
+						},
+						{
+							"test": "has_biome_tag",
+							"operator": "==",
+							"value": "ocean"
+						}
+					]
+				}
+			]
+		},
+		"distribution": {
+			"coordinate_eval_order": "zyx",
+			"iterations": 1,
+			"x": {
+				"extent": [
+					0,
+					512
+				],
+				"distribution": "gaussian"
+			},
+			"y": "query.heightmap(variable.worldx,variable.worldz)-2",
+			"z": {
+				"extent": [
+					0,
+					512
+				],
+				"distribution": "gaussian"
+			}
+		}
+	}
+}

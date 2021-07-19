@@ -1,0 +1,31 @@
+//bridge-file-version: #1
+{
+	"format_version": "1.16.100",
+	"minecraft:recipe_shaped": {
+		"description": {
+			"identifier": "exdrill:dragon_bane"
+		},
+		"tags": [
+			"crafting_table"
+		],
+		"pattern": [
+			"A",
+			"A",
+			"B"
+		],
+		"key": {
+			"A": {
+				"item": "exdrill:dragon_bone"
+			},
+			"B": {
+				"item": "exdrill:platinum_ingot"
+			}
+		},
+		"result": [
+			{
+				"item": "exdrill:dragon_bane",
+				"count": 1
+			}
+		]
+	}
+}

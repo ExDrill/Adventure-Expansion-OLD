@@ -1,0 +1,23 @@
+{
+	"format_version": "1.13.0",
+	"minecraft:ore_feature": {
+		"description": {
+			"identifier": "exdrill:platinum_ore_feature_v2"
+		},
+		"count": 8,
+        "replace_rules": [
+            {
+                "places_block": "exdrill:platinum_ore",
+                "may_replace": [
+                    "minecraft:stone"
+                ]
+            },
+            {
+                "places_block": "exdrill:deepslate_platinum_ore",
+                "may_replace": [
+                    "minecraft:deepslate"
+                ]
+            }
+        ]
+	}
+}

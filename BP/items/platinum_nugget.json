@@ -1,0 +1,16 @@
+{
+    "format_version": "1.16.100",
+    "minecraft:item": {
+        "description": {
+            "identifier": "exdrill:platinum_nugget"
+        },
+        "components": {
+            "minecraft:icon": {
+                "texture": "platinum_nugget"
+            },
+            "minecraft:display_name": {
+                "value": "Platinum Nugget"
+            }
+        }
+    }
+}

@@ -1,0 +1,80 @@
+{
+	"format_version": "1.16.100",
+	"minecraft:block": {
+		"description": {
+			"identifier": "exdrill:blue_dragon_egg"
+		},
+		"components": {
+			"minecraft:destroy_time": 1,
+			"minecraft:block_light_absorption": 0,
+			"minecraft:geometry": "geometry.egg",
+			"minecraft:material_instances": {
+				"*": {
+					"texture": "egg",
+					"render_method": "alpha_test"
+				}
+			},
+			"minecraft:pick_collision": {
+				"origin": [
+					-4,
+					0,
+					-4
+				],
+				"size": [
+					8,
+					12,
+					8
+				]
+			},
+			"minecraft:entity_collision": {
+				"origin": [
+					-4,
+					0,
+					-4
+				],
+				"size": [
+					8,
+					12,
+					8
+				]
+			},
+			"minecraft:on_interact": {
+				"event": "on_interact",
+				"target": "self"
+			},
+			"minecraft:ticking": {
+				"looping": true,
+				"range": [
+					0.1,
+					0.2
+				],
+				"on_tick": {
+					"event": "on_tick",
+					"target": "self"
+				}
+			},
+			"minecraft:loot": "loot_tables/empty.json"
+		},
+		"events": {
+			"on_interact": {
+				"run_command": {
+					"command": [
+						"summon exdrill:blue_dragon ~ ~20 ~"
+					],
+					"target": "self"
+				},
+				"die": {
+					"target": "self"
+				}
+			},
+			"on_tick": {
+				"run_command": {
+					"command": [
+						"title @a[r=10] actionbar Interact with the Egg"
+					],
+					"target": "self"
+				}
+			}
+		}
+	}
+}

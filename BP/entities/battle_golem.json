@@ -1,0 +1,98 @@
+//bridge-file-version: #11
+{
+	"format_version": "1.16.100",
+	"minecraft:entity": {
+		"description": {
+			"identifier": "exdrill:battle_golem",
+			"is_summonable": true,
+			"is_spawnable": true,
+			"runtime_identifier": "minecraft:iron_golem"
+		},
+		"component_groups": {
+			"scale": {
+				"minecraft:scale": {
+					"value": 2.5
+				}
+			}
+		},
+		"components": {
+			"minecraft:health": {
+				"value": 200,
+				"max": 200
+			},
+			"minecraft:movement.generic": {},
+			"minecraft:navigation.generic": {},
+			"minecraft:movement": {
+				"value": 0.25
+			},
+			"minecraft:physics": {},
+			"minecraft:nameable": {},
+			"minecraft:attack": {
+				"damage": 10
+			},
+			"minecraft:behavior.melee_attack": {
+				"priority": 4,
+				"attack_once": false,
+				"track_target": false,
+				"reach_multiplier": 0.9
+			},
+			"minecraft:behavior.nearest_attackable_target": {
+				"priority": 5,
+				"entity_types": [
+					{
+						"filters": {
+							"test": "is_family",
+							"subject": "other",
+							"value": "player"
+						},
+						"must_see": true,
+						"check_if_outnumbered": false
+					}
+				]
+			},
+			"minecraft:knockback_resistance": {
+				"value": 1
+			},
+			"minecraft:damage_sensor": {
+				"triggers": [
+					{
+						"cause": "fall",
+						"deals_damage": false
+					}
+				]
+			},
+			"minecraft:boss": {
+				"should_darken_sky": false,
+				"hud_range": 30,
+				"name": "Battle Golem"
+			},
+			"minecraft:collision_box": {
+				"width": 0.8,
+				"height": 1
+			},
+			"minecraft:loot": {
+				"table": "loot_tables/entities/battle_golem.json"
+			},
+			"minecraft:breathable": {
+				"total_supply": 15,
+				"suffocate_time": 0
+			},
+			"minecraft:type_family": {
+				"family": [
+					"mob",
+					"monster",
+					"battle_golem"
+				]
+			}
+		},
+		"events": {
+			"minecraft:entity_spawned": {
+				"add": {
+					"component_groups": [
+						"scale"
+					]
+				}
+			}
+		}
+	}
+}

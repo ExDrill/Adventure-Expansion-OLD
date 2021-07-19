@@ -1,0 +1,43 @@
+//bridge-file-version: #3
+{
+	"format_version": "1.16.100",
+	"minecraft:entity": {
+		"description": {
+			"identifier": "exdrill:jumper_entity",
+			"is_summonable": true,
+			"is_spawnable": false
+		},
+		"component_groups": {
+			"despawn": {
+				"minecraft:instant_despawn": {}
+			}
+		},
+		"components": {
+			"minecraft:behavior.knockback_roar": {
+				"priority": 0,
+				"duration": 0.1,
+				"knockback_strength": 1,
+				"attack_time": 0.1,
+				"knockback_range": 1,
+				"knockback_damage": 0
+			},
+			"minecraft:timer": {
+				"looping": true,
+				"time": 0.1,
+				"time_down_event": {
+					"event": "despawn",
+					"target": "self"
+				}
+			}
+		},
+		"events": {
+			"despawn": {
+				"add": {
+					"component_groups": [
+						"despawn"
+					]
+				}
+			}
+		}
+	}
+}

@@ -1,0 +1,14 @@
+{
+	"format_version": "1.16.100",
+	"minecraft:block": {
+		"description": {
+			"identifier": "exdrill:platinum_block"
+		},
+		"components": {
+			"minecraft:destroy_time": 0.1,
+			"minecraft:map_color": "#B3F0FF",
+			"tag:metal": {},
+			"minecraft:loot": "loot_tables/blocks/platinum_block_loot.json"
+		}
+	}
+}

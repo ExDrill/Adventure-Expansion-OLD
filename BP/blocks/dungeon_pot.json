@@ -1,0 +1,59 @@
+//bridge-file-version: #9
+{
+	"format_version": "1.16.100",
+	"minecraft:block": {
+		"description": {
+			"identifier": "exdrill:dungeon_pot"
+		},
+		"components": {
+			"minecraft:destroy_time": 1.2,
+			"minecraft:block_light_absorption": 0,
+			"minecraft:loot": "loot_tables/blocks/dungeon_pot_loot.json",
+			"minecraft:geometry": "geometry.dungeon_pot",
+			"minecraft:material_instances": {
+				"*": {
+					"texture": "dungeon_pot",
+					"render_method": "alpha_test"
+				}
+			},
+			"minecraft:on_player_destroyed": {
+				"event": "exdrill:exp_on_break",
+				"target": "self"
+			},
+			"minecraft:entity_collision": {
+				"origin": [
+					-3,
+					0,
+					-3
+				],
+				"size": [
+					6,
+					13,
+					6
+				]
+			},
+			"minecraft:pick_collision": {
+				"origin": [
+					-3,
+					0,
+					-3
+				],
+				"size": [
+					6,
+					13,
+					6
+				]
+			}
+		},
+		"events": {
+			"exdrill:exp_on_break": {
+				"run_command": {
+					"command": [
+						"summon xp_orb ~ ~ ~"
+					],
+					"target": "self"
+				}
+			}
+		}
+	}
+}

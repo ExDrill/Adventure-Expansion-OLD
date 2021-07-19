@@ -1,0 +1,91 @@
+{
+	"format_version": "1.16.100",
+	"minecraft:item": {
+		"description": {
+			"identifier": "exdrill:magic_berries"
+		},
+		"components": {
+			"minecraft:display_name": {
+				"value": "Sana Berries"
+			},
+			"minecraft:icon": {
+				"texture": "magic_berries"
+			},
+			"minecraft:use_animation": "eat",
+			"minecraft:potion": {
+				"type": "regular"
+			},
+			"minecraft:use_duration": 1.6,
+			"minecraft:max_stack_size": 64,
+			"minecraft:food": {
+				"can_always_eat": true,
+				"saturation_modifier": "good",
+				"nutrition": 4,
+				"on_consume": {
+					"event": "on_consume",
+					"target": "self"
+				}
+			}
+		},
+		"events": {
+			"on_consume": {
+				"sequence": [
+					{
+						"remove_mob_effect": {
+							"effect": "bad_omen",
+							"target": "holder"
+						}
+					},
+					{
+						"remove_mob_effect": {
+							"effect": "blindness",
+							"target": "holder"
+						}
+					},
+					{
+						"remove_mob_effect": {
+							"effect": "slowness",
+							"target": "holder"
+						}
+					},
+					{
+						"remove_mob_effect": {
+							"effect": "levitation",
+							"target": "holder"
+						}
+					},
+					{
+						"remove_mob_effect": {
+							"effect": "weakness",
+							"target": "holder"
+						}
+					},
+					{
+						"remove_mob_effect": {
+							"effect": "fatal_poison",
+							"target": "holder"
+						}
+					},
+					{
+						"remove_mob_effect": {
+							"effect": "hunger",
+							"target": "holder"
+						}
+					},
+					{
+						"remove_mob_effect": {
+							"effect": "poison",
+							"target": "holder"
+						}
+					},
+					{
+						"remove_mob_effect": {
+							"effect": "wither",
+							"target": "holder"
+						}
+					}
+				]
+			}
+		}
+	}
+}

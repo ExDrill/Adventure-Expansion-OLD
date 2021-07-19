@@ -1,0 +1,49 @@
+//bridge-file-version: #4
+{
+	"format_version": "1.10.0",
+	"minecraft:client_entity": {
+		"description": {
+			"identifier": "exdrill:friendly_blockling",
+			"materials": {
+				"default": "entity_alphatest"
+			},
+			"textures": {
+				"red": "textures/entity/friendly_blockling/red",
+				"blue": "textures/entity/friendly_blockling/blue",
+				"yellow": "textures/entity/friendly_blockling/yellow",
+				"green": "textures/entity/friendly_blockling/green"
+			},
+			"geometry": {
+				"default": "geometry.blockling_v2"
+			},
+			"animations": {
+				"walk": "animation.blockling_v2.walk",
+				"look_at_target": "animation.common.look_at_target",
+				"sit": "animation.blockling.sit",
+				"stand": "animation.blockling.stand"
+			},
+			"scripts": {
+				"animate": [
+					{
+						"walk": "query.modified_move_speed"
+					},
+					"look_at_target",
+					{
+						"sit": "query.is_sitting"
+					},
+					{
+						"stand": "!query.is_sitting"
+					}
+				]
+			},
+			"render_controllers": [
+				"controller.render.friendly_blockling"
+			],
+			"spawn_egg": {
+				"texture_index": 0,
+				"base_color": "#FFFFFF",
+				"overlay_color": "#595959"
+			}
+		}
+	}
+}

@@ -1,0 +1,25 @@
+//bridge-file-version: #0
+{
+	"format_version": "1.16.100",
+	"minecraft:block": {
+		"description": {
+			"identifier": "exdrill:lightbrick"
+		},
+		"components": {
+			"minecraft:destroy_time": 200,
+			"minecraft:explosion_resistance": 100,
+			"minecraft:breathability": "solid",
+			"minecraft:on_player_destroyed": {
+				"event": "place_back",
+				"target": "self"
+			}
+		},
+		"events": {
+			"place_back": {
+				"set_block": {
+					"block_type": "exdrill:lightbrick"
+				}
+			}
+		}
+	}
+}

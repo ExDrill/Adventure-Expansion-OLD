@@ -1,0 +1,32 @@
+//bridge-file-version: #0
+{
+	"format_version": "1.10.0",
+	"minecraft:client_entity": {
+		"description": {
+			"identifier": "exdrill:goblin_banner",
+			"materials": {
+				"default": "entity_alphatest"
+			},
+			"textures": {
+				"default": "textures/entity/goblin_banner"
+			},
+			"geometry": {
+				"default": "geometry.goblin_banner"
+			},
+			"animations": {
+				"idle": "animation.goblin_banner.idle"
+			},
+			"scripts": {
+				"animate": [
+					"idle"
+				]
+			},
+			"render_controllers": [
+				"controller.render.no_hurt"
+			],
+			"spawn_egg": {
+				"texture": "goblin_banner"
+			}
+		}
+	}
+}

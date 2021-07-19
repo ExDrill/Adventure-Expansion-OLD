@@ -1,0 +1,44 @@
+//bridge-file-version: #4
+{
+	"format_version": "1.10.0",
+	"minecraft:client_entity": {
+		"description": {
+			"identifier": "exdrill:skeleton_mage",
+			"materials": {
+				"default": "skeleton",
+				"glow": "skeleton"
+			},
+			"textures": {
+				"default": "textures/entity/skeleton_mage/skeleton_mage",
+				"glow": "textures/entity/skeleton_mage/glow_parts"
+			},
+			"geometry": {
+				"default": "geometry.skeleton_mage",
+				"glow": "geometry.skeleton_mage"
+			},
+			"animations": {
+				"cast": "animation.skeleton_mage.cast",
+				"move_arms": "animation.skeleton_mage.move.arms",
+				"move_legs": "animation.skeleton_mage.move.legs",
+				"setup": "controller.animation.mage_skeleton"
+			},
+			"scripts": {
+				"animate": [
+					"setup"
+				]
+			},
+			"render_controllers": [
+				"controller.render.default",
+				"controller.render.glow"
+			],
+			"spawn_egg": {
+				"texture_index": 0,
+				"base_color": "#BAB1A6",
+				"overlay_color": "#B2CF97"
+			},
+			"particle_effects": {
+				"spell": "exdrill:skeleton_magic"
+			}
+		}
+	}
+}

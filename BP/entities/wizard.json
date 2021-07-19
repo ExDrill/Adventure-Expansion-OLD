@@ -1,0 +1,105 @@
+//bridge-file-version: #2
+{
+	"format_version": "1.16.0",
+	"minecraft:entity": {
+		"description": {
+			"identifier": "exdrill:wizard",
+			"is_spawnable": true,
+			"is_summonable": true,
+			"is_experimental": false
+		},
+		"component_groups": {},
+		"components": {
+			"minecraft:breathable": {
+				"total_supply": 15,
+				"suffocate_time": 0
+			},
+			"minecraft:nameable": {},
+			"minecraft:loot": {
+				"table": "loot_tables/entities/witch.json"
+			},
+			"minecraft:health": {
+				"value": 26,
+				"max": 26
+			},
+			"minecraft:hurt_on_condition": {
+				"damage_conditions": [
+					{
+						"filters": {
+							"test": "in_lava",
+							"subject": "self",
+							"operator": "==",
+							"value": true
+						},
+						"cause": "lava",
+						"damage_per_tick": 4
+					}
+				]
+			},
+			"minecraft:movement": {
+				"value": 0.25
+			},
+			"minecraft:navigation.walk": {
+				"can_path_over_water": true,
+				"avoid_water": false
+			},
+			"minecraft:movement.basic": {},
+			"minecraft:jump.static": {},
+			"minecraft:can_climb": {},
+			"minecraft:behavior.float": {
+				"priority": 1
+			},
+			"minecraft:behavior.ranged_attack": {
+				"priority": 2,
+				"speed_multiplier": 1,
+				"attack_interval_min": 3,
+				"attack_interval_max": 3,
+				"attack_radius": 10
+			},
+			"minecraft:behavior.random_stroll": {
+				"priority": 4,
+				"speed_multiplier": 1
+			},
+			"minecraft:behavior.look_at_player": {
+				"priority": 5,
+				"look_distance": 8
+			},
+			"minecraft:behavior.random_look_around": {
+				"priority": 5,
+				"look_distance": 8
+			},
+			"minecraft:type_family": {
+				"family": [
+					"mob",
+					"wizard",
+					"villager"
+				]
+			},
+			"minecraft:collision_box": {
+				"width": 0.6,
+				"height": 1.9
+			},
+			"minecraft:physics": {},
+			"minecraft:pushable": {
+				"is_pushable": true,
+				"is_pushable_by_piston": true
+			},
+			"minecraft:follow_range": {
+				"value": 64
+			},
+			"minecraft:conditional_bandwidth_optimization": {},
+			"minecraft:behavior.trade_with_player": {
+				"priority": 1
+			},
+			"minecraft:behavior.look_at_trading_player": {
+				"priority": 2
+			},
+			"minecraft:trade_table": {
+				"display_name": "Wizard",
+				"table": "trading/wizard_trades.json"
+			},
+			"minecraft:persistent": {}
+		},
+		"events": {}
+	}
+}

@@ -1,0 +1,12 @@
+{
+	"format_version": "1.13.0",
+	"minecraft:structure_template_feature": {
+		"description": {
+			"identifier": "exdrill:dragon_den"
+		},
+		"structure_name": "mystructure:dragon_den_structure",
+		"adjustment_radius": 8,
+		"facing_direction": "north",
+		"constraints": {}
+	}
+}

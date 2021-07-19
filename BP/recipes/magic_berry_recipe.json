@@ -1,0 +1,31 @@
+//bridge-file-version: #0
+{
+	"format_version": "1.16.100",
+	"minecraft:recipe_shaped": {
+		"description": {
+			"identifier": "exdrill:magic_berry_recipe"
+		},
+		"tags": [
+			"crafting_table"
+		],
+		"pattern": [
+			"AAA",
+			"ABA",
+			"AAA"
+		],
+		"key": {
+			"A": {
+				"item": "exdrill:magic_cell"
+			},
+			"B": {
+				"item": "minecraft:sweet_berries"
+			}
+		},
+		"result": [
+			{
+				"item": "exdrill:magic_berries",
+				"count": 1
+			}
+		]
+	}
+}

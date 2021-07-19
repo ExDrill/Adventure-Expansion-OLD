@@ -1,0 +1,26 @@
+//bridge-file-version: #1
+{
+	"format_version": "1.16.100",
+	"minecraft:item": {
+		"description": {
+			"identifier": "exdrill:totem_head"
+		},
+		"components": {
+			"minecraft:max_stack_size": 1,
+			"minecraft:render_offsets": "emerald",
+			"minecraft:creative_category": {
+				"parent": "itemGroup.name.totem"
+			},
+			"minecraft:icon": {
+				"texture": "totem_head"
+			},
+			"minecraft:display_name": {
+				"value": "Totem Head"
+			},
+			"minecraft:projectile": {
+				"projectile_entity": "minecraft:arrow"
+			}
+		},
+		"events": {}
+	}
+}

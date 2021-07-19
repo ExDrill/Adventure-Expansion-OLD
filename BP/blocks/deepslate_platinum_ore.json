@@ -1,0 +1,13 @@
+{
+    "format_version": "1.16.100",
+    "minecraft:block": {
+        "description": {
+            "identifier": "exdrill:deepslate_platinum_ore"
+        },
+        "components": {
+            "minecraft:destroy_time": 0.7,
+            "minecraft:loot": "loot_tables/blocks/platinum_ore_loot.json",
+            "tag:stone": {}
+        }
+    }
+}

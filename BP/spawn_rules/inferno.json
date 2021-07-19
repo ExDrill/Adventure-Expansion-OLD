@@ -1,0 +1,31 @@
+//bridge-file-version: #8
+{
+	"format_version": "1.8.0",
+	"minecraft:spawn_rules": {
+		"description": {
+			"identifier": "exdrill:inferno",
+			"population_control": "monster"
+		},
+		"conditions": [
+			{
+				"minecraft:weight": {
+					"default": 10
+				},
+				"minecraft:biome_filter": {
+					"test": "has_biome_tag",
+					"operator": "==",
+					"value": "nether"
+				},
+				"minecraft:spawns_on_surface": {},
+				"minecraft:difficulty_filter": {
+					"min": "easy",
+					"max": "hard"
+				},
+				"minecraft:spawns_underground": {},
+				"minecraft:spawns_on_block_filter": [
+					"minecraft:blackstone"
+				]
+			}
+		]
+	}
+}

@@ -1,0 +1,28 @@
+//bridge-file-version: #5
+{
+	"format_version": "1.8.0",
+	"minecraft:client_entity": {
+		"description": {
+			"identifier": "exdrill:slimy",
+			"materials": {
+				"default": "slime",
+				"outer": "slime_outer"
+			},
+			"textures": {
+				"default": "textures/entity/slimy"
+			},
+			"geometry": {
+				"default": "geometry.slime",
+				"armor": "geometry.slime.armor"
+			},
+			"scripts": {},
+			"render_controllers": [
+				"controller.render.slime",
+				"controller.render.slime_armor"
+			],
+			"spawn_egg": {
+				"texture": "slimy_bucket"
+			}
+		}
+	}
+}

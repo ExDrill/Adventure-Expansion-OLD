@@ -1,0 +1,48 @@
+//bridge-file-version: #8
+{
+	"format_version": "1.10.0",
+	"minecraft:client_entity": {
+		"description": {
+			"identifier": "exdrill:wagi",
+			"materials": {
+				"default": "skeleton"
+			},
+			"textures": {
+				"default": "textures/entity/wagi"
+			},
+			"geometry": {
+				"default": "geometry.wagi"
+			},
+			"animations": {
+				"walk": "animation.wagi.walk",
+				"fly": "animation.wagi.fly",
+				"baby": "animation.wagi.big_head",
+				"tame": "animation.wagi.tamed"
+			},
+			"scripts": {
+				"animate": [
+					{
+						"walk": "query.modified_move_speed"
+					},
+					{
+						"fly": "!query.is_on_ground"
+					},
+					{
+						"baby": "query.is_baby"
+					},
+					{
+						"tame": "query.is_tamed"
+					}
+				]
+			},
+			"render_controllers": [
+				"controller.render.default"
+			],
+			"spawn_egg": {
+				"texture_index": 0,
+				"base_color": "#6F0202",
+				"overlay_color": "#D54848"
+			}
+		}
+	}
+}

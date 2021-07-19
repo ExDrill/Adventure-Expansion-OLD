@@ -1,0 +1,259 @@
+//bridge-file-version: #38
+{
+	"format_version": "1.16.100",
+	"minecraft:entity": {
+		"description": {
+			"identifier": "exdrill:goblin_warrior",
+			"is_summonable": true,
+			"is_spawnable": true
+		},
+		"component_groups": {
+			"exdrill:hardmode_configuration": {
+				"minecraft:attack": {
+					"damage": 9,
+					"effect_name": "weakness",
+					"effect_duration": 1
+				},
+				"minecraft:health": {
+					"value": 12,
+					"max": 12
+				},
+				"minecraft:loot": {
+					"table": "loot_tables/entities/hardmode_goblin_loot.json"
+				}
+			},
+			"exdrill:timer_to_shield": {
+				"minecraft:timer": {
+					"looping": false,
+					"time": [
+						1,
+						1.5
+					],
+					"time_down_event": {
+						"event": "exdrill:switch_to_shield",
+						"target": "self"
+					}
+				},
+				"minecraft:movement": {
+					"value": 0.25
+				}
+			},
+			"exdrill:timer_to_default": {
+				"minecraft:timer": {
+					"looping": false,
+					"time": [
+						0.1,
+						0.5
+					],
+					"time_down_event": {
+						"event": "exdrill:switch_to_default",
+						"target": "self"
+					}
+				},
+				"minecraft:damage_sensor": {
+					"triggers": [
+						{
+							"cause": "entity_attack",
+							"deals_damage": false,
+							"on_damage": {
+								"event": "play_shield_sound",
+								"target": "self"
+							}
+						}
+					]
+				},
+				"minecraft:movement": {
+					"value": 0.1
+				}
+			}
+		},
+		"components": {
+			"minecraft:behavior.float": {
+				"priority": 0
+			},
+			"minecraft:behavior.random_stroll": {
+				"priority": 6,
+				"speed_multiplier": 1
+			},
+			"minecraft:behavior.look_at_player": {
+				"priority": 7,
+				"look_distance": 6,
+				"probability": 0.02
+			},
+			"minecraft:behavior.random_look_around": {
+				"priority": 7
+			},
+			"minecraft:collision_box": {
+				"width": 0.5,
+				"height": 1.8
+			},
+			"minecraft:health": {
+				"value": 10,
+				"max": 10
+			},
+			"minecraft:movement": {
+				"value": 0.25
+			},
+			"minecraft:movement.generic": {},
+			"minecraft:navigation.generic": {},
+			"minecraft:jump.static": {},
+			"minecraft:can_climb": {},
+			"minecraft:breathable": {
+				"totalSupply": 15,
+				"suffocateTime": 0,
+				"breathesAir": true,
+				"breathesWater": false
+			},
+			"minecraft:physics": {
+				"has_collision": true,
+				"has_gravity": true
+			},
+			"minecraft:attack": {
+				"damage": 8
+			},
+			"minecraft:behavior.melee_attack": {
+				"priority": 1,
+				"attack_once": false,
+				"speed_multiplier": 1.2,
+				"track_target": true
+			},
+			"minecraft:type_family": {
+				"family": [
+					"goblin",
+					"mob",
+					"monster"
+				]
+			},
+			"minecraft:pushable": {
+				"is_pushable": true,
+				"is_pushable_by_piston": true
+			},
+			"minecraft:loot": {
+				"table": "loot_tables/entities/hostile_goblin_loot.json"
+			},
+			"minecraft:behavior.hurt_by_target": {
+				"priority": 1,
+				"alert_same_type": true
+			},
+			"minecraft:behavior.nearest_attackable_target": {
+				"priority": 2,
+				"must_see": true,
+				"entity_types": [
+					{
+						"filters": {
+							"any_of": [
+								{
+									"test": "is_family",
+									"subject": "other",
+									"value": "player"
+								},
+								{
+									"test": "is_family",
+									"subject": "other",
+									"value": "snowgolem"
+								},
+								{
+									"test": "is_family",
+									"subject": "other",
+									"value": "irongolem"
+								}
+							]
+						}
+					}
+				],
+				"within_radius": 64
+			},
+			"minecraft:equipment": {
+				"table": "loot_tables/equipment/goblin_warrior.json",
+				"slot_drop_chance": [
+					{
+						"slot": "slot.armor.chest",
+						"drop_chance": 0.05
+					},
+					{
+						"slot": "slot.armor.feet",
+						"drop_chance": 0.05
+					},
+					{
+						"slot": "slot.armor.head",
+						"drop_chance": 0.05
+					},
+					{
+						"slot": "slot.armor.legs",
+						"drop_chance": 0.05
+					},
+					{
+						"slot": "slot.weapon.mainhand",
+						"drop_chance": 0.05
+					},
+					{
+						"slot": "slot.weapon.offhand",
+						"drop_chance": 0.1
+					}
+				]
+			},
+			"minecraft:follow_range": {
+				"value": 64
+			}
+		},
+		"events": {
+			"minecraft:entity_spawned": {},
+			"exdrill:spread": {
+				"run_command": {
+					"command": [
+						"spreadplayers ~ ~ 1 30 @e[type=exdrill:goblin_warrior,r=5]"
+					]
+				}
+			},
+			"exdrill:hardmode_configuration": {
+				"add": {
+					"component_groups": [
+						"exdrill:hardmode_configuration",
+						"exdrill:timer_to_shield"
+					]
+				},
+				"trigger": "exdrill:spread"
+			},
+			"exdrill:switch_to_default": {
+				"add": {
+					"component_groups": [
+						"exdrill:timer_to_shield"
+					]
+				},
+				"remove": {
+					"component_groups": [
+						"exdrill:timer_to_default"
+					]
+				}
+			},
+			"exdrill:switch_to_shield": {
+				"add": {
+					"component_groups": [
+						"exdrill:timer_to_default"
+					]
+				},
+				"remove": {
+					"component_groups": [
+						"exdrill:timer_to_shield"
+					]
+				}
+			},
+			"play_shield_sound": {
+				"run_command": {
+					"command": [
+						"playsound item.shield.block @a ~ ~ ~",
+						"playanimation @s animation.goblin.shield t 0.5"
+					]
+				}
+			},
+			"exdrill:hardmode": {
+				"add": {
+					"component_groups": [
+						"exdrill:hardmode_configuration",
+						"exdrill:timer_to_shield"
+					]
+				}
+			}
+		}
+	}
+}

@@ -1,0 +1,32 @@
+//bridge-file-version: #6
+{
+	"format_version": "1.16.100",
+	"minecraft:block": {
+		"description": {
+			"identifier": "exdrill:stairs"
+		},
+		"components": {
+			"minecraft:destroy_time": 1,
+			"minecraft:unit_cube": {},
+			"minecraft:entity_collision": {
+				"origin": [
+					-8,
+					0,
+					-8
+				],
+				"size": [
+					12,
+					8,
+					8
+				]
+			},
+			"minecraft:material_instances": {
+				"*": {
+					"texture": "darkbrick",
+					"render_method": "opaque"
+				}
+			}
+		},
+		"events": {}
+	}
+}

@@ -1,0 +1,18 @@
+{
+	"format_version": "1.8.0",
+	"animations": {
+		"animation.goblin_banner.idle": {
+			"loop": true,
+			"animation_length": 3.6,
+			"bones": {
+				"banner": {
+					"rotation": {
+						"0.0": [0, 0, 0],
+						"1.56": [-2.5, 0, 0],
+						"3.56": [0, 0, 0]
+					}
+				}
+			}
+		}
+	}
+}

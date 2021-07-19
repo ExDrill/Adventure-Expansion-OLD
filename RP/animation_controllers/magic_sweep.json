@@ -1,0 +1,18 @@
+//bridge-file-version: #0
+{
+	"format_version": "1.10.0",
+	"animation_controllers": {
+		"controller.animation.sweep": {
+			"states": {
+				"default": {
+					"particle_effects": [
+						{
+							"effect": "aura"
+						}
+					]
+				}
+			},
+			"initial_state": "default"
+		}
+	}
+}

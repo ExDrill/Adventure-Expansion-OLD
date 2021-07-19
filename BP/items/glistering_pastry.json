@@ -1,0 +1,38 @@
+{
+	"format_version": "1.16.100",
+	"minecraft:item": {
+		"description": {
+			"identifier": "exdrill:glistering_pastry"
+		},
+		"components": {
+			"minecraft:max_stack_size": 64,
+			"minecraft:icon": {
+				"texture": "heal_pastry"
+			},
+			"minecraft:food": {
+				"saturation_modifier": "low",
+				"can_always_eat": true,
+				"nutrition": 1,
+				"on_consume": {
+					"event": "on_consume",
+					"target": "self"
+				}
+			},
+			"minecraft:display_name": {
+				"value": "Glistering Pastry"
+			},
+			"minecraft:use_duration": 1.6,
+			"minecraft:use_animation": "eat"
+		}
+	},
+	"events": {
+		"on_consume": {
+			"add_mob_effect": {
+				"effect": "regeneration",
+				"target": "holder",
+				"duration": 0.1,
+				"amplifier": 10
+			}
+		}
+	}
+}

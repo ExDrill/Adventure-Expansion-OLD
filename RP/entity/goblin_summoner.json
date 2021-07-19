@@ -1,0 +1,42 @@
+//bridge-file-version: #5
+{
+	"format_version": "1.10.0",
+	"minecraft:client_entity": {
+		"description": {
+			"identifier": "exdrill:goblin_summoner",
+			"materials": {
+				"default": "entity_alphatest"
+			},
+			"textures": {
+				"default": "textures/entity/goblin_summoner"
+			},
+			"geometry": {
+				"default": "geometry.goblin"
+			},
+			"animations": {
+				"walk": "animation.goblin.walk",
+				"casting": "animation.goblin_summoner.cast",
+				"look_at_target": "animation.common.look_at_target",
+				"controller_general": "controller.animation.goblin_summoner.general"
+			},
+			"scripts": {
+				"animate": [
+					{
+						"walk": "query.modified_move_speed"
+					},
+					"look_at_target",
+					"controller_general"
+				]
+			},
+			"render_controllers": [
+				"controller.render.default"
+			],
+			"spawn_egg": {
+				"texture_index": 0,
+				"base_color": "#116935",
+				"overlay_color": "#2F0B74"
+			},
+			"enable_attachables": true
+		}
+	}
+}

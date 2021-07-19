@@ -1,0 +1,21 @@
+{
+    "format_version": "1.16.100",
+    "minecraft:recipe_shapeless": {
+        "description": {
+            "identifier": "exdrill:raw_platinum_from_raw_platinum_block"
+        },
+        "tags": [
+            "crafting_table"
+        ],
+        "ingredients": [
+            {
+                "count": 1,
+                "item": "exdrill:raw_platinum_block"
+            }
+        ],
+        "result": {
+            "count": 9,
+            "item": "exdrill:raw_platinum"
+        }
+    }
+}

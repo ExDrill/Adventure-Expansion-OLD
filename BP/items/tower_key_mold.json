@@ -1,0 +1,26 @@
+//bridge-file-version: #20
+{
+	"format_version": "1.16.100",
+	"minecraft:item": {
+		"description": {
+			"identifier": "exdrill:tower_key_mold"
+		},
+		"components": {
+			"minecraft:max_stack_size": 1,
+			"minecraft:icon": {
+				"texture": "tower_key_mold"
+			},
+			"minecraft:display_name": {
+				"value": "Tower Key Mold"
+			}
+		},
+		"events": {
+			"shoot": {
+				"shoot": {
+					"projectile": "minecraft:arrow",
+					"launch_power": 1
+				}
+			}
+		}
+	}
+}

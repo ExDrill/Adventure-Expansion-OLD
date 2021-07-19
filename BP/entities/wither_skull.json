@@ -1,0 +1,194 @@
+//bridge-file-version: #10
+{
+	"format_version": "1.12.0",
+	"minecraft:entity": {
+		"description": {
+			"identifier": "minecraft:wither_skull",
+			"is_spawnable": false,
+			"is_summonable": false,
+			"is_experimental": false
+		},
+		"component_groups": {
+			"minecraft:exploding": {
+				"minecraft:explode": {
+					"fuse_length": 0,
+					"fuse_lit": true,
+					"power": 1,
+					"causes_fire": false,
+					"destroy_affected_by_griefing": true
+				}
+			},
+			"exdrill:dragon_skull": {
+				"minecraft:variant": {
+					"value": 1
+				},
+				"minecraft:projectile": {
+					"on_hit": {
+						"definition_event": {
+							"affect_projectile": true,
+							"event_trigger": {
+								"event": "minecraft:explode",
+								"target": "self"
+							}
+						},
+						"catch_fire": {
+							"fire_affected_by_griefing": true
+						},
+						"impact_damage": {
+							"damage": 12
+						}
+					},
+					"power": 1.2,
+					"gravity": 0,
+					"uncertainty_base": 7.5,
+					"uncertainty_multiplier": 1,
+					"anchor": 1,
+					"offset": [
+						0,
+						0,
+						10
+					],
+					"inertia": 1,
+					"liquid_inertia": 1,
+					"shoot_target": true,
+					"catch_fire": true,
+					"reflect_on_hurt": true
+				},
+				"minecraft:conditional_bandwidth_optimization": {
+					"default_values": {
+						"max_optimized_distance": 80,
+						"max_dropped_ticks": 10,
+						"use_motion_prediction_hints": true
+					}
+				}
+			},
+			"exdrill:phase_two": {
+				"minecraft:projectile": {
+					"on_hit": {
+						"definition_event": {
+							"affect_projectile": true,
+							"event_trigger": {
+								"event": "minecraft:explode",
+								"target": "self"
+							}
+						},
+						"catch_fire": {
+							"fire_affected_by_griefing": true
+						},
+						"impact_damage": {
+							"damage": 15
+						}
+					},
+					"power": 1.2,
+					"gravity": 0,
+					"uncertainty_base": 7.5,
+					"uncertainty_multiplier": 1,
+					"anchor": 1,
+					"offset": [
+						0,
+						0,
+						10
+					],
+					"inertia": 1,
+					"liquid_inertia": 1,
+					"shoot_target": true,
+					"catch_fire": true
+				},
+				"minecraft:variant": {
+					"value": 1
+				}
+			}
+		},
+		"components": {
+			"minecraft:collision_box": {
+				"width": 0.15,
+				"height": 0.15
+			},
+			"minecraft:projectile": {
+				"on_hit": {
+					"definition_event": {
+						"affect_projectile": true,
+						"event_trigger": {
+							"event": "minecraft:explode",
+							"target": "self"
+						}
+					},
+					"mob_effect": {
+						"effect": "wither",
+						"durationeasy": 0,
+						"durationnormal": 200,
+						"durationhard": 800,
+						"amplifier": 1
+					}
+				},
+				"power": 1.2,
+				"gravity": 0,
+				"uncertainty_base": 7.5,
+				"uncertainty_multiplier": 1,
+				"shoot_sound": "bow",
+				"hit_sound": "bow.hit",
+				"anchor": 1,
+				"offset": [
+					0,
+					-0.1,
+					0
+				],
+				"inertia": 1,
+				"liquid_inertia": 1,
+				"shoot_target": false
+			},
+			"minecraft:physics": {},
+			"minecraft:pushable": {
+				"is_pushable": true,
+				"is_pushable_by_piston": true
+			},
+			"minecraft:conditional_bandwidth_optimization": {
+				"default_values": {
+					"max_optimized_distance": 80,
+					"max_dropped_ticks": 10,
+					"use_motion_prediction_hints": true
+				}
+			},
+			"minecraft:variant": {
+				"value": 0
+			}
+		},
+		"events": {
+			"minecraft:explode": {
+				"add": {
+					"component_groups": [
+						"minecraft:exploding"
+					]
+				}
+			},
+			"minecraft:entity_spawned": {
+				"sequence": [
+					{
+						"filters": {
+							"test": "is_family",
+							"subject": "other",
+							"value": "dragon"
+						},
+						"add": {
+							"component_groups": [
+								"exdrill:dragon_skull"
+							]
+						}
+					},
+					{
+						"filters": {
+							"test": "is_family",
+							"subject": "other",
+							"value": "phase_two"
+						},
+						"add": {
+							"component_groups": [
+								"exdrill:phase_two"
+							]
+						}
+					}
+				]
+			}
+		}
+	}
+}

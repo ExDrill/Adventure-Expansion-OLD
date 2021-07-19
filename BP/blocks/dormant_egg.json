@@ -1,0 +1,46 @@
+//bridge-file-version: #1
+{
+	"format_version": "1.16.100",
+	"minecraft:block": {
+		"description": {
+			"identifier": "exdrill:dormant_egg"
+		},
+		"components": {
+			"minecraft:destroy_time": 0.1,
+			"minecraft:block_light_absorption": 0,
+			"minecraft:geometry": "geometry.egg",
+			"minecraft:material_instances": {
+				"*": {
+					"texture": "egg",
+					"render_method": "alpha_test"
+				}
+			},
+			"minecraft:loot": "loot_tables/blocks/dormant_egg.json",
+			"minecraft:pick_collision": {
+				"origin": [
+					-4,
+					0,
+					-4
+				],
+				"size": [
+					8,
+					12,
+					8
+				]
+			},
+			"minecraft:entity_collision": {
+				"origin": [
+					-4,
+					0,
+					-4
+				],
+				"size": [
+					8,
+					12,
+					8
+				]
+			}
+		},
+		"events": {}
+	}
+}

@@ -1,0 +1,43 @@
+//bridge-file-version: #2
+{
+	"format_version": "1.16.100",
+	"minecraft:item": {
+		"description": {
+			"identifier": "exdrill:cutlass",
+			"category": "equipment"
+		},
+		"components": {
+			"minecraft:max_stack_size": 1,
+			"minecraft:durability": {
+				"damage_chance": {
+					"min": 60,
+					"max": 100
+				},
+				"max_durability": 570
+			},
+			"minecraft:weapon": {
+				"on_hurt_entity": {
+					"event": "damage",
+					"target": "self"
+				}
+			},
+			"minecraft:icon": {
+				"texture": "cutlass"
+			},
+			"minecraft:hand_equipped": true,
+			"minecraft:display_name": {
+				"value": "Cutlass"
+			},
+			"minecraft:damage": 6
+		},
+		"events": {
+			"damage": {
+				"damage": {
+					"type": "durability",
+					"amount": 1,
+					"target": "self"
+				}
+			}
+		}
+	}
+}

@@ -1,0 +1,38 @@
+//bridge-file-version: #0
+{
+	"format_version": "1.10.0",
+	"minecraft:client_entity": {
+		"description": {
+			"identifier": "exdrill:inferno",
+			"materials": {
+				"default": "entity_alphatest"
+			},
+			"textures": {
+				"default": "textures/entity/inferno"
+			},
+			"geometry": {
+				"default": "geometry.inferno"
+			},
+			"animations": {
+				"general": "animation.inferno.idle",
+				"look_at_target": "animation.common.look_at_target",
+				"attack": "animation.inferno.attack"
+			},
+			"scripts": {
+				"animate": [
+					"general",
+					"look_at_target",
+					{"attack": "query.has_target"}
+				]
+			},
+			"render_controllers": [
+				"controller.render.inferno"
+			],
+			"spawn_egg": {
+				"texture_index": 0,
+				"base_color": "#FF6400",
+				"overlay_color": "#FF0000"
+			}
+		}
+	}
+}

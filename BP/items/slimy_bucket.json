@@ -1,0 +1,22 @@
+//bridge-file-version: #3
+{
+	"format_version": "1.16.100",
+	"minecraft:item": {
+		"description": {
+			"identifier": "exdrill:slimy_bucket"
+		},
+		"components": {
+			"minecraft:max_stack_size": 1,
+			"minecraft:icon": {
+				"texture": "slimy_bucket"
+			},
+			"minecraft:display_name": {
+				"value": "Slimy Bucket"
+			},
+			"minecraft:entity_placer": {
+				"entity": "exdrill:slimy"
+			}
+		},
+		"events": {}
+	}
+}

@@ -1,0 +1,219 @@
+//bridge-file-version: #16
+{
+	"format_version": "1.16.100",
+	"minecraft:block": {
+		"description": {
+			"identifier": "exdrill:magic_berry_bush",
+			"properties": {
+				"exdrill:crop_growth": [
+					0,
+					1,
+					2,
+					3
+				]
+			}
+		},
+		"components": {
+			"minecraft:destroy_time": 1,
+			"minecraft:block_light_absorption": 0,
+			"minecraft:map_color": "#53F1FF",
+			"minecraft:entity_collision": false,
+			"minecraft:breakonpush": true,
+			"minecraft:placement_filter": {
+				"conditions": [
+					{
+						"block_filter": [
+							"minecraft:grass"
+						],
+						"allowed_faces": [
+							"up"
+						]
+					}
+				]
+			},
+			"minecraft:geometry": "geometry.flower",
+			"minecraft:loot": "loot_tables/empty.json",
+			"minecraft:random_ticking": {
+				"on_tick": {
+					"event": "grow",
+					"target": "self",
+					"condition": "query.block_property('exdrill:crop_growth') < 3"
+				}
+			}
+		},
+		"permutations": [
+			{
+				"condition": "query.block_property('exdrill:crop_growth') == 0",
+				"components": {
+					"minecraft:material_instances": {
+						"*": {
+							"texture": "magic_berry_bush_stage1",
+							"render_method": "alpha_test"
+						}
+					},
+					"minecraft:on_interact": {
+						"event": "grow_from_0",
+						"target": "self",
+						"condition": "query.get_equipped_item_name==('bone_meal')"
+					},
+					"minecraft:pick_collision": {
+						"origin": [
+							-3,
+							0,
+							-3
+						],
+						"size": [
+							6,
+							6,
+							6
+						]
+					}
+				}
+			},
+			{
+				"condition": "query.block_property('exdrill:crop_growth') == 1",
+				"components": {
+					"minecraft:material_instances": {
+						"*": {
+							"texture": "magic_berry_bush_stage2",
+							"render_method": "alpha_test"
+						}
+					},
+					"minecraft:on_interact": {
+						"event": "grow_from_1",
+						"target": "self",
+						"condition": "query.get_equipped_item_name==('bone_meal')"
+					},
+					"minecraft:pick_collision": {
+						"origin": [
+							-7,
+							0,
+							-7
+						],
+						"size": [
+							14,
+							16,
+							14
+						]
+					}
+				}
+			},
+			{
+				"condition": "query.block_property('exdrill:crop_growth') == 2",
+				"components": {
+					"minecraft:material_instances": {
+						"*": {
+							"texture": "magic_berry_bush_stage3",
+							"render_method": "alpha_test"
+						}
+					},
+					"minecraft:on_interact": {
+						"event": "grow_from_2",
+						"target": "self",
+						"condition": "query.get_equipped_item_name==('bone_meal')"
+					},
+					"minecraft:pick_collision": {
+						"origin": [
+							-7,
+							0,
+							-7
+						],
+						"size": [
+							14,
+							16,
+							14
+						]
+					}
+				}
+			},
+			{
+				"condition": "query.block_property('exdrill:crop_growth') == 3",
+				"components": {
+					"minecraft:material_instances": {
+						"*": {
+							"texture": "magic_berry_bush_stage4",
+							"render_method": "alpha_test"
+						}
+					},
+					"minecraft:on_interact": {
+						"event": "harvest",
+						"target": "self"
+					},
+					"minecraft:pick_collision": {
+						"origin": [
+							-7,
+							0,
+							-7
+						],
+						"size": [
+							14,
+							16,
+							14
+						]
+					}
+				}
+			}
+		],
+		"events": {
+			"grow": {
+				"set_block_property": {
+					"exdrill:crop_growth": "query.block_property('exdrill:crop_growth') + 1"
+				}
+			},
+			"grow_from_0": {
+				"set_block_property": {
+					"exdrill:crop_growth": "query.block_property('exdrill:crop_growth') + 3"
+				},
+				"run_command": {
+					"command": [
+						"particle minecraft:crop_growth_emitter ~ ~ ~",
+						"particle minecraft:crop_growth_emitter ~ ~ ~"
+					],
+					"target": "self"
+				}
+			},
+			"grow_from_1": {
+				"set_block_property": {
+					"exdrill:crop_growth": "query.block_property('exdrill:crop_growth') + 2"
+				},
+				"run_command": {
+					"command": [
+						"particle minecraft:crop_growth_emitter ~ ~ ~",
+						"particle minecraft:crop_growth_emitter ~ ~ ~",
+						"particle minecraft:crop_growth_emitter ~ ~ ~",
+						"particle minecraft:crop_growth_emitter ~ ~ ~"
+					],
+					"target": "self"
+				}
+			},
+			"grow_from_2": {
+				"set_block_property": {
+					"exdrill:crop_growth": "query.block_property('exdrill:crop_growth') + 1"
+				},
+				"run_command": {
+					"command": [
+						"particle minecraft:crop_growth_emitter ~ ~ ~",
+						"particle minecraft:crop_growth_emitter ~ ~ ~",
+						"particle minecraft:crop_growth_emitter ~ ~ ~",
+						"particle minecraft:crop_growth_emitter ~ ~ ~"
+					],
+					"target": "self"
+				}
+			},
+			"harvest": {
+				"spawn_loot": {
+					"table": "loot_tables/blocks/berry_harvest.json"
+				},
+				"set_block_property": {
+					"exdrill:crop_growth": "query.block_property('exdrill:crop_growth') - 3"
+				},
+				"run_command": {
+					"command": [
+						"playsound block.sweet_berry_bush.pick @a ~ ~ ~"
+					],
+					"target": "self"
+				}
+			}
+		}
+	}
+}

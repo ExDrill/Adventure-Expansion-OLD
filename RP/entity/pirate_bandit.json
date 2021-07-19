@@ -1,0 +1,42 @@
+//bridge-file-version: #13
+{
+	"format_version": "1.10.0",
+	"minecraft:client_entity": {
+		"description": {
+			"identifier": "exdrill:pirate_bandit",
+			"materials": {
+				"default": "entity_alphatest"
+			},
+			"textures": {
+				"red": "textures/entity/pirate_bandit/red",
+				"blue": "textures/entity/pirate_bandit/blue",
+				"green": "textures/entity/pirate_bandit/green"
+			},
+			"geometry": {
+				"default": "geometry.human"
+			},
+			"animations": {
+				"bob": "animation.human.bob",
+				"look_at_target": "animation.common.look_at_target",
+				"move_legs": "animation.human.move.legs",
+				"move_arms": "animation.human.move.arms",
+				"has_target": "animation.human.has_target",
+				"setup": "controller.animation.human"
+			},
+			"scripts": {
+				"animate": [
+					"setup"
+				]
+			},
+			"render_controllers": [
+				"controller.render.pirate_bandit"
+			],
+			"enable_attachables": true,
+			"spawn_egg": {
+				"texture_index": 0,
+				"base_color": "#E6C372",
+				"overlay_color": "#B58C1C"
+			}
+		}
+	}
+}

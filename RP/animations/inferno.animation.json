@@ -1,0 +1,50 @@
+{
+	"format_version": "1.8.0",
+	"animations": {
+		"animation.inferno.idle": {
+			"loop": true,
+			"animation_length": 1.52,
+			"bones": {
+				"shield0": {
+					"rotation": [0, 0, -45],
+					"position": [2, 0, 0]
+				},
+				"shield1": {
+					"rotation": [-45, 0, 0],
+					"position": [0, 0, -2]
+				},
+				"shield2": {
+					"rotation": [0, 0, 45],
+					"position": [-2, 0, 0]
+				},
+				"shield3": {
+					"rotation": [45, 0, 0],
+					"position": [0, 0, 2]
+				},
+				"shields": {
+					"rotation": {
+						"0.0": [0, 0, 0],
+						"1.52": [0, 360, 0]
+					}
+				}
+			}
+		},
+		"animation.inferno.attack": {
+			"loop": "hold_on_last_frame",
+			"bones": {
+				"shield0": {
+					"position": [10, 0, 0]
+				},
+				"shield1": {
+					"position": [0, 0, -10]
+				},
+				"shield2": {
+					"position": [-10, 0, 0]
+				},
+				"shield3": {
+					"position": [0, 0, 10]
+				}
+			}
+		}
+	}
+}

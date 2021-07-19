@@ -1,0 +1,29 @@
+//bridge-file-version: #0
+{
+	"format_version": "1.10.0",
+	"minecraft:client_entity": {
+		"description": {
+			"identifier": "exdrill:tornado",
+			"materials": {
+				"default": "entity_alphatest"
+			},
+			"textures": {
+				"default": "textures/entity/tornado"
+			},
+			"geometry": {
+				"default": "geometry.tornado"
+			},
+			"animations": {
+				"general": "animation.tornado.general"
+			},
+			"scripts": {
+				"animate": [
+					"general"
+				]
+			},
+			"render_controllers": [
+				"controller.render.default"
+			]
+		}
+	}
+}

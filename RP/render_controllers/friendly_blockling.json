@@ -1,0 +1,38 @@
+//bridge-file-version: #0
+{
+	"format_version": "1.8.0",
+	"render_controllers": {
+		"controller.render.friendly_blockling": {
+			"arrays": {
+				"textures": {
+					"Array.skins": [
+						"Texture.yellow",
+						"Texture.green",
+						"Texture.blue",
+						"Texture.red"
+					]
+				}
+			},
+			"geometry": "Geometry.default",
+			"part_visibility": [
+				{
+					"leg*": "!query.is_sleeping"
+				},
+				{
+					"head": "!query.is_sleeping"
+				},
+				{
+					"head_sleeping": "query.is_sleeping"
+				}
+			],
+			"materials": [
+				{
+					"*": "Material.default"
+				}
+			],
+			"textures": [
+				"Array.skins[query.variant]"
+			]
+		}
+	}
+}
