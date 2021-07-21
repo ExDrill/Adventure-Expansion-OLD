@@ -1,9 +1,8 @@
-//bridge-file-version: #1
 {
 	"format_version": "1.8.0",
 	"minecraft:attachable": {
 		"description": {
-			"identifier": "exdrill:witch_helmet",
+			"identifier": "exdrill:goblin_summoner_hat",
 			"materials": {
 				"default": "armor",
 				"enchanted": "armor_enchanted"
@@ -20,10 +19,7 @@
 			},
 			"render_controllers": [
 				"controller.render.armor"
-			],
-			"item": {
-				"exdrill:goblin_summoner_hat": "query.owner_identifier == 'minecraft:armor_stand'"
-			}
+			]
 		}
 	}
 }

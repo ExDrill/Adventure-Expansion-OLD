@@ -78,8 +78,7 @@
 			},
 			"minecraft:behavior.melee_attack": {
 				"priority": 3,
-				"track_target": true,
-				"max_dist": 48
+				"track_target": true
 			},
 			"minecraft:behavior.nearest_attackable_target": {
 				"priority": 2,

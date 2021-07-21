@@ -1,6 +1,5 @@
-//bridge-file-version: #37
 {
-	"format_version": "1.16.0",
+	"format_version": "1.17.0",
 	"minecraft:entity": {
 		"description": {
 			"identifier": "exdrill:goblin_beast",
@@ -39,8 +38,7 @@
 					"event": "minecraft:throw_into_ground",
 					"target": "self"
 				},
-				"track_target": true,
-				"target_dist": 100
+				"track_target": true
 			},
 			"minecraft:collision_box": {
 				"width": 0.8,

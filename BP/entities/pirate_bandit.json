@@ -50,7 +50,6 @@
 				"minecraft:behavior.melee_attack": {
 					"priority": 3,
 					"attack_once": false,
-					"target_dist": 30,
 					"track_target": true
 				},
 				"minecraft:attack": {

@@ -1,20 +1,16 @@
-//bridge-file-version: #4
 {
 	"format_version": "1.10.0",
 	"minecraft:client_entity": {
 		"description": {
 			"identifier": "exdrill:skeleton_mage",
 			"materials": {
-				"default": "skeleton",
-				"glow": "skeleton"
+				"default": "entity_emissive_alpha"
 			},
 			"textures": {
-				"default": "textures/entity/skeleton_mage/skeleton_mage",
-				"glow": "textures/entity/skeleton_mage/glow_parts"
+				"default": "textures/entity/skeleton_mage"
 			},
 			"geometry": {
-				"default": "geometry.skeleton_mage",
-				"glow": "geometry.skeleton_mage"
+				"default": "geometry.skeleton_mage"
 			},
 			"animations": {
 				"cast": "animation.skeleton_mage.cast",
@@ -28,8 +24,7 @@
 				]
 			},
 			"render_controllers": [
-				"controller.render.default",
-				"controller.render.glow"
+				"controller.render.default"
 			],
 			"spawn_egg": {
 				"texture_index": 0,
