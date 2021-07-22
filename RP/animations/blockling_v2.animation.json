@@ -1,7 +1,7 @@
 {
 	"format_version": "1.8.0",
 	"animations": {
-		"animation.blockling_v2.walk": {
+		"animation.blockling.walk": {
 			"loop": true,
 			"animation_length": 0.52,
 			"bones": {
@@ -22,6 +22,20 @@
 						"0.36": [-22.5, 0, 0],
 						"0.48": [0, 0, 0]
 					}
+				}
+			}
+		},
+		"animation.blockling.sit": {
+			"bones": {
+				"head": {
+					"position": [0,-1,0]
+				}
+			}
+		},
+		"animation.blockling.stand": {
+			"bones": {
+				"head": {
+					"position": [0,0,0]
 				}
 			}
 		}
