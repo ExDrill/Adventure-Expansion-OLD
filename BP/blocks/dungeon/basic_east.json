@@ -1,0 +1,35 @@
+//CREATED BY WARHEAD FOR ADVENTURE EXPANSION
+{
+	"format_version": "1.16.100",
+	"minecraft:block": {
+		"description": {
+			"identifier": "warhead:basic_east"
+		},
+		"components": {
+			"minecraft:on_interact": {
+				"event": "east_gen",
+				"target": "self"
+			},
+			"minecraft:ticking": {
+				"looping": false,
+				"range": [
+					999999,
+					999999
+				],
+				"on_tick": {
+					"event": "east_gen",
+					"target": "self"
+				}
+			}
+		},
+		"events": {
+			"east_gen": {
+				"randomize": [
+					{
+						//FILL 
+					}
+				]
+			}
+		}
+	}
+}
