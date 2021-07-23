@@ -8,16 +8,15 @@
 		"sound": "glass"
 	},
 	"exdrill:darkbrick": {
-		"textures": "darkbrick",
+		"textures": "shadow_stone_bricks",
 		"sound": "nether_brick"
 	},
 	"exdrill:locked_darkbrick": {
-		"sound": "stone",
-		"textures": "darkbrick_locked"
+		"sound": "nether_brick",
+		"textures": "locked_shadow_stone_bricks"
 	},
 	"exdrill:battle_golem_summoner": {
-		"sound": "stone",
-		"textures": "darkbrick"
+		"sound": "stone"
 	},
 	"exdrill:goblin_banner_block": {
 		"sound": "wood"
@@ -45,10 +44,10 @@
 	},
 	"exdrill:cracked_darkbrick": {
 		"sound": "nether_brick",
-		"textures": "cracked_darkbrick"
+		"textures": "cracked_shadow_stone_bricks"
 	},
 	"exdrill:dark_tiling": {
-		"textures": "dark_tiling",
+		"textures": "cobbled_shadow_stone",
 		"sound": "netherrack"
 	},
 	"exdrill:deepslate_platinum_ore": {
@@ -61,5 +60,13 @@
 	},
 	"exdrill:magic_berry_bush": {
 		"sound": "grass"
+	},
+	"exdrill:shadow_stone": {
+		"textures": "shadow_stone",
+		"sound": "netherrack"
+	},
+	"exdrill:chiseled_shadow_stone_bricks": {
+		"sound": "nether_brick",
+		"textures": "chiseled_shadow_stone_bricks"
 	}
 }

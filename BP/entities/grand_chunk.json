@@ -1,0 +1,47 @@
+{
+	"format_version": "1.17.0",
+	"minecraft:entity": {
+		"description": {
+			"identifier": "exdrill:grand_chunk",
+			"is_summonable": true,
+			"is_spawnable": true
+		},
+		"component_groups": {},
+		"components": {
+			"minecraft:attack": {
+				"damage": 12
+			},
+			"minecraft:health": {
+				"value": 250,
+				"max": 250
+			},
+			"minecraft:movement": {
+				"value": 0.15
+			},
+			"minecraft:type_family": {
+				"family": [
+					"mob",
+					"monster",
+					"grand_chunk"
+				]
+			},
+			"minecraft:physics": {},
+			"minecraft:pushable": {},
+			"minecraft:movement.generic": {},
+			"minecraft:navigation.walk": {},
+			"minecraft:behavior.random_look_around": {
+				"priority": 5,
+				"look_time": [0,3],
+				"look_distance": 4
+			},
+			"minecraft:nameable": {},
+			"minecraft:behavior.random_stroll": {
+				"priority": 2,
+				"interval": 4,
+				"xz_dist": 30,
+				"y_dist": 4
+			}
+		},
+		"events": {}
+	}
+}

@@ -37,7 +37,7 @@
 			"y": {
 				"distribution": "uniform",
 				"extent": [
-					0,
+					-60,
 					40
 				]
 			},

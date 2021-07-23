@@ -1,0 +1,37 @@
+{
+	"format_version": "1.10.0",
+	"minecraft:client_entity": {
+		"description": {
+			"identifier": "exdrill:grand_chunk",
+			"materials": {
+				"default": "entity_alphatest"
+			},
+			"textures": {
+				"default": "textures/entity/grand_chunk"
+			},
+			"geometry": {
+				"default": "geometry.grand_chunk"
+			},
+			"animations": {
+				"move_legs": "animation.grand_chunk.move_legs",
+				"move_arms": "animation.grand_chunk.move_arms",
+				"slam": "animation.grand_chunk.slam",
+				"look_at_target": "animation.common.look_at_target",
+				"controller": "controller.animation.grand_chunk"
+			},
+			"scripts": {
+				"animate": [
+					"controller",
+					"look_at_target"	
+				]
+			},
+			"render_controllers": [
+				"controller.render.default"
+			],
+			"spawn_egg": {
+				"base_color": "#8D9884",
+				"overlay_color": "#A8C855"
+			}
+		}
+	}
+}

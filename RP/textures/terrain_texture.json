@@ -14,14 +14,14 @@
 				"textures/blocks/glow_crystal"
 			]
 		},
-		"darkbrick": {
+		"shadow_stone_bricks": {
 			"textures": [
-				"textures/blocks/darkbrick"
+				"textures/blocks/shadow_stone/shadow_stone_bricks"
 			]
 		},
-		"darkbrick_locked": {
+		"locked_shadow_stone_bricks": {
 			"textures": [
-				"textures/blocks/darkbrick_locked"
+				"textures/blocks/locked_shadow_stone_bricks"
 			]
 		},
 		"goblin_banner_block": {
@@ -107,11 +107,6 @@
 				"textures/blocks/platinum_block"
 			]
 		},
-		"platinum_locked_darkbrick": {
-			"textures": [
-				"textures/blocks/platinum_locked_darkbrick"
-			]
-		},
 		"lightbrick": {
 			"textures": [
 				"textures/blocks/lightbrick"
@@ -127,14 +122,14 @@
 				"textures/blocks/golem_trophy"
 			]
 		},
-		"cracked_darkbrick": {
+		"cracked_shadow_stone_bricks": {
 			"textures": [
-				"textures/blocks/cracked_darkbrick"
+				"textures/blocks/shadow_stone/cracked_shadow_stone_bricks"
 			]
 		},
-		"dark_tiling": {
+		"cobbled_shadow_stone": {
 			"textures": [
-				"textures/blocks/dark_tiling"
+				"textures/blocks/shadow_stone/cobbled_shadow_stone"
 			]
 		},
 		"deepslate_platinum_ore": {
@@ -146,6 +141,9 @@
 			"textures": [
 				"textures/blocks/raw_platinum_block"
 			]
+		},
+		"shadow_stone": {
+			"textures": "textures/blocks/shadow_stone/shadow_stone"
 		}
 	}
 }

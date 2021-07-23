@@ -1,0 +1,10 @@
+[
+    {
+        "flipbook_texture": "textures/blocks/shadow_stone/chiseled_shadow_stone_bricks",
+        "atlas_tile": "chiseled_shadow_stone_bricks",
+        "blend_frames": true,
+        "ticks_per_frame": 10,
+        "frames": [0,1]
+
+    }
+]

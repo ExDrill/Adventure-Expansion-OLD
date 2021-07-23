@@ -10,7 +10,7 @@
 		"component_groups": {
 			"scale": {
 				"minecraft:scale": {
-					"value": 2.5
+					"value": 2
 				}
 			}
 		},
@@ -33,7 +33,7 @@
 				"priority": 4,
 				"attack_once": false,
 				"track_target": false,
-				"reach_multiplier": 0.9
+				"reach_multiplier": 1
 			},
 			"minecraft:behavior.nearest_attackable_target": {
 				"priority": 5,
@@ -66,22 +66,8 @@
 				"name": "Battle Golem"
 			},
 			"minecraft:collision_box": {
-				"width": 0.5,
+				"width": 1,
 				"height": 2
-			},
-			"minecraft:custom_hit_test": {
-				"hitboxes": [
-					{
-						"height": 0.75,
-						"width": 0.3,
-						"pivot": [0.35,0.75,0]
-					},
-					{
-						"height": 0.75,
-						"width": 0.3,
-						"pivot": [-0.35,0.75,0]
-					}
-				]
 			},
 			"minecraft:loot": {
 				"table": "loot_tables/entities/battle_golem.json"
