@@ -2,29 +2,17 @@
 	"resource_pack_name": "bridgeRP",
 	"texture_name": "atlas.items",
 	"texture_data": {
-		"enderite": {
-			"textures": [
-				"textures/items/enderite"
-			]
-		},
 		"war": {
 			"textures": [
 				"textures/items/war"
 			]
 		},
-		"enderite_hammer": {
-			"textures": [
-				"textures/items/enderite_hammer"
-			]
+		"inferno_fragment": {
+			"textures": "textures/items/inferno_fragment"
 		},
 		"goblin_dagger": {
 			"textures": [
 				"textures/items/goblin_dagger"
-			]
-		},
-		"enderite_collecter": {
-			"textures": [
-				"textures/items/enderite_collecter"
 			]
 		},
 		"goblin_banner": {
