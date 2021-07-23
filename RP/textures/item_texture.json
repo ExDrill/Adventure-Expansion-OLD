@@ -82,16 +82,6 @@
 				"textures/items/goblin_club"
 			]
 		},
-		"inferno_shield_item": {
-			"textures": [
-				"textures/items/inferno_shield"
-			]
-		},
-		"inferno_fragment": {
-			"textures": [
-				"textures/items/inferno_fragment"
-			]
-		},
 		"green_energy_staff": {
 			"textures": [
 				"textures/items/green_energy_staff"
@@ -147,11 +137,6 @@
 				"textures/items/blue_dragon_scale"
 			]
 		},
-		"cloud_walker_boots": {
-			"textures": [
-				"textures/items/cloud_walker_boots"
-			]
-		},
 		"dragon_bone": {
 			"textures": [
 				"textures/items/dragon_bone"
@@ -197,11 +182,6 @@
 				"textures/items/harpoon_gun"
 			]
 		},
-		"magic_blade": {
-			"textures": [
-				"textures/items/magic_blade"
-			]
-		},
 		"dragon_bane": {
 			"textures": [
 				"textures/items/dragon_bane"
@@ -217,34 +197,14 @@
 				"textures/items/slimy_bucket"
 			]
 		},
-		"knight_chestplate": {
-			"textures": [
-				"textures/items/knight_chestplate"
-			]
-		},
-		"mage_robe": {
-			"textures": [
-				"textures/items/mage_robe"
-			]
-		},
 		"wind_staff": {
 			"textures": [
 				"textures/items/wind_staff"
 			]
 		},
-		"platinum_pickaxe": {
-			"textures": [
-				"textures/items/platinum_pickaxe"
-			]
-		},
 		"blockling_staff": {
 			"textures": [
 				"textures/items/blockling_staff"
-			]
-		},
-		"tough_glove": {
-			"textures": [
-				"textures/items/tough_glove"
 			]
 		},
 		"jumper_bottle": {

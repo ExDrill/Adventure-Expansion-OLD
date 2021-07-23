@@ -4,16 +4,6 @@
 	"padding": 8,
 	"num_mip_levels": 4,
 	"texture_data": {
-		"enderite_ore": {
-			"textures": [
-				"textures/blocks/enderite_ore"
-			]
-		},
-		"enderite_block": {
-			"textures": [
-				"textures/blocks/enderite_block"
-			]
-		},
 		"egg": {
 			"textures": [
 				"textures/blocks/egg"
@@ -74,11 +64,6 @@
 				"textures/blocks/large_experience_storage_filled"
 			]
 		},
-		"metal_pole": {
-			"textures": [
-				"textures/blocks/metal_pole"
-			]
-		},
 		"mana_generator_empty": {
 			"textures": [
 				"textures/blocks/mana_generator"
@@ -127,11 +112,6 @@
 		"lightbrick": {
 			"textures": [
 				"textures/blocks/lightbrick"
-			]
-		},
-		"dungeon_torch": {
-			"textures": [
-				"textures/blocks/dungeon_torch"
 			]
 		},
 		"goblin_raid_trophy": {
