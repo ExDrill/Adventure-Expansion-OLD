@@ -1,17 +1,12 @@
-//bridge-file-version: #1
 {
 	"format_version": "1.16.100",
 	"minecraft:item": {
 		"description": {
-			"identifier": "exdrill:friendly_blockling_item",
-			"category": "nature"
+			"identifier": "exdrill:friendly_blockling_item"
 		},
 		"components": {
 			"minecraft:max_stack_size": 1,
 			"minecraft:render_offsets": "blaze_rod",
-			"minecraft:creative_category": {
-				"parent": "itemGroup.name.mobEgg"
-			},
 			"minecraft:entity_placer": {
 				"entity": "exdrill:friendly_blockling"
 			},

@@ -1,10 +1,8 @@
-//bridge-file-version: #6
 {
 	"format_version": "1.16.100",
 	"minecraft:item": {
 		"description": {
-			"identifier": "exdrill:dragon_bane",
-			"category": "equipment"
+			"identifier": "exdrill:dragon_bane"
 		},
 		"components": {
 			"minecraft:icon": {
@@ -22,9 +20,6 @@
 			},
 			"minecraft:damage": 10,
 			"minecraft:can_destroy_in_creative": false,
-			"minecraft:creative_category": {
-				"parent": "itemGroup.name.sword"
-			},
 			"minecraft:enchantable": {
 				"slot": "sword",
 				"value": 10

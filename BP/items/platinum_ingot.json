@@ -2,13 +2,9 @@
 	"format_version": "1.16.100",
 	"minecraft:item": {
 		"description": {
-			"identifier": "exdrill:platinum_ingot",
-			"category": "items"
+			"identifier": "exdrill:platinum_ingot"
 		},
 		"components": {
-			"minecraft:creative_category": {
-				"parent": "itemGroup.name.iron"
-			},
 			"minecraft:icon": {
 				"texture": "platinum_ingot"
 			},

@@ -1,10 +1,8 @@
-//bridge-file-version: #8
 {
 	"format_version": "1.16.100",
 	"minecraft:item": {
 		"description": {
-			"identifier": "exdrill:platinum_chestplate",
-			"category": "equipment"
+			"identifier": "exdrill:platinum_chestplate"
 		},
 		"components": {
 			"minecraft:max_stack_size": 1,
@@ -28,9 +26,6 @@
 			},
 			"minecraft:wearable": {
 				"slot": "slot.armor.chest"
-			},
-			"minecraft:creative_category": {
-				"parent": "itemGroup.name.chestplate"
 			},
 			"minecraft:display_name": {
 				"value": "Platinum Chestplate"

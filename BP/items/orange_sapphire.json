@@ -1,10 +1,8 @@
-//bridge-file-version: #0
 {
 	"format_version": "1.16.100",
 	"minecraft:item": {
 		"description": {
-			"identifier": "exdrill:orange_sapphire",
-			"category": "items"
+			"identifier": "exdrill:orange_sapphire"
 		},
 		"components": {
 			"minecraft:max_stack_size": 64,
@@ -14,11 +12,7 @@
 			"minecraft:display_name": {
 				"value": "Orange Sapphire"
 			},
-			"minecraft:creative_category": {
-				"parent": "itemGroup.name.emerald"
-			},
-			"minecraft:hover_text_color": "gold",
-			"minecraft:render_offsets": "emerald"
+			"minecraft:hover_text_color": "gold"
 		},
 		"events": {}
 	}

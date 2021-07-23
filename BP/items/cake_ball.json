@@ -1,10 +1,8 @@
-//bridge-file-version: #1
 {
 	"format_version": "1.16.100",
 	"minecraft:item": {
 		"description": {
-			"identifier": "exdrill:cake_ball",
-			"category": "equipment"
+			"identifier": "exdrill:cake_ball"
 		},
 		"components": {
 			"minecraft:use_duration": 0.1,
@@ -20,9 +18,6 @@
 			},
 			"minecraft:icon": {
 				"texture": "cake_ball"
-			},
-			"minecraft:creative_category": {
-				"parent": "itemGroup.name.miscFood"
 			}
 		},
 		"events": {}

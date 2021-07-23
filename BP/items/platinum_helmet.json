@@ -1,10 +1,8 @@
-//bridge-file-version: #2
 {
 	"format_version": "1.16.100",
 	"minecraft:item": {
 		"description": {
-			"identifier": "exdrill:platinum_helmet",
-			"category": "equipment"
+			"identifier": "exdrill:platinum_helmet"
 		},
 		"components": {
 			"minecraft:max_stack_size": 1,
@@ -28,9 +26,6 @@
 			},
 			"minecraft:wearable": {
 				"slot": "slot.armor.head"
-			},
-			"minecraft:creative_category": {
-				"parent": "itemGroup.name.helmet"
 			},
 			"minecraft:display_name": {
 				"value": "Platinum Helmet"
