@@ -30,7 +30,6 @@
 			]
 		},
 		"distribution": {
-			"coordinate_eval_order": "zyx",
 			"iterations": 1,
 			"x": {
 				"extent": [
@@ -39,7 +38,7 @@
 				],
 				"distribution": "gaussian"
 			},
-			"y": "query.heightmap(variable.worldx,variable.worldz)-2",
+			"y": "query.heightmap(variable.worldx, variable.worldz)-2",
 			"z": {
 				"extent": [
 					0,

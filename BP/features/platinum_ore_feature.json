@@ -5,11 +5,19 @@
 			"identifier": "exdrill:platinum_ore_feature"
 		},
 		"count": 8,
-		"places_block": "exdrill:platinum_ore",
-		"may_replace": [
-			{
-				"name": "minecraft:stone"
-			}
-		]
+        "replace_rules": [
+            {
+                "places_block": "exdrill:platinum_ore",
+                "may_replace": [
+                    "minecraft:stone"
+                ]
+            },
+            {
+                "places_block": "exdrill:deepslate_platinum_ore",
+                "may_replace": [
+                    "minecraft:deepslate"
+                ]
+            }
+        ]
 	}
 }

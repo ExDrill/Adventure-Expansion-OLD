@@ -24,6 +24,9 @@
 				"textures/blocks/darkbrick_locked"
 			]
 		},
+		"goblin_banner_block": {
+			"textures": "textures/blocks/goblin_banner_block"
+		},
 		"dungeon_pot": {
 			"textures": [
 				"textures/blocks/dungeon_pot"

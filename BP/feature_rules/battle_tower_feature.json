@@ -25,26 +25,19 @@
 			"placement_pass": "surface_pass"
 		},
 		"distribution": {
-			"coordinate_eval_order": "zyx",
 			"iterations": 1,
-			"x": {
-				"extent": [
-					0,
-					32
-				],
-				"distribution": "gaussian"
+			"x":  {
+				"distribution": "gaussian",
+				"extent": [ 0, 32 ]
 			},
-			"y": "(query.heightmap(variable.worldx, variable.worldz))-1",
+			"y": "query.heightmap(variable.worldx, variable.worldz)-1",
 			"z": {
-				"extent": [
-					0,
-					32
-				],
-				"distribution": "gaussian"
+				"distribution": "gaussian",
+				"extent": [ 0, 32 ]
 			},
 			"scatter_chance": {
 				"numerator": 1,
-				"denominator": 100
+				"denominator": 200
 			}
 		}
 	}

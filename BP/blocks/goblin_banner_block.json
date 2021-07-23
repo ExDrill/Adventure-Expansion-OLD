@@ -1,92 +1,76 @@
-//bridge-file-version: #0
 {
+	"format_version": "1.16.100",
 	"minecraft:block": {
 		"description": {
+			"identifier": "exdrill:goblin_banner_block",
 			"properties": {
-				"bridge:block_rotation": [
-					2,
-					3,
-					4,
-					5
-				]
-			},
-			"identifier": "exdrill:goblin_banner_block"
-		},
-		"permutations": [
-			{
-				"condition": "query.block_property('bridge:block_rotation') == 2",
-				"components": {
-					"minecraft:rotation": [
-						0,
-						180,
-						0
-					]
-				}
-			},
-			{
-				"condition": "query.block_property('bridge:block_rotation') == 3",
-				"components": {
-					"minecraft:rotation": [
-						0,
-						0,
-						0
-					]
-				}
-			},
-			{
-				"condition": "query.block_property('bridge:block_rotation') == 4",
-				"components": {
-					"minecraft:rotation": [
-						0,
-						270,
-						0
-					]
-				}
-			},
-			{
-				"condition": "query.block_property('bridge:block_rotation') == 5",
-				"components": {
-					"minecraft:rotation": [
-						0,
-						90,
-						0
-					]
-				}
+				"exdrill:direction": [2,3,4,5,]
 			}
-		],
+		},
 		"components": {
+			"minecraft:destroy_time": 0,
+			"minecraft:breakonpush": true,
 			"minecraft:on_player_placing": {
-				"event": "bridge:update_rotation"
+				"event": "adjust_direction",
+				"target": "self"
 			},
-			"minecraft:destroy_time": 1,
-			"minecraft:geometry": "geometry.goblin_banner",
+			"minecraft:geometry": "geometry.goblin_banner_block_wall",
 			"minecraft:material_instances": {
 				"*": {
-					"texture": "goblin_banner"
+					"texture": "goblin_banner_block",
+					"render_method": "alpha_test",
+					"ambient_occlusion": false
 				}
 			},
 			"minecraft:block_light_absorption": 0,
 			"minecraft:pick_collision": {
-				"origin": [
-					-3,
-					0,
-					-3
-				],
-				"size": [
-					6,
-					14,
-					6
-				]
+				"origin": [-3,4,6],
+				"size": [6,9,2]
 			},
-			"minecraft:entity_collision": false
+			"minecraft:breathability": "air",
+			"minecraft:entity_collision": false,
+			"minecraft:placement_filter": {
+				"conditions": [
+					{
+						"allowed_faces": [
+							"side"
+						]
+					}
+				]
+			}
 		},
+		"permutations": [
+			{
+				"condition": "query.block_property('exdrill:direction') == 2",
+				"components": {
+					"minecraft:rotation": [0,0,0]
+				}
+			},
+						{
+				"condition": "query.block_property('exdrill:direction') == 3",
+				"components": {
+					"minecraft:rotation": [0,180,0]
+				}
+			},
+						{
+				"condition": "query.block_property('exdrill:direction') == 4",
+				"components": {
+					"minecraft:rotation": [0,90,0]
+				}
+			},
+						{
+				"condition": "query.block_property('exdrill:direction') == 5",
+				"components": {
+					"minecraft:rotation": [0,270,0]
+				}
+			},
+		],
 		"events": {
-			"bridge:update_rotation": {
+			"adjust_direction": {
 				"set_block_property": {
-					"bridge:block_rotation": "query.cardinal_facing_2d"
+					"exdrill:direction": "query.block_face"
 				}
 			}
 		}
-	},
-	"format_version": "1.16.100"
+	}
 }

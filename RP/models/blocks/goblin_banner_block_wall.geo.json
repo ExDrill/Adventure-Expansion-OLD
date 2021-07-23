@@ -1,0 +1,46 @@
+{
+	"format_version": "1.12.0",
+	"minecraft:geometry": [
+		{
+			"description": {
+				"identifier": "geometry.goblin_banner_block_wall",
+				"texture_width": 32,
+				"texture_height": 32,
+				"visible_bounds_width": 2,
+				"visible_bounds_height": 2.5,
+				"visible_bounds_offset": [0, 0.75, 0]
+			},
+			"bones": [
+				{
+					"name": "main",
+					"pivot": [0, 0, 0],
+					"cubes": [
+						{
+							"origin": [-3, 4, 7],
+							"size": [6, 7, 0],
+							"uv": {
+								"north": {"uv": [17, 6], "uv_size": [6, 7]},
+								"east": {"uv": [0, 0], "uv_size": [0, 6]},
+								"west": {"uv": [0, 0], "uv_size": [0, 6]},
+								"up": {"uv": [6, 0], "uv_size": [-6, 0]},
+								"down": {"uv": [6, 0], "uv_size": [-6, 0]}
+							}
+						},
+						{
+							"origin": [-3, 11, 6],
+							"size": [6, 2, 2],
+							"uv": {
+								"north": {"uv": [11, 3], "uv_size": [6, 2]},
+								"east": {"uv": [7, 3], "uv_size": [2, 2]},
+								"south": {"uv": [11, 3], "uv_size": [6, 2]},
+								"west": {"uv": [7, 3], "uv_size": [2, 2]},
+								"up": {"uv": [17, 2], "uv_size": [-6, -2]},
+								"down": {"uv": [17, 2], "uv_size": [-6, -2]}
+							}
+						}
+					]
+				}
+			]
+		}
+	]
+}
