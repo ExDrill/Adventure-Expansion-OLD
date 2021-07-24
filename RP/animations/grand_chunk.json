@@ -2,7 +2,6 @@
 	"format_version": "1.8.0",
 	"animations": {
 		"animation.grand_chunk.slam": {
-			"loop": true,
 			"animation_length": 1.28,
 			"bones": {
 				"head": {
@@ -130,7 +129,17 @@
 					}
 				}
 			},
-			"particle_effects": {}
+			"sound_effects": {
+				"1.0": {
+					"effect": "kaboom"
+				}
+			},
+			"particle_effects": {
+				"1.0": {
+					"effect": "explosion",
+					"locator": "explosion"
+				}
+			}
 		},
 		"animation.grand_chunk.move_legs": {
 			"loop": true,

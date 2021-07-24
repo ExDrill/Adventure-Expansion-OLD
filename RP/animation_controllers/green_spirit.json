@@ -1,34 +1,30 @@
 {
     "format_version": "1.10.0",
     "animation_controllers": {
-        "controller.animation.grand_chunk": {
+        "controller.animation.green_spirit": {
             "initial_state": "default",
             "states": {
                 "default": {
                     "animations": [
-                        {
-                            "move_legs": "query.modified_move_speed * 4"
-                        },
-                        {
-                            "move_arms": "query.modified_move_speed * 4"
-                        }
+                        {"move_body": "query.modified_move_speed"},
+                        {"move_arms": "query.modified_move_speed"}
                     ],
                     "transitions": [
                         {
-                            "slam": "query.is_delayed_attacking"
+                            "attack": "variable.attack_time"
                         }
                     ]
                 },
-                "slam": {
+                "attack": {
                     "animations": [
-                        "slam"
+                        "attack",
+                        {"move_body": "query.modified_move_speed"}
                     ],
                     "transitions": [
                         {
-                            "default": "!query.is_delayed_attacking"
+                            "default": "!variable.attack_time"
                         }
                     ]
-                    
                 }
             }
         }

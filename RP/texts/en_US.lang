@@ -75,3 +75,5 @@ tile.exdrill:raw_platinum_block.name=Raw Platinum Block
 tile.exdrill:dark_tiling.name=Cobbled Shadow Stone
 tile.exdrill:shadow_stone.name=Shadow Stone
 tile.exdrill:chiseled_shadow_stone_bricks.name=Chiseled Shadow Stone Bricks
+entity.exdrill:grand_chunk.name=Grand Chunk
+item.spawn_egg.entity.exdrill:grand_chunk.name=Spawn Grand Chunk

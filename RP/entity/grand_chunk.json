@@ -25,6 +25,12 @@
 					"look_at_target"	
 				]
 			},
+			"particle_effects": {
+				"explosion": "minecraft:dragon_death_explosion_emitter"
+			},
+			"sound_effects": {
+				"kaboom": "random.explode"
+			},
 			"render_controllers": [
 				"controller.render.default"
 			],

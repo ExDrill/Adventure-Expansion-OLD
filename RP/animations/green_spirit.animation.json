@@ -1,32 +1,123 @@
 {
 	"format_version": "1.8.0",
 	"animations": {
-		"animation.green_spirit.general": {
+		"animation.green_spirit.bob": {
 			"loop": true,
-			"animation_length": 3.4,
+			"animation_length": 2.08,
 			"bones": {
-				"body": {
-					"rotation": [0, 0, 0]
-				},
 				"leftarm": {
 					"rotation": {
-						"0.0": [-45, 0, -2.5],
-						"1.64": [-42.5, 0, 0],
-						"3.4": [-45, 0, 0]
+						"0.0": {
+							"post": [0, 0, 0],
+							"lerp_mode": "catmullrom"
+						},
+						"1.0": {
+							"post": [0, 0, -5],
+							"lerp_mode": "catmullrom"
+						},
+						"2.0": {
+							"post": [0, 0, 0],
+							"lerp_mode": "catmullrom"
+						}
 					}
 				},
 				"rightarm": {
 					"rotation": {
-						"0.0": [-45, 0, 2.5],
-						"1.64": [-42.5, 0, 0],
-						"3.4": [-45, 0, 0]
+						"0.0": {
+							"post": [0, 0, 0],
+							"lerp_mode": "catmullrom"
+						},
+						"1.0": {
+							"post": [0, 0, 5],
+							"lerp_mode": "catmullrom"
+						},
+						"2.0": {
+							"post": [0, 0, 0],
+							"lerp_mode": "catmullrom"
+						}
+					}
+				},
+				"root": {
+					"position": {
+						"0.0": {
+							"post": [0, 0, 0],
+							"lerp_mode": "catmullrom"
+						},
+						"1.0": {
+							"post": [0, 1, 0],
+							"lerp_mode": "catmullrom"
+						},
+						"2.0": {
+							"post": [0, 0, 0],
+							"lerp_mode": "catmullrom"
+						}
+					}
+				}
+			}
+		},
+		"animation.green_spirit.move_body": {
+			"loop": "hold_on_last_frame",
+			"animation_length": 0.52,
+			"bones": {
+				"head": {
+					"rotation": {
+						"0.0": {
+							"post": [-22.5, 0, 0],
+							"lerp_mode": "catmullrom"
+						}
 					}
 				},
 				"tail": {
 					"rotation": {
-						"0.0": [0, 0, 0],
-						"1.64": [10, 0, 0],
-						"3.4": [0, 0, 0]
+						"0.0": {
+							"post": [22.5, 0, 0],
+							"lerp_mode": "catmullrom"
+						}
+					}
+				},
+				"root": {
+					"rotation": {
+						"0.0": {
+							"post": [20, 0, 0],
+							"lerp_mode": "catmullrom"
+						}
+					}
+				}
+			}
+		},
+		"animation.green_spirit.move_arms": {
+			"loop": "hold_on_last_frame",
+			"bones": {
+				"leftarm": {
+					"rotation": [22.5, 0, 0]
+				},
+				"rightarm": {
+					"rotation": [22.5, 0, 0]
+				}
+			}
+		},
+		"animation.green_spirit.attack": {
+			"loop": false,
+			"animation_length": 0.28,
+			"bones": {
+				"rightarm": {
+					"rotation": {
+						"0.0": {
+							"post": [0, 0, 0],
+							"lerp_mode": "catmullrom"
+						},
+						"0.12": {
+							"post": [-67.5, -22.5, 0],
+							"lerp_mode": "catmullrom"
+						},
+						"0.16": {
+							"post": [-37.97, -57.66, 0],
+							"lerp_mode": "catmullrom"
+						},
+						"0.28": {
+							"post": [0, 0, 0],
+							"lerp_mode": "catmullrom"
+						}
 					}
 				}
 			}

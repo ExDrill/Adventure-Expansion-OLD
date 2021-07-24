@@ -11,6 +11,10 @@
 			"minecraft:attack": {
 				"damage": 12
 			},
+			"minecraft:collision_box": {
+				"width": 1,
+				"height": 2.1
+			},
 			"minecraft:health": {
 				"value": 250,
 				"max": 250
@@ -25,6 +29,7 @@
 					"grand_chunk"
 				]
 			},
+			"minecraft:jump.static": {},
 			"minecraft:physics": {},
 			"minecraft:pushable": {},
 			"minecraft:movement.generic": {},
@@ -40,6 +45,44 @@
 				"interval": 4,
 				"xz_dist": 30,
 				"y_dist": 4
+			},
+			"minecraft:behavior.delayed_attack": {
+				"priority": 0,
+				"attack_duration": 1.5,
+				"hit_delay_pct": 0.8,
+				"reach_multiplier": 6,
+				"random_stop_interval": 0,
+				"track_target": true,
+				"speed_multiplier": 2
+			},
+			"minecraft:follow_range": {
+				"value": 64
+			},
+			"minecraft:behavior.nearest_attackable_target": {
+				"priority": 0,
+				"entity_types": {
+					"walk_speed_multiplier": 2,
+					"filters": {
+						"any_of": [
+							{
+								"test": "is_family",
+								"subject": "other",
+								"value": "player"
+							},
+														{
+								"test": "is_family",
+								"subject": "other",
+								"value": "irongolem"
+							},
+														{
+								"test": "is_family",
+								"subject": "other",
+								"value": "snowgolem"
+							}
+						]
+					}
+				},
+				"must_reach": false,
 			}
 		},
 		"events": {}
