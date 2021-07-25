@@ -8,56 +8,15 @@
 			"is_summonable": true,
 			"is_experimental": false
 		},
-		"component_groups": {
-			"minecraft:celebrate": {
-				"minecraft:behavior.celebrate": {
-					"priority": 5,
-					"celebration_sound": "celebrate",
-					"sound_interval": {
-						"range_min": 2,
-						"range_max": 7
-					},
-					"jump_interval": {
-						"range_min": 1,
-						"range_max": 3.5
-					},
-					"duration": 30,
-					"on_celebration_end_event": {
-						"event": "minecraft:stop_celebrating",
-						"target": "self"
-					}
-				}
-			},
-			"minecraft:raid_configuration": {
-				"minecraft:dweller": {
-					"dwelling_type": "village",
-					"dweller_role": "hostile",
-					"update_interval_base": 60,
-					"update_interval_variant": 40,
-					"can_find_poi": false,
-					"can_migrate": false,
-					"first_founding_reward": 0
-				},
-				"minecraft:behavior.move_to_village": {
-					"priority": 6,
-					"speed_multiplier": 0.7
-				},
-				"minecraft:ambient_sound_interval": {
-					"value": 2,
-					"range": 4,
-					"event_name": "ambient.in.raid"
-				}
-			}
-		},
+		"component_groups": {},
 		"components": {
 			"minecraft:experience_reward": {
 				"on_death": 10
 			},
 			"minecraft:type_family": {
 				"family": [
-					"evocation_illager",
+					"skeleton_mage",
 					"monster",
-					"illager",
 					"mob"
 				]
 			},
@@ -67,8 +26,8 @@
 			},
 			"minecraft:nameable": {},
 			"minecraft:health": {
-				"value": 50,
-				"max": 50
+				"value": 250,
+				"max": 250
 			},
 			"minecraft:hurt_on_condition": {
 				"damage_conditions": [
@@ -107,58 +66,36 @@
 				"priority": 0,
 				"summon_choices": [
 					{
-						"min_activation_range": 0,
-						"max_activation_range": 3,
-						"cooldown_time": 5,
-						"weight": 3,
-						"cast_duration": 2,
-						"particle_color": "#FF664D59",
+						"weight": 1,
+						"do_casting": true,
+						"max_activation_range": 30,
+						"min_activation_range": 1,
+						"cast_duration": 0.5,
+						"cooldown_time": 3,
 						"start_sound_event": "cast.spell",
 						"sequence": [
 							{
+								"target": "target",
+								"entity_lifespan": 0.5,
+								"size": 5,
 								"shape": "circle",
-								"target": "self",
-								"base_delay": 1,
-								"delay_per_summon": 0,
-								"num_entities_spawned": 5,
-								"entity_type": "exdrill:vigor_energy",
-								"size": 1.5,
-								"entity_lifespan": 1.1,
-								"sound_event": "prepare.attack"
+								"num_entities_spawned": 16,
+								"base_delay": 1.0,
+								"delay_per_summon": 0.0,
+								"entity_type": "exdrill:vigor_energy"
 							},
 							{
+								"target": "target",
+								"entity_lifespan": 0.5,
+								"size": 5,
 								"shape": "circle",
-								"target": "self",
-								"base_delay": 0.15,
-								"delay_per_summon": 0,
-								"num_entities_spawned": 8,
-								"entity_type": "exdrill:vigor_energy",
-								"size": 2.5,
-								"entity_lifespan": 1.1
+								"num_entities_spawned": 10,
+								"sound_event": "prepare.attack",
+								"base_delay": 1.0,
+								"delay_per_summon": 0.0,
+								"entity_type": "exdrill:vigor_energy"
 							}
-						],
-						"do_casting": true
-					},
-					{
-						"min_activation_range": 3,
-						"weight": 3,
-						"cooldown_time": 5,
-						"cast_duration": 2,
-						"particle_color": "#FF664D59",
-						"start_sound_event": "cast.spell",
-						"sequence": [
-							{
-								"shape": "line",
-								"target": "self",
-								"base_delay": 1,
-								"delay_per_summon": 0.05,
-								"num_entities_spawned": 16,
-								"entity_type": "exdrill:vigor_energy",
-								"size": 20,
-								"entity_lifespan": 1.1
-							}
-						],
-						"do_casting": true
+						]
 					}
 				]
 			},
@@ -167,7 +104,7 @@
 				"speed_multiplier": 0.6
 			},
 			"minecraft:behavior.nearest_attackable_target": {
-				"priority": 2,
+				"priority": 0,
 				"entity_types": [
 					{
 						"filters": {
@@ -246,27 +183,6 @@
 			"minecraft:conditional_bandwidth_optimization": {}
 		},
 		"events": {
-			"minecraft:spawn_for_raid": {
-				"add": {
-					"component_groups": [
-						"minecraft:raid_configuration"
-					]
-				}
-			},
-			"minecraft:start_celebrating": {
-				"add": {
-					"component_groups": [
-						"minecraft:celebrate"
-					]
-				}
-			},
-			"minecraft:stop_celebrating": {
-				"remove": {
-					"component_groups": [
-						"minecraft:celebrate"
-					]
-				}
-			}
 		}
 	}
 }

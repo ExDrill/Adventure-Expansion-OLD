@@ -20,7 +20,7 @@
 			"scripts": {
 				"animate": [
 					{
-						"move": "query.modified_move_speed"
+						"move": "query.modified_move_speed * 4"
 					},
 					{
 						"attack": "variable.attack_time"
