@@ -10,15 +10,27 @@
                         {"move_legs": "query.modified_move_speed * 3"}
                     ],
                     "transitions": [
+                        {"block": "query.variant == 1"},
+                        {"attack": "variable.attack_time"}
+                    ]
+                },
+                "block": {
+                    "animations": [
+                        "block",
+                        {"move_legs": "query.modified_move_speed * 3"}
+                    ],
+                    "transitions": [
+                        {"default": "query.variant == 0"},
                         {"attack": "variable.attack_time"}
                     ]
                 },
                 "attack": {
                     "animations": [
-                        "attack"
+                        "attack",
+                        {"move_legs": "query.modified_move_speed * 3"}
                     ],
                     "transitions": [
-                        {"default": "!variable.attack_time"}
+                        {"default": "!variable.attack_time"},
                     ]
                 }
             }

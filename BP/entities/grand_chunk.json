@@ -42,6 +42,7 @@
 				"look_time": [0,3],
 				"look_distance": 4
 			},
+			"minecraft:persistent": {},
 			"minecraft:nameable": {},
 			"minecraft:behavior.random_stroll": {
 				"priority": 2,

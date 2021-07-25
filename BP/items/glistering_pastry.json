@@ -23,15 +23,15 @@
 			},
 			"minecraft:use_duration": 1.6,
 			"minecraft:use_animation": "eat"
-		}
-	},
-	"events": {
-		"on_consume": {
-			"add_mob_effect": {
-				"effect": "regeneration",
-				"target": "holder",
-				"duration": 0.1,
-				"amplifier": 10
+		},
+		"events": {
+			"on_consume": {
+				"add_mob_effect": {
+					"effect": "regeneration",
+					"target": "holder",
+					"amplifier": 10,
+					"duration": 0.1
+				}
 			}
 		}
 	}

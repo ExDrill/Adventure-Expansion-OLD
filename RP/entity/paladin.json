@@ -21,7 +21,8 @@
 				"move_legs": "animation.common_humanoid.move.legs",
 				"look_at_target": "animation.common.look_at_target",
 				"bob": "animation.humanoid.bob",
-				"controller": "controller.animation.paladin"
+				"controller": "controller.animation.paladin",
+				"block": "animation.common_humanoid.block"
 			},
 			"scripts": {
 				"animate": [

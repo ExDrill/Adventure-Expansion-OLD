@@ -1,4 +1,3 @@
-//bridge-file-version: #21
 {
 	"format_version": "1.16.100",
 	"minecraft:entity": {
@@ -13,7 +12,7 @@
 			"minecraft:mob_effect": {
 				"effect_range": 1,
 				"mob_effect": "fatal_poison",
-				"effect_time": 5,
+				"effect_time": 1,
 				"entity_filter": {
 					"test": "is_family",
 					"subject": "other",

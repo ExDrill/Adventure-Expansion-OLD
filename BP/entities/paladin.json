@@ -9,7 +9,7 @@
 		"component_groups": {
 			"melee_state": {
 				"minecraft:behavior.melee_attack": {
-					"reach_multiplier": 1.5,
+					"reach_multiplier": 3,
 					"priority": 0
 				},
 				"minecraft:damage_sensor": {
@@ -17,6 +17,9 @@
 						"cause": "projectile",
 						"deals_damage": false
 					}
+				},
+				"minecraft:variant": {
+					"value": 0
 				},
 				"minecraft:timer": {
 					"looping": false,
@@ -40,9 +43,12 @@
 						}
 					]
 				},
+				"minecraft:variant": {
+					"value": 1
+				},
 				"minecraft:timer": {
 					"looping": false,
-					"time": 20,
+					"time": 5,
 					"time_down_event": {
 						"event": "melee_state",
 						"target": "self"
@@ -55,6 +61,7 @@
 				"value": 250,
 				 "max": 250
 			},
+			"minecraft:persistent": {},
 			"minecraft:follow_range": {
 				"value": 64
 			},
