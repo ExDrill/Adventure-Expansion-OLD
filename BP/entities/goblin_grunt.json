@@ -62,8 +62,8 @@
 			"minecraft:breathable": {
 				"totalSupply": 15,
 				"suffocateTime": 0,
-				"breathesAir": true,
-				"breathesWater": false,
+				"breathes_air": true,
+				"breathes_water": false,
 				"total_supply": 15,
 				"suffocate_time": 0
 			},

@@ -29,6 +29,9 @@
 					"grand_chunk"
 				]
 			},
+			"minecraft:knockback_resistance": {
+				"value": 0.8
+			},
 			"minecraft:jump.static": {},
 			"minecraft:physics": {},
 			"minecraft:pushable": {},

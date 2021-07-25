@@ -77,3 +77,5 @@ tile.exdrill:shadow_stone.name=Shadow Stone
 tile.exdrill:chiseled_shadow_stone_bricks.name=Chiseled Shadow Stone Bricks
 entity.exdrill:grand_chunk.name=Grand Chunk
 item.spawn_egg.entity.exdrill:grand_chunk.name=Spawn Grand Chunk
+entity.exdrill:paladin.name=Paladin
+item.spawn_egg.entity.exdrill:paladin.name=Spawn Paladin

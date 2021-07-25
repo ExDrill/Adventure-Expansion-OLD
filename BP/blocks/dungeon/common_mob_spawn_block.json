@@ -1,0 +1,10 @@
+{
+	"format_version": "1.16.100",
+	"minecraft:block": {
+		"description": {
+			"identifier": "exdrill:common_mob_spawn_block"
+		},
+		"components": {},
+		"events": {}
+	}
+}

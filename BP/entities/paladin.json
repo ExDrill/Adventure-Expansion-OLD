@@ -1,0 +1,42 @@
+{
+	"format_version": "1.17.0",
+	"minecraft:entity": {
+		"description": {
+			"identifier": "exdrill:paladin",
+			"is_summonable": true,
+			"is_spawnable": true
+		},
+		"component_groups": {},
+		"components": {
+			"minecraft:health": {
+				"value": 250,
+				 "max": 250
+			},
+			"minecraft:movement": {
+				"value": 0.25
+			},
+			"minecraft:collision_box": {
+				"height": 1.9,
+				"width": 0.6
+			},
+			"minecraft:jump.static": {},
+			"minecraft:physics": {},
+			"minecraft:pushable": {},
+			"minecraft:movement.basic": {},
+			"minecraft:navigation.generic": {
+				"can_sink": false,
+				"avoid_water": true
+			},
+			"minecraft:knockback_resistance": {
+				"value": 0.9
+			},
+			"minecraft:behavior.random_stroll": {
+				"priority": 4,
+				"interval": 10,
+				"xz_dist": 10,
+				"y_dist": 2
+			}
+		},
+		"events": {}
+	}
+}

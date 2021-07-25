@@ -15,9 +15,24 @@
 			"render_controllers": [
 				"controller.render.default"
 			],
+			"animations": {
+				"move_arms": "animation.common_humanoid.move.arms",
+				"attack": "animation.common_humanoid.attack",
+				"move_legs": "animation.common_humanoid.move.legs",
+				"look_at_target": "animation.common.look_at_target",
+				"bob": "animation.humanoid.bob",
+				"controller": "controller.animation.paladin"
+			},
+			"scripts": {
+				"animate": [
+					"bob",
+					"controller",
+					"look_at_target"
+				]
+			},
 			"spawn_egg": {
-				"base_color": "#FFFFFF",
-				"overlay_color": "#FFFFFF"
+				"base_color": "#436638",
+				"overlay_color": "#8FA9A9"
 			}
 		}
 	}
