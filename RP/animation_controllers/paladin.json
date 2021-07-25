@@ -6,8 +6,8 @@
             "states": {
                 "default": {
                     "animations": [
-                        {"move_arms": "query.modified_move_speed * 4"},
-                        {"move_legs": "query.modified_move_speed * 4"}
+                        {"move_arms": "query.modified_move_speed * 3"},
+                        {"move_legs": "query.modified_move_speed * 3"}
                     ],
                     "transitions": [
                         {"attack": "variable.attack_time"}

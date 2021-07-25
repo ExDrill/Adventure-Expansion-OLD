@@ -7,10 +7,10 @@
 				"default": {
 					"animations": [
 						{
-							"move_legs": "query.modified_move_speed"
+							"move_legs": "query.modified_move_speed * 2"
 						},
 						{
-							"move_arms": "query.modified_move_speed"
+							"move_arms": "query.modified_move_speed * 2"
 						},
 						"bob",
 						"look_at_target"
@@ -27,7 +27,7 @@
 						"bob",
 						"look_at_target",
 						{
-							"move_legs": "query.modified_move_speed"
+							"move_legs": "query.modified_move_speed * 2"
 						}
 					],
 					"transitions": [

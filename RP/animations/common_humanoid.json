@@ -2,7 +2,7 @@
     "format_version": "1.10.0",
     "animations": {
         "animation.common_humanoid.attack": {
-            			"loop": false,
+            "loop": false,
 			"animation_length": 0.28,
 			"bones": {
 				"rightArm": {
@@ -28,6 +28,8 @@
 			}
         },
         "animation.common_humanoid.move.arms": {
+            "loop": true,
+            "animation_length": 0.96,
             "bones": {
                 "leftArm": {
                     "rotation": {
@@ -81,6 +83,8 @@
             }
         },
         "animation.common_humanoid.move.legs": {
+            "loop": true,
+            "animation_length": 0.96,
             "bones": {
                 "leftLeg": {
                     "rotation": {

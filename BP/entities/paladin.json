@@ -6,11 +6,57 @@
 			"is_summonable": true,
 			"is_spawnable": true
 		},
-		"component_groups": {},
+		"component_groups": {
+			"melee_state": {
+				"minecraft:behavior.melee_attack": {
+					"reach_multiplier": 1.5,
+					"priority": 0
+				},
+				"minecraft:damage_sensor": {
+					"triggers": {
+						"cause": "projectile",
+						"deals_damage": false
+					}
+				},
+				"minecraft:timer": {
+					"looping": false,
+					"time": 20,
+					"time_down_event": {
+						"event": "shield_state",
+						"target": "self"
+					}
+				}
+			},
+			"shield_state": {
+				"minecraft:damage_sensor": {
+					"triggers": [
+						{
+							"cause": "entity_attack",
+							"deals_damage": false
+						},
+						{
+							"cause": "projectile",
+							"deals_damage": false
+						}
+					]
+				},
+				"minecraft:timer": {
+					"looping": false,
+					"time": 20,
+					"time_down_event": {
+						"event": "melee_state",
+						"target": "self"
+					}
+				}
+			}
+		},
 		"components": {
 			"minecraft:health": {
 				"value": 250,
 				 "max": 250
+			},
+			"minecraft:follow_range": {
+				"value": 64
 			},
 			"minecraft:movement": {
 				"value": 0.25
@@ -35,8 +81,62 @@
 				"interval": 10,
 				"xz_dist": 10,
 				"y_dist": 2
+			},
+			"minecraft:attack": {
+				"damage": 1
+			},
+			"minecraft:equipment": {
+				"slot_drop_chance": [
+					{
+						"drop_chance": 0.5,
+						"slot": "slot.weapon.mainhand"
+					},
+					{
+						"drop_chance": 0,
+						"slot": "slot.weapon.offhand"
+					}
+				],
+				"table": "loot_tables/equipment/paladin.json"
+			},
+			"minecraft:behavior.nearest_attackable_target": {
+				"priority": 0,
+				"entity_types": {
+					"must_see": true,
+					"filters": {
+						"test": "is_family",
+						"subject": "other",
+						"value": "player"
+					}
+				}
 			}
 		},
-		"events": {}
+		"events": {
+			"minecraft:entity_spawned": {
+				"add": {
+					"component_groups": [
+						"melee_state"
+					]
+				}
+			},
+			"melee_state": {
+				"add": {
+					"component_groups": [
+						"melee_state"
+					]
+				}
+			},
+			"shield_state": {
+				"add": {
+					"component_groups": [
+						"shield_state"
+					]
+				},
+				"run_command": {
+					"command": [
+						"/say HELLO HELLO HELLO"
+					]
+				}
+			}
+		}
 	}
 }
