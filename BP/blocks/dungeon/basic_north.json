@@ -26,7 +26,49 @@
 			"north_gen": {
 				"randomize": [
 					{
-						//FILL 
+						//Halls
+						"weight": 65,
+						"randomize": [
+							{
+								//Basic Hallway
+								"weight": 100,
+								"run_command": {
+									"command": [
+										"say North Hallway Generated!",
+										"structure load dungeon:hall_n ~-9 ~ ~-16 180_degrees"
+									]
+								},
+								"set_block": {
+									"block_type": "exdrill:darkbrick"
+								}
+							}
+						]
+					},
+					{
+						//Cross/L shape
+						"weight": 5,
+						"run_command": {
+							"command": [
+								"say North L Hall Generated!",
+								"structure load dungeon:cross_n ~-9 ~ ~-16 180_degrees"
+							]
+						},
+						"set_block": {
+							"block_type": "exdrill:darkbrick"
+						}
+					},
+					{
+						//Room TEST
+						"weight": 20,
+						"run_command": {
+							"command": [
+								"say Room Generated!",
+								"structure load dungeon:room ~-9 ~ ~-16 180_degrees"
+							]
+						},
+						"set_block": {
+							"block_type": "exdrill:darkbrick"
+						}
 					}
 				]
 			}

@@ -26,7 +26,49 @@
 			"west_gen": {
 				"randomize": [
 					{
-						//FILL 
+						//Halls
+						"weight": 65,
+						"randomize": [
+							{
+								//Basic Hallway
+								"weight": 100,
+								"run_command": {
+									"command": [
+										"say West Hallway Generated!",
+										"structure load dungeon:hall_w ~-16 ~ ~-6 90_degrees"
+									]
+								},
+								"set_block": {
+									"block_type": "exdrill:darkbrick"
+								}
+							}
+						]
+					},
+					{
+						//Cross/L shape
+						"weight": 10,
+						"run_command": {
+							"command": [
+								"say West L Hall Generated!",
+								"structure load dungeon:cross_w ~-16 ~ ~-6 90_degrees"
+							]
+						},
+						"set_block": {
+							"block_type": "exdrill:darkbrick"
+						}
+					},
+					{
+						//Room TEST
+						"weight": 20,
+						"run_command": {
+							"command": [
+								"say Room Generated!",
+								"structure load dungeon:room ~-16 ~ ~-6 90_degrees"
+							]
+						},
+						"set_block": {
+							"block_type": "exdrill:darkbrick"
+						}
 					}
 				]
 			}
