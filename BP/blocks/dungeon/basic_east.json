@@ -27,15 +27,15 @@
 				"randomize": [
 					{
 						//Halls
-						"weight": 65,
+						"weight": 15,
 						"randomize": [
 							{
 								//Basic Hallway
 								"weight": 100,
 								"run_command": {
 									"command": [
-										"say East Hallway Generated!",
-										"structure load dungeon:hall_e ~ ~ ~-9 270_degrees"
+										"say East Room Test Generated!",
+										"structure load dungeon:room_test_e ~ ~ ~-9 270_degrees"
 									]
 								},
 								"set_block": {
@@ -46,7 +46,7 @@
 					},
 					{
 						//Cross/L shape
-						"weight": 10,
+						"weight": 0,
 						"run_command": {
 							"command": [
 								"say North L Hall Generated!",
@@ -59,7 +59,7 @@
 					},
 					{
 						//Room TEST
-						"weight": 20,
+						"weight": 30,
 						"run_command": {
 							"command": [
 								"say Room Generated!",
