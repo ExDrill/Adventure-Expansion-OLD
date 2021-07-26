@@ -34,7 +34,30 @@
 						"structure load dungeon:start_refresh ~-7 ~-11 ~-7"
 					]
 				}
+			},
+			"refresh_swap": {
+				"set_block_property": {
+					"dungeon:switch": true
+				}
 			}
-		}
+		},
+		"permutations": [
+			{
+				"condition": "query.block_property('warhead:start_refresh') == true",
+				"components": {
+					"minecraft:ticking": {
+						"looping": false,
+						"on_tick": {
+							"event": "refresh",
+							"target": "self"
+						},
+						"range": [
+							100,
+							100
+						]
+					}
+				}
+			}
+		]
 	}
 }
