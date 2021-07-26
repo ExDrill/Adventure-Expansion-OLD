@@ -28,7 +28,13 @@
 			}
 		},
 		"events": {
-			"refresh": {}
+			"refresh": {
+				"run_command": {
+					"command": [
+						"structure load dungeon:start_refresh ~-7 ~-11 ~-7"
+					]
+				}
+			}
 		}
 	}
 }
