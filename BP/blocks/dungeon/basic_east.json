@@ -35,7 +35,7 @@
 								"run_command": {
 									"command": [
 										"say East Room Test Generated!",
-										"structure load dungeon:room_test_e ~ ~ ~-9 270_degrees"
+										"structure load dungeon:room_test_e ~1 ~ ~-9 270_degrees"
 									]
 								},
 								"set_block": {
@@ -50,7 +50,7 @@
 						"run_command": {
 							"command": [
 								"say North L Hall Generated!",
-								"structure load dungeon:cross_e ~ ~ ~-9 270_degrees"
+								"structure load dungeon:cross_e ~1 ~ ~-9 270_degrees"
 							]
 						},
 						"set_block": {
@@ -63,7 +63,7 @@
 						"run_command": {
 							"command": [
 								"say Room Generated!",
-								"structure load dungeon:room ~ ~ ~-9 270_degrees"
+								"structure load dungeon:room ~1 ~ ~-9 270_degrees"
 							]
 						},
 						"set_block": {
