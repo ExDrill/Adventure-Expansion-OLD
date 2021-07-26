@@ -5,8 +5,24 @@
 			"identifier": "exdrill:common_mob_spawn_block"
 		},
 		"components": {
+			"minecraft:on_interact": {
+				"event": "spawn_mob",
+				"target": "self"
+			}
 		},
-		"events": {}
+		"events": {
+			"spawn_mob": {
+				"randomize": [
+					{
+						"run_command": {
+							"command": [
+								"summon zombie ~ ~ ~ spawn_as_common_mob"
+							],
+							"target": "self"
+						}
+					}
+				]
+			}	
 		}
 	}
 }

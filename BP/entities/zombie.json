@@ -8,6 +8,21 @@
       "is_experimental": false
     },
     "component_groups": {
+      "spawn_as_common_mob": {
+        "minecraft:equipment": {
+          "table": "loot_tables/equipment/common_monster_gear.json",
+          "slot_drop_chance": [
+            {
+              "slot": "slot.weapon.mainhand",
+              "drop_chance": 0
+            },
+            {
+              "slot": "slot.armor",
+              "drop_chance": 0
+            }
+          ]
+        }
+      },
       "minecraft:look_to_start_drowned_transformation": {
         "minecraft:environment_sensor": {
           "triggers": {
@@ -585,6 +600,14 @@
             }
           }
         ]
+      },
+      "spawn_as_common_mob": {
+        "add": {
+          "component_groups": [
+            "minecraft:zombie_adult",
+            "spawn_as_common_mob"
+          ]
+        }
       }
     }
   }
