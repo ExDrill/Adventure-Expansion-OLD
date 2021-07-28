@@ -12,12 +12,6 @@
 					"reach_multiplier": 3,
 					"priority": 0
 				},
-				"minecraft:damage_sensor": {
-					"triggers": {
-						"cause": "projectile",
-						"deals_damage": false
-					}
-				},
 				"minecraft:variant": {
 					"value": 0
 				},
@@ -35,12 +29,21 @@
 					"triggers": [
 						{
 							"cause": "entity_attack",
-							"deals_damage": false
+							"deals_damage": false,
+							"on_damage": {
+								"event": "play_sound",
+								"target": "self"
+							}
 						},
 						{
 							"cause": "projectile",
-							"deals_damage": false
-						}
+							"deals_damage": false,
+							"on_damage": {
+								"event": "play_sound",
+								"target": "self"
+							}
+						},
+						
 					]
 				},
 				"minecraft:variant": {
@@ -130,6 +133,11 @@
 					"component_groups": [
 						"melee_state"
 					]
+				},
+				"remove": {
+					"component_groups": [
+						"shield_state"
+					]
 				}
 			},
 			"shield_state": {
@@ -137,10 +145,12 @@
 					"component_groups": [
 						"shield_state"
 					]
-				},
+				}
+			},
+			"play_sound": {
 				"run_command": {
 					"command": [
-						"/say HELLO HELLO HELLO"
+						"playsound item.shield.block @a ~ ~ ~"
 					]
 				}
 			}
