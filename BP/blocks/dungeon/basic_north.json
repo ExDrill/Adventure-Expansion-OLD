@@ -28,14 +28,25 @@
 					{
 						//Halls
 						"weight": 15,
-						"randomize": [
+						"sequence": [
 							{
-								//Basic Hallway
-								"weight": 100,
+								"condition": "query.scoreboard('count') < 300",
 								"run_command": {
 									"command": [
 										"say North Room Test Generated!",
-										"structure load dungeon:room_test_n ~-9 ~ ~-16 180_degrees"
+										"structure load dungeon:room_test_n ~-9 ~ ~-16 180_degrees",
+										"scoreboard players add @a count 1"
+									]
+								},
+								"set_block": {
+									"block_type": "exdrill:darkbrick"
+								}
+							},
+							{
+								"condition": "query.scoreboard('count') >= 300",
+								"run_command": {
+									"command": [
+										"say Room Count Reached"
 									]
 								},
 								"set_block": {
@@ -60,15 +71,32 @@
 					{
 						//Room TEST
 						"weight": 30,
-						"run_command": {
-							"command": [
-								"say Room Generated!",
-								"structure load dungeon:room ~-9 ~ ~-16 180_degrees"
-							]
-						},
-						"set_block": {
-							"block_type": "exdrill:darkbrick"
-						}
+						"sequence": [
+							{
+								"condition": "query.scoreboard('count') < 300",
+								"run_command": {
+									"command": [
+										"say Room Generated!",
+										"structure load dungeon:room ~-9 ~ ~-16 180_degrees",
+										"scoreboard players add @a count 1"
+									]
+								},
+								"set_block": {
+									"block_type": "exdrill:darkbrick"
+								}
+							},
+							{
+								"condition": "query.scoreboard('count') >= 300",
+								"run_command": {
+									"command": [
+										"say Room Count Reached"
+									]
+								},
+								"set_block": {
+									"block_type": "exdrill:darkbrick"
+								}
+							}
+						]
 					}
 				]
 			}

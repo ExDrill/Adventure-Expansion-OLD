@@ -32,15 +32,32 @@
 							{
 								//Basic Hallway
 								"weight": 100,
-								"run_command": {
-									"command": [
-										"say West Room Test Generated!",
-										"structure load dungeon:room_test_w ~-16 ~ ~-6 90_degrees"
-									]
-								},
-								"set_block": {
-									"block_type": "exdrill:darkbrick"
-								}
+								"sequence": [
+									{
+										"condition": "query.scoreboard('count') < 300",
+										"run_command": {
+											"command": [
+												"say West Room Test Generated!",
+												"structure load dungeon:room_test_w ~-16 ~ ~-6 90_degrees",
+												"scoreboard players add @a count 1"
+											]
+										},
+										"set_block": {
+											"block_type": "exdrill:darkbrick"
+										}
+									},
+									{
+										"condition": "query.scoreboard('count') >= 300",
+										"run_command": {
+											"command": [
+												"say Room Count Reached"
+											]
+										},
+										"set_block": {
+											"block_type": "exdrill:darkbrick"
+										}
+									}
+								]
 							}
 						]
 					},
@@ -60,15 +77,32 @@
 					{
 						//Room TEST
 						"weight": 30,
-						"run_command": {
-							"command": [
-								"say Room Generated!",
-								"structure load dungeon:room ~-16 ~ ~-6 90_degrees"
-							]
-						},
-						"set_block": {
-							"block_type": "exdrill:darkbrick"
-						}
+						"sequence": [
+							{
+								"condition": "query.scoreboard('count') < 300",
+								"run_command": {
+									"command": [
+										"say Room Generated!",
+										"structure load dungeon:room ~-16 ~ ~-6 90_degrees",
+										"scoreboard players add @a count 1"
+									]
+								},
+								"set_block": {
+									"block_type": "exdrill:darkbrick"
+								}
+							},
+							{
+								"condition": "query.scoreboard('count') >= 300",
+								"run_command": {
+									"command": [
+										"say Room Count Reached"
+									]
+								},
+								"set_block": {
+									"block_type": "exdrill:darkbrick"
+								}
+							}
+						]
 					}
 				]
 			}
