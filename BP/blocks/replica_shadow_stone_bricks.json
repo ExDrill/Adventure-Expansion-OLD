@@ -1,0 +1,15 @@
+{
+	"format_version": "1.16.100",
+	"minecraft:block": {
+		"description": {
+			"identifier": "exdrill:replica_shadow_stone_bricks"
+		},
+		"components": {
+			"minecraft:destroy_time": 1,
+			"minecraft:explosion_resistance": 100,
+			"minecraft:breathability": "solid",
+			"minecraft:immovable": true
+		},
+		"events": {}
+	}
+}

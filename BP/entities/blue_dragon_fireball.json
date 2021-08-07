@@ -1,0 +1,101 @@
+{
+	"format_version": "1.17.0",
+	"minecraft:entity": {
+		"description": {
+			"identifier": "exdrill:blue_dragon_fireball",
+			"is_summonable": true,
+			"is_spawnable": false,
+			"runtime_identifier": "minecraft:snowball"
+		},
+		"component_groups": {
+			"explode": {
+				"minecraft:explode": {
+					"breaks_blocks": false,
+					"causes_fire": false,
+					"fuse_length": 0,
+					"fuse_lit": true,
+					"power": 2
+				}
+			},
+			"large_fireball": {
+				"minecraft:scale": {
+					"value": 1.5
+				},
+				"minecraft:projectile": {
+					"power": 1.6,
+					"gravity": 0.0,
+					"catch_fire": true,
+					"liquid_inertia": 1,
+					"uncertainty_base": 0,
+					"uncertainty_multiplier": 0,
+					"anchor": 1,
+					"reflect_on_hurt": false,
+					"offset": [ 0, 2, -4 ],
+					"on_hit": {
+						"catch_fire": {},
+						"impact_damage": 8,
+						"definition_event": {
+							"event_trigger": {
+								"event": "explode",
+								"target": "self"
+							}
+						}
+					}
+				}
+			},
+			"small_fireball": {
+				"minecraft:projectile": {
+					"power": 1.6,
+					"gravity": 0.0,
+					"liquid_inertia": 1,
+					"uncertainty_base": 0,
+					"reflect_on_hurt": false,
+					"uncertainty_multiplier": 0,
+					"anchor": 1,
+					"offset": [ 0, 2, -4 ],
+					"catch_fire": true,
+					"on_hit": {
+						"catch_fire": {},
+						"remove_on_hit": {},
+						"impact_damage": 8
+					}
+				}
+			}
+		},
+		"components": {
+			"minecraft:collision_box": {
+				"width": 0.3,
+				"height": 0.3
+			}
+		},
+		"events": {
+			"minecraft:entity_spawned": {
+				"randomize": [
+					{
+						"add": {
+							"component_groups": [
+								"small_fireball"
+							]
+						},
+						"weight": 3
+					},
+					{
+						"add": {
+							"component_groups": [
+								"large_fireball"
+							]
+						},
+						"weight": 1
+					}
+				]
+			},
+			"explode": {
+				"add": {
+					"component_groups": [
+						"explode"
+					]
+				}
+			}
+		}
+	}
+}

@@ -1,0 +1,36 @@
+{
+	"format_version": "1.16.100",
+	"minecraft:item": {
+		"description": {
+			"identifier": "exdrill:paladin_blade"
+		},
+		"components": {
+			"minecraft:icon": {
+				"texture": "paladin_blade"
+			},
+			"minecraft:display_name": {
+				"value": "Paladin's Blade"
+			},
+			"minecraft:max_stack_size": 1,
+			"minecraft:hand_equipped": true,
+			"minecraft:weapon": {},
+			"minecraft:damage": 7,
+			"minecraft:on_use": {
+				"on_use": {
+					"event": "total_swoop",
+					"target": "self"
+				}
+			}
+		},
+		"events": {
+			"total_swoop": {
+				"run_command": {
+					"command": [
+						"playanimation @s animation.player.sweep t 10",
+						"summon exdrill:total_swoop"
+					]
+				}
+			}
+		}
+	}
+}

@@ -1,0 +1,23 @@
+{
+	"format_version": "1.12",
+    "minecraft:recipe_shapeless": {
+        "description": {
+            "identifier": "exdrill:sana_berry_pips"
+        },
+        "tags": [
+            "crafting_table"
+        ],
+        "ingredients": [
+            {
+                "item": "exdrill:magic_berries",
+                "count": 1
+            }
+        ],
+        "result": [
+            {
+                "item": "exdrill:sana_berry_pips",
+                "count": 3
+            }
+        ]
+    }
+}

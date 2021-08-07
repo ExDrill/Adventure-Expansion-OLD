@@ -1,0 +1,86 @@
+{
+	"format_version": "1.16.100",
+	"minecraft:block": {
+		"description": {
+			"identifier": "exdrill:room_generator"
+		},
+		"components": {
+			"minecraft:on_interact": {
+				"event": "place_room",
+				"target": "self"
+			},
+			"minecraft:ticking": {
+				"looping": false,
+				"range": [
+					999998,
+					999999
+				],
+				"on_tick": {
+					"event": "place_room",
+					"target": "self"
+				}
+			},
+			"minecraft:loot": "loot_tables/empty.json"
+		},
+		"events": {
+			"place_room": {
+				"sequence": [
+					{
+						"randomize": [
+							{
+								"run_command": {
+									"command": [
+										"structure load dungeon:basic_room ~ ~ ~"
+									],
+									"target": "self"
+								},
+								"weight": 3
+							},
+							{
+								"run_command": {
+									"command": [
+										"structure load dungeon:library ~ ~ ~"
+									],
+									"target": "self"
+								},
+								"weight": 2
+							},
+							{
+								"run_command": {
+									"command": [
+										"structure load dungeon:strong_room ~ ~ ~"
+									],
+									"target": "self"
+								},
+								"weight": 1
+							},
+							{
+								"run_command": {
+									"command": [
+										"structure load dungeon:nature ~ ~ ~"
+									],
+									"target": "self"
+								},
+								"weight": 2
+							},
+							{
+								"run_command": {
+									"command": [
+										"structure load dungeon:lava_room ~ ~ ~"
+									],
+									"target": "self"
+								},
+								"weight": 2
+							}
+						]
+					},
+					{
+						"set_block": {
+							"block_type": "exdrill:dark_tiling"
+						}
+					}
+				]
+			}
+		}
+	}
+}

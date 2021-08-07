@@ -21,14 +21,16 @@
 				"move_legs": "animation.common_humanoid.move.legs",
 				"look_at_target": "animation.common.look_at_target",
 				"bob": "animation.humanoid.bob",
+				"total_swoop": "animation.paladin.total_swoop",
 				"controller": "controller.animation.paladin",
-				"block": "animation.common_humanoid.block"
+				"block": "animation.common_humanoid.block",
+				"test": "animation.human.test"
 			},
 			"scripts": {
 				"animate": [
 					"bob",
-					"controller",
-					"look_at_target"
+					"controller"
+
 				]
 			},
 			"spawn_egg": {

@@ -68,5 +68,28 @@
 	"exdrill:chiseled_shadow_stone_bricks": {
 		"sound": "nether_brick",
 		"textures": "chiseled_shadow_stone_bricks"
+	},
+	"exdrill:crate": {
+		"textures": {
+			"side": "crate_side",
+			"up": "crate_upper",
+			"down": "crate_upper"
+		},
+		"sound": "wood"
+	},
+	"exdrill:replica_shadow_stone": {
+		"textures": "shadow_stone"
+	},
+	"exdrill:replica_shadow_stone_bricks": {
+		"textures": "shadow_stone_bricks"
+	},
+	"exdrill:replica_cracked_shadow_stone_bricks": {
+		"textures": "cracked_shadow_stone_bricks"
+	},
+	"exdrill:replica_chiseled_shadow_stone_bricks": {
+		"textures": "chiseled_shadow_stone_bricks"
+	},
+	"exdrill:replica_cobbled_shadow_stone": {
+		"textures": "cobbled_shadow_stone"
 	}
 }

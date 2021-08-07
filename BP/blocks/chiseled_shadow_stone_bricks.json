@@ -5,7 +5,7 @@
 			"identifier": "exdrill:chiseled_shadow_stone_bricks"
 		},
 		"components": {
-			"minecraft:destroy_time": 1,
+			"minecraft:destroy_time": 500,
 			"minecraft:explosion_resistance": 50,
 			"minecraft:immovable": true
 		}

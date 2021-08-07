@@ -25,11 +25,6 @@
 				"textures/items/orange_sapphire"
 			]
 		},
-		"enhanced_steak": {
-			"textures": [
-				"textures/items/enhanced_steak"
-			]
-		},
 		"cake_ball": {
 			"textures": [
 				"textures/items/cake_ball"
@@ -58,11 +53,6 @@
 		"goblin_summoner_hat": {
 			"textures": [
 				"textures/items/witch_helmet"
-			]
-		},
-		"darkbrick_harvester": {
-			"textures": [
-				"textures/items/darkbrick_harvester"
 			]
 		},
 		"goblin_club": {
@@ -224,6 +214,21 @@
 			"textures": [
 				"textures/blocks/glow_crystal"
 			]
+		},
+		"sana_berry_pips": {
+			"textures": "textures/items/sana_berry_pips"
+		},
+		"dungeon_crate_key": {
+			"textures": "textures/items/dungeon_crate_key"
+		},
+		"bone_wand": {
+			"textures": "textures/items/bone_wand"
+		},
+		"paladin_blade": {
+			"textures": "textures/items/paladin_blade"
+		},
+		"grand_boulder_hammer": {
+			"textures": "textures/items/grand_boulder_hammer"
 		}
 	}
 }

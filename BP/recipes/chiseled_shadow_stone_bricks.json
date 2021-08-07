@@ -1,0 +1,23 @@
+{
+	"format_version": "1.12",
+    "minecraft:recipe_shapeless": {
+        "description": {
+            "identifier": "exdrill:chiseled_shadow_stone_bricks"
+        },
+        "tags": [
+            "stonecutter"
+        ],
+        "ingredients": [
+            {
+                "item": "exdrill:replica_shadow_stone",
+                "count": 1
+            }
+        ],
+        "result": [
+            {
+                "count": 1,
+                "item": "exdrill:replica_chiseled_shadow_stone_bricks"
+            }
+        ]
+    }
+}

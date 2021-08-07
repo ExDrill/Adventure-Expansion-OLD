@@ -1,63 +1,42 @@
 {
-	"format_version": "1.16.0",
+	"format_version": "1.17.0",
 	"minecraft:entity": {
 		"description": {
 			"identifier": "exdrill:blue_dragon",
 			"is_spawnable": true,
 			"is_summonable": true,
-			"is_experimental": false,
-			"runtime_identifier": "minecraft:parrot",
-			"animations": {
-				"death": "controller.animation.one_to_two"
-			},
-			"scripts": {
-				"animate": [
-					"death"
-				]
-			}
+			"is_experimental": false
 		},
-		"component_groups": {
-			"exdrill:scale_on_spawn": {
-				"minecraft:scale": {
-					"value": 3
-				},
-				"minecraft:spell_effects": {
-					"add_effects": [
-						{
-							"effect": "regeneration",
-							"amplifier": 0,
-							"duration": 999999,
-							"visible": false
-						}
-					]
-				}
-			}
-		},
+		"component_groups": {},
 		"components": {
 			"minecraft:behavior.ranged_attack": {
-				"priority": 3,
-				"burst_shots": 3,
+				"priority": 0,
+				"burst_shots": 10,
 				"burst_interval": 0.3,
 				"attack_interval_min": 1,
 				"attack_interval_max": 3,
 				"attack_radius": 16
 			},
 			"minecraft:shooter": {
-				"def": "minecraft:wither_skull"
+				"def": "exdrill:blue_dragon_fireball"
 			},
 			"minecraft:behavior.random_hover": {
-				"priority": 12,
-				"xz_dist": 8,
-				"y_dist": 8,
-				"y_offset": -1,
+				"priority": 1,
+				"xz_dist": 30,
+				"y_dist": 30,
+				"speed_multiplier": 1.5,
+				"y_offset": -2,
 				"interval": 1,
 				"hover_height": [
-					1,
-					8
+					6,
+					12
 				]
 			},
 			"minecraft:behavior.float": {
-				"priority": 19
+				"priority": 0
+			},
+			"minecraft:loot": {
+				"table": "loot_tables/entities/blue_dragon.json"
 			},
 			"minecraft:type_family": {
 				"family": [
@@ -72,19 +51,29 @@
 			},
 			"minecraft:conditional_bandwidth_optimization": {},
 			"minecraft:follow_range": {
-				"value": 1024
+				"value": 64
 			},
 			"minecraft:damage_sensor": {
-				"triggers": {
-					"cause": "fall",
-					"deals_damage": false
-				}
+				"triggers": [
+					{
+						"cause": "fall",
+						"deals_damage": false
+					},
+					{
+						"cause": "fire",
+						"deals_damage": false
+					},
+					{
+						"cause": "magic",
+						"deals_damage": false
+					}
+				]
 			},
 			"minecraft:movement": {
 				"value": 0.3
 			},
 			"minecraft:flying_speed": {
-				"value": 0.15
+				"value": 0.2
 			},
 			"minecraft:navigation.hover": {
 				"can_path_over_water": true,
@@ -99,8 +88,8 @@
 			"minecraft:jump.static": {},
 			"minecraft:can_fly": true,
 			"minecraft:health": {
-				"value": 300,
-				"max": 300
+				"value": 500,
+				"max": 500
 			},
 			"minecraft:nameable": {},
 			"minecraft:physics": {},
@@ -112,7 +101,9 @@
 				"value": 1
 			},
 			"minecraft:behavior.nearest_attackable_target": {
-				"priority": 3,
+				"priority": 0,
+				"reselect_targets": true,
+				"within_radius": 128,
 				"entity_types": [
 					{
 						"filters": {
@@ -124,20 +115,33 @@
 				]
 			},
 			"minecraft:collision_box": {
-				"width": 1.5,
+				"width": 5,
 				"height": 1
+			},
+			"minecraft:ground_offset": {
+				"value": 5
 			},
 			"minecraft:boss": {
 				"should_darken_sky": true,
 				"hud_range": 100,
 				"name": "Blue Dragon"
+			},
+			"minecraft:timer": {
+				"looping": true,
+				"time_down_event": {
+					"event": "hover",
+					"target": "self"
+				},
+				"time": [
+					15, 20
+				]
 			}
 		},
 		"events": {
-			"minecraft:entity_spawned": {
-				"add": {
-					"component_groups": [
-						"exdrill:scale_on_spawn"
+			"hover": {
+				"run_command": {
+					"command": [
+						"effect @s levitation 2 6 true"
 					]
 				}
 			}

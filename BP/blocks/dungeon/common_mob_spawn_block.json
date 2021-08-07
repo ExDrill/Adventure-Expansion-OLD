@@ -8,21 +8,64 @@
 			"minecraft:on_interact": {
 				"event": "spawn_mob",
 				"target": "self"
+			},
+			"minecraft:loot": "loot_tables/empty.json",
+			"minecraft:ticking": {
+				"looping": false,
+				"range": [
+					999998,
+					999999
+				],
+				"on_tick": {
+					"event": "spawn_mob",
+					"target": "self"
+				}
 			}
 		},
 		"events": {
 			"spawn_mob": {
-				"randomize": [
+				"sequence": [
 					{
-						"run_command": {
-							"command": [
-								"summon zombie ~ ~ ~ spawn_as_common_mob"
-							],
+						"randomize": [
+							{
+								"run_command": {
+									"command": [
+										"summon zombie ~ ~ ~ spawn_as_common_mob"
+									],
+									"target": "self"
+								},
+								"weight": 150
+							},
+							{
+								"run_command": {
+									"command": [
+										"summon skeleton ~ ~ ~ spawn_as_common_mob"
+									],
+									"target": "self"
+								},
+								"weight": 150
+							},
+							{
+								"run_command": {
+									"command": [
+										"summon spider ~ ~ ~ spawn_as_mob"
+									],
+									"target": "self"
+								},
+								"weight": 75
+							},
+							{
+								"weight": 25
+							}
+						]
+					},
+					{
+						"die": {
 							"target": "self"
 						}
 					}
 				]
-			}	
+			}
 		}
 	}
 }

@@ -19,7 +19,18 @@
 			}
 		]
 	},
-	"cave_watermark": {
+	"ae_image": {
+		"type": "image",
+		"anchor_from": "bottom_left",
+		"anchor_to": "bottom_left",
+		"texture": "textures/ui/platinum_icon",
+		"size": [ 25, 25 ],
+		"layer": 2,
+		"offset": [
+			5,-4
+		]
+	},
+	"version_label": {
 		"type": "label",
 		"text": "Beta 1.7",
 		"color": [
@@ -31,7 +42,10 @@
 		"font_size": "medium",
 		"anchor_from": "bottom_left",
 		"anchor_to": "bottom_left",
-		"alpha": 10
+		"alpha": 10,
+		"offset": [
+			35, -10
+		]
 	},
 	"special_render": {
 		"type": "custom",
@@ -52,10 +66,10 @@
 				"special_render@debug_screen.special_render": {}
 			},
 			{
-				"cave_watermark@debug_screen.cave_watermark": {}
+				"version_label@debug_screen.version_label": {}
 			},
 			{
-				"cave_watermark_image@debug_screen.cave_watermark_image": {}
+				"ae_image@debug_screen.ae_image": {}
 			}
 		]
 	},

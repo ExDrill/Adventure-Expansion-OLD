@@ -19,7 +19,9 @@
 				"move_legs": "animation.human.move.legs",
 				"move_arms": "animation.human.move.arms",
 				"has_target": "animation.human.has_target",
-				"setup": "controller.animation.human"
+				"setup": "controller.animation.human",
+				"attack_rotations": "animation.common_humanoid.attack.rotations",
+				"attack_positions": "animation.common_humanoid.attack.rotations"
 			},
 			"scripts": {
 				"animate": [

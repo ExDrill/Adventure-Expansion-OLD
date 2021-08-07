@@ -1,0 +1,40 @@
+{
+	"format_version": "1.16.0",
+	"minecraft:geometry": [
+		{
+			"description": {
+				"identifier": "geometry.grand_boulder",
+				"texture_width": 64,
+				"texture_height": 64,
+				"visible_bounds_width": 3,
+				"visible_bounds_height": 2.5,
+				"visible_bounds_offset": [0, 0.75, 0]
+			},
+			"bones": [
+				{
+					"name": "root",
+					"binding": "q.item_slot_to_bone_name(c.item_slot)",
+					"pivot": [ 0, 0, 0]
+				},
+				{
+					"name": "hammer",
+					"parent": "root",
+					"pivot": [0, 17, -8],
+					"rotation": [-90, 0, 0],
+					"cubes": [
+						{"origin": [-5, 17, -13], "size": [10, 16, 10], "uv": [0, 0]}
+					]
+				},
+				{
+					"name": "handle",
+					"parent": "root",
+					"pivot": [1, 0, -1],
+					"cubes": [
+						{"origin": [-1, 0, -1], "size": [2, 12, 2], "uv": [10, 31]},
+						{"origin": [-1, 0, -1], "size": [2, 12, 2], "inflate": 0.25, "uv": [18, 31]}
+					]
+				}
+			]
+		}
+	]
+}

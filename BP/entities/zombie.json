@@ -8,19 +8,64 @@
       "is_experimental": false
     },
     "component_groups": {
-      "spawn_as_common_mob": {
+      "spawn_as_rare_mob": {
         "minecraft:equipment": {
-          "table": "loot_tables/equipment/common_monster_gear.json",
+          "table": "loot_tables/equipment/rare_zombie_gear.json",
           "slot_drop_chance": [
             {
               "slot": "slot.weapon.mainhand",
               "drop_chance": 0
             },
             {
-              "slot": "slot.armor",
+              "slot": "slot.armor.chest",
+              "drop_chance": 0
+            },
+            {
+              "slot": "slot.armor.feet",
+              "drop_chance": 0
+            },
+            {
+              "slot": "slot.armor.head",
+              "drop_chance": 0
+            },
+            {
+              "slot": "slot.armor.legs",
               "drop_chance": 0
             }
           ]
+        },
+        "minecraft:loot": {
+          "table": "loot_tables/equipment/dungeon_mob_loot.json"
+        }
+      },
+      "spawn_as_common_mob": {
+        "minecraft:equipment": {
+          "table": "loot_tables/equipment/common_zombie_gear.json",
+          "slot_drop_chance": [
+            {
+              "slot": "slot.weapon.mainhand",
+              "drop_chance": 0
+            },
+            {
+              "slot": "slot.armor.chest",
+              "drop_chance": 0
+            },
+            {
+              "slot": "slot.armor.feet",
+              "drop_chance": 0
+            },
+            {
+              "slot": "slot.armor.head",
+              "drop_chance": 0
+            },
+            {
+              "slot": "slot.armor.legs",
+              "drop_chance": 0
+            }
+          ]
+        },
+        "minecraft:loot": {
+          "table": "loot_tables/equipment/dungeon_mob_loot.json"
         }
       },
       "minecraft:look_to_start_drowned_transformation": {
@@ -606,6 +651,14 @@
           "component_groups": [
             "minecraft:zombie_adult",
             "spawn_as_common_mob"
+          ]
+        }
+      },
+      "spawn_as_rare_mob": {
+        "add": {
+          "component_groups": [
+            "spawn_as_rare_mob",
+            "minecraft:zombie_adult"
           ]
         }
       }

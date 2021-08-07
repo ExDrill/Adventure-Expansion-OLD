@@ -1,0 +1,59 @@
+{
+	"format_version": "1.16.100",
+	"minecraft:block": {
+		"description": {
+			"identifier": "exdrill:rare_mob_spawn_block"
+		},
+		"components": {
+			"minecraft:on_interact": {
+				"event": "spawn_mob",
+				"target": "self"
+			},
+			"minecraft:loot": "loot_tables/empty.json",
+			"minecraft:ticking": {
+				"looping": false,
+				"range": [
+					999998,
+					999999
+				],
+				"on_tick": {
+					"event": "spawn_mob",
+					"target": "self"
+				}
+			}
+		},
+		"events": {
+			"spawn_mob": {
+				"sequence": [
+					{
+						"randomize": [
+							{
+								"run_command": {
+									"command": [
+										"summon zombie ~ ~ ~ spawn_as_rare_mob"
+									],
+									"target": "self"
+								},
+								"weight": 150
+							},
+							{
+								"run_command": {
+									"command": [
+										"summon skeleton ~ ~ ~ spawn_as_rare_mob"
+									],
+									"target": "self"
+								},
+								"weight": 150
+							}
+						]
+					},
+					{
+						"die": {
+							"target": "self"
+						}
+					}
+				]
+			}
+		}
+	}
+}

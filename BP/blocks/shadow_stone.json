@@ -5,8 +5,8 @@
 			"identifier": "exdrill:shadow_stone"
 		},
 		"components": {
-			"minecraft:destroy_time": 0.5,
-			"minecraft:explosion_resistance": 15
+			"minecraft:destroy_time": 500,
+			"minecraft:explosion_resistance": 200
 		}
 	}
 }

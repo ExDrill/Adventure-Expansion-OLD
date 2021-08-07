@@ -1,0 +1,19 @@
+{
+	"format_version": "1.16.100",
+	"minecraft:item": {
+		"description": {
+			"identifier": "exdrill:sana_berry_pips"
+		},
+		"components": {
+			"minecraft:display_name": {
+				"value": "Sana Berry Pips"
+			},
+			"minecraft:icon": {
+				"texture": "sana_berry_pips"
+			},
+			"minecraft:block_placer": {
+				"block": "exdrill:magic_berry_bush"
+			}
+		}
+	}
+}

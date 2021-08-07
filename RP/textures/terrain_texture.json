@@ -144,6 +144,15 @@
 		},
 		"shadow_stone": {
 			"textures": "textures/blocks/shadow_stone/shadow_stone"
+		},
+		"crate_side": {
+			"textures": "textures/blocks/crate_side"
+		},
+		"crate_upper": {
+			"textures": "textures/blocks/crate_upper"
+		},
+		"shadow_binder": {
+			"textures": "textures/blocks/shadow_binder"
 		}
 	}
 }

@@ -1,0 +1,40 @@
+{
+	"format_version": "1.16.100",
+	"minecraft:block": {
+		"description": {
+			"identifier": "exdrill:shadow_binder"
+		},
+		"components": {
+			"minecraft:material_instances": {
+				"*": {
+					"texture": "shadow_binder",
+					"render_method": "opaque"
+				}
+			},
+			"minecraft:geometry": "geometry.shadow_binder",
+			"minecraft:block_light_absorption": 0,
+			"minecraft:block_light_emission": 0.3,
+			"minecraft:pick_collision": {
+				"origin": [ -4, 0, -4 ],
+				"size": [ 8, 16, 8 ]
+			},
+			"minecraft:entity_collision": {
+				"origin": [ -4, 0, -4 ],
+				"size": [ 8, 16, 8 ]
+			},
+			"minecraft:on_interact": {
+				"event": "on_interact",
+				"target": "self",
+				"condition": "query.get_equipped_item_name == 'stone'"
+			}
+		},
+		"events": {
+			"on_interact": {
+				"spawn_loot": {
+					"table": "loot_tables/blocks/shadow_binder_convert.json"
+				},
+				"decrement_stack": {}
+			}
+		}
+	}
+}

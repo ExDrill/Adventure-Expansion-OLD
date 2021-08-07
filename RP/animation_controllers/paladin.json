@@ -6,31 +6,71 @@
             "states": {
                 "default": {
                     "animations": [
-                        {"move_arms": "query.modified_move_speed * 3"},
-                        {"move_legs": "query.modified_move_speed * 3"}
+                        {
+                            "move_arms": "query.modified_move_speed * 3"
+                        },
+                        {
+                            "move_legs": "query.modified_move_speed * 3"
+                        },
+                        "look_at_target"
                     ],
                     "transitions": [
-                        {"block": "query.variant == 1"},
-                        {"attack": "variable.attack_time"}
+                        {
+                            "block": "query.variant == 1"
+                        },
+                        {
+                            "attack": "variable.attack_time"
+                        },
+                        {
+                            "total_swoop": "query.is_roaring"
+                        }
                     ]
                 },
                 "block": {
                     "animations": [
                         "block",
-                        {"move_legs": "query.modified_move_speed * 3"}
+                        {
+                            "move_legs": "query.modified_move_speed * 3"
+                        },
+                        "look_at_target"
                     ],
                     "transitions": [
-                        {"default": "query.variant == 0"},
-                        {"attack": "variable.attack_time"}
+                        {
+                            "default": "query.variant == 0"
+                        },
+                        {
+                            "attack": "variable.attack_time"
+                        },
+                        {
+                            "total_swoop": "query.is_roaring"
+                        }
                     ]
                 },
                 "attack": {
                     "animations": [
                         "attack",
-                        {"move_legs": "query.modified_move_speed * 3"}
+                        {
+                            "move_legs": "query.modified_move_speed * 3"
+                        },
+                        "look_at_target"
                     ],
                     "transitions": [
-                        {"default": "!variable.attack_time"},
+                        {
+                            "default": "!variable.attack_time"
+                        },
+                        {
+                            "total_swoop": "query.is_roaring"
+                        }
+                    ]
+                },
+                "total_swoop": {
+                    "animations": [
+                        "total_swoop"
+                    ],
+                    "transitions": [
+                        {
+                            "default": "!query.is_roaring"
+                        }
                     ]
                 }
             }

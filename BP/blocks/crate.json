@@ -1,0 +1,41 @@
+{
+	"format_version": "1.16.100",
+	"minecraft:block": {
+		"description": {
+			"identifier": "exdrill:crate"
+		},
+		"components": {
+			"minecraft:destroy_time": 500,
+			"minecraft:on_interact": {
+				"event": "attempt_to_open",
+				"target": "self"
+			}
+		},
+		"events": {
+			"attempt_to_open": {
+				"sequence": [
+					{
+						"condition": "query.get_equipped_item_name == 'dungeon_crate_key'",
+						"run_command": {
+							"command": [
+								"fill ~ ~ ~ ~ ~ ~ air 0 destroy"
+							],
+							"target": "self"
+						},
+						"decrement_stack": {}
+					},
+					{
+						"condition": "query.get_equipped_item_name != 'dungeon_crate_key'",
+						"run_command": {
+							"command": [
+								"title @s actionbar You don't have a key!",
+								"playsound random.chestclosed @a ~ ~ ~"
+							],
+							"target": "other"
+						}
+					}
+				]
+			}
+		}
+	}
+}

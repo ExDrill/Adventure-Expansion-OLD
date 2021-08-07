@@ -1,0 +1,39 @@
+{
+	"format_version": "1.16.100",
+	"minecraft:block": {
+		"description": {
+			"identifier": "exdrill:skeleton_mage_spawn_block"
+		},
+		"components": {
+			"minecraft:on_interact": {
+				"event": "spawn_mob",
+				"target": "self"
+			},
+			"minecraft:loot": "loot_tables/empty.json",
+			"minecraft:ticking": {
+				"looping": false,
+				"range": [
+					999998,
+					999999
+				],
+				"on_tick": {
+					"event": "spawn_mob",
+					"target": "self"
+				}
+			}
+		},
+		"events": {
+			"spawn_mob": {
+				"run_command": {
+					"command": [
+						"summon exdrill:skeleton_mage"
+					],
+					"target": "self"
+				},
+				"die": {
+					"target": "self"
+				}
+			}
+		}
+	}
+}

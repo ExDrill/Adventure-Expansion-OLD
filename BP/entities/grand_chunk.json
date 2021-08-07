@@ -6,8 +6,78 @@
 			"is_summonable": true,
 			"is_spawnable": true
 		},
-		"component_groups": {},
+		"component_groups": {
+			"aggro_mode": {
+				"minecraft:behavior.nearest_attackable_target": {
+					"priority": 0,
+					"must_reach": false,
+					"entity_types": {
+						"walk_speed_multiplier": 3,
+						"filters": {
+							"any_of": [
+								{
+									"test": "is_family",
+									"subject": "other",
+									"value": "player"
+								},
+								{
+									"test": "is_family",
+									"subject": "other",
+									"value": "irongolem"
+								},
+								{
+									"test": "is_family",
+									"subject": "other",
+									"value": "snowgolem"
+								}
+							]
+						}
+					}
+				}
+			},
+			"speed_adjust": {
+				"minecraft:behavior.nearest_attackable_target": {
+					"entity_types": {
+						"walk_speed_multiplier": 2,
+						"filters": {
+							"any_of": [
+								{
+									"test": "is_family",
+									"subject": "other",
+									"value": "player"
+								},
+								{
+									"test": "is_family",
+									"subject": "other",
+									"value": "irongolem"
+								}
+							]
+						}
+					}
+				}
+			}
+		},
 		"components": {
+			"minecraft:damage_sensor": {
+				"triggers": [
+					{
+						"cause": "magic",
+						"damage_multiplier": 0.1
+					},
+					{
+						"cause": "fall",
+						"deals_damage": false
+					},
+					{
+						"cause": "lava",
+						"damage_multiplier": 0.5
+					},
+					{
+						"cause": "fire",
+						"damage_multiplier": 0.5
+					}
+				]
+			},
 			"minecraft:attack": {
 				"damage": 12
 			},
@@ -61,34 +131,28 @@
 			},
 			"minecraft:follow_range": {
 				"value": 64
-			},
-			"minecraft:behavior.nearest_attackable_target": {
-				"priority": 0,
-				"entity_types": {
-					"walk_speed_multiplier": 2,
-					"filters": {
-						"any_of": [
-							{
-								"test": "is_family",
-								"subject": "other",
-								"value": "player"
-							},
-														{
-								"test": "is_family",
-								"subject": "other",
-								"value": "irongolem"
-							},
-														{
-								"test": "is_family",
-								"subject": "other",
-								"value": "snowgolem"
-							}
-						]
-					}
-				},
-				"must_reach": false,
 			}
 		},
-		"events": {}
+		"events": {
+			"minecraft:entity_spawned": {
+				"add": {
+					"component_groups": [
+						"speed_adjust"
+					]
+				}
+			},
+			"aggro_mode": {
+				"add": {
+					"component_groups": [
+						"aggro_mode"
+					]
+				},
+				"remove": {
+					"component_groups": [
+						"speed_adjust"
+					]
+				}
+			}
+		}
 	}
 }

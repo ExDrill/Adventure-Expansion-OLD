@@ -10,14 +10,15 @@
 			"melee_state": {
 				"minecraft:behavior.melee_attack": {
 					"reach_multiplier": 3,
-					"priority": 0
+					"priority": 0,
+					"speed_multiplier": 1.25
 				},
 				"minecraft:variant": {
 					"value": 0
 				},
 				"minecraft:timer": {
 					"looping": false,
-					"time": 20,
+					"time": [ 1, 2 ],
 					"time_down_event": {
 						"event": "shield_state",
 						"target": "self"
@@ -31,7 +32,7 @@
 							"cause": "entity_attack",
 							"deals_damage": false,
 							"on_damage": {
-								"event": "play_sound",
+								"event": "disable_shield",
 								"target": "self"
 							}
 						},
@@ -57,16 +58,51 @@
 						"target": "self"
 					}
 				}
+			},
+			"total_swoop": {
+				"minecraft:behavior.knockback_roar": {
+					"duration": 2.5,
+					"priority": 0,
+					"attack_time": 1.8,
+					"knockback_range": 5,
+					"knockback_strength": 3,
+					"knockback_damage": 4,
+					"on_roar_end": {
+						"event": "melee_state",
+						"target": "self"
+					}
+				},
+				"minecraft:damage_sensor": {
+					"triggers": {
+						"cause": "all",
+						"damage_multiplier": 0.3
+					}
+				}
 			}
 		},
 		"components": {
 			"minecraft:health": {
-				"value": 250,
-				 "max": 250
+				"value": 300,
+				 "max": 300
 			},
 			"minecraft:persistent": {},
 			"minecraft:follow_range": {
 				"value": 64
+			},
+			"minecraft:ravager_blocked": {
+				"knockback_strength": 0,
+				"reaction_choices": [
+					{
+						"weight": 1,
+						"value": {
+							"event": "total_swoop",
+							"target": "self"
+						}
+					},
+					{
+						"weight": 1
+					}
+				]
 			},
 			"minecraft:movement": {
 				"value": 0.25
@@ -81,10 +117,21 @@
 			"minecraft:movement.basic": {},
 			"minecraft:navigation.generic": {
 				"can_sink": false,
-				"avoid_water": true
+				"avoid_water": true,
+				"avoid_damage_blocks": true,
+				"can_walk_in_lava": false
+			},
+			"minecraft:behavior.avoid_block": {
+				"priority": 2,
+				"search_height": 5,
+				"search_range": 2,
+				"target_blocks": [
+					"minecraft:lava",
+					"minecraft:flowing_lava"
+				]
 			},
 			"minecraft:knockback_resistance": {
-				"value": 0.9
+				"value": 0.6
 			},
 			"minecraft:behavior.random_stroll": {
 				"priority": 4,
@@ -136,7 +183,8 @@
 				},
 				"remove": {
 					"component_groups": [
-						"shield_state"
+						"shield_state",
+						"total_swoop"
 					]
 				}
 			},
@@ -151,6 +199,38 @@
 				"run_command": {
 					"command": [
 						"playsound item.shield.block @a ~ ~ ~"
+					]
+				}
+			},
+			"disable_shield": {
+				"sequence": [
+					{
+						"add": {
+							"component_groups": [
+								"melee_state"
+							]
+						},
+						"remove": {
+							"component_groups": [
+								"shield_state"
+							]
+						}
+					},
+					{
+						"trigger": "play_sound"
+					}
+				]
+			},
+			"total_swoop": {
+				"add": {
+					"component_groups": [
+						"total_swoop"
+					]
+				},
+				"remove": {
+					"component_groups": [
+						"melee_state",
+						"shield_state"
 					]
 				}
 			}
