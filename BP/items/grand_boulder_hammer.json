@@ -11,8 +11,36 @@
 			"minecraft:display_name": {
 				"value": "Grand Boulder Hammer"
 			},
+			"minecraft:damage": 6,
 			"minecraft:hand_equipped": true,
-			"minecraft:max_stack_size": 1
+			"minecraft:max_stack_size": 1,
+			"minecraft:weapon": {
+				"on_hurt_entity": {
+					"event": "grand_boulder_smash",
+					"target": "self"
+				}
+			}
+		},
+		"events": {
+			"grand_boulder_smash": {
+				"randomize": [
+					{
+						"run_command": {
+							"command": [
+								"summon exdrill:area_attack ~ ~ ~",
+								"playsound random.explode @a ~ ~ ~",
+								"particle minecraft:dragon_death_explosion_emitter ~ ~ ~"
+							],
+							"target": "other"
+						},
+						"swing": {},
+						"weight": 1
+					},
+					{
+						"weight": 4
+					}
+				]
+			}
 		}
 	}
 }

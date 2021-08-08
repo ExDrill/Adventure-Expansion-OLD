@@ -7,8 +7,22 @@
       "is_summonable": false,
       "is_experimental": false
     },
-
     "component_groups": {
+      "grand_boulder_smash": {
+        "minecraft:area_attack": {
+          "cause": "entity_attack",
+          "damage_per_tick": 5,
+          "damage_range": 4
+        },
+        "minecraft:timer": {
+          "looping": false,
+          "time": 0.1,
+          "time_down_event": {
+            "event": "stop_smash",
+            "target": "self"
+          }
+        }
+      },
       "minecraft:add_bad_omen": {
         "minecraft:spell_effects": {
           "add_effects": [
@@ -185,6 +199,20 @@
       "minecraft:remove_raid_trigger": {
         "remove": {
           "component_groups": [ "minecraft:raid_trigger" ]
+        }
+      },
+      "add_smash": {
+        "add": {
+          "component_groups": [
+            "grand_boulder_smash"
+          ]
+        }
+      },
+      "stop_smash": {
+        "remove": {
+          "component_groups": [
+            "grand_boulder_smash"
+          ]
         }
       }
     }

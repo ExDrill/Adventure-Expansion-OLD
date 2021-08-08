@@ -20,6 +20,10 @@
 					"event": "total_swoop",
 					"target": "self"
 				}
+			},
+			"minecraft:cooldown": {
+				"category": "paladin_blade",
+				"duration": 1
 			}
 		},
 		"events": {
