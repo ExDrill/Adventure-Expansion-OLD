@@ -81,6 +81,9 @@
 			"minecraft:attack": {
 				"damage": 12
 			},
+			"minecraft:loot": {
+				"table": "loot_tables/entities/grand_chunk.json"
+			},
 			"minecraft:collision_box": {
 				"width": 1,
 				"height": 2.1

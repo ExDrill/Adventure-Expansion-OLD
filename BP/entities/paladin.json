@@ -100,7 +100,7 @@
 						}
 					},
 					{
-						"weight": 1
+						"weight": 2
 					}
 				]
 			},
@@ -142,10 +142,13 @@
 			"minecraft:attack": {
 				"damage": 1
 			},
+			"minecraft:loot": {
+				"table": "loot_tables/entities/paladin.json"
+			},
 			"minecraft:equipment": {
 				"slot_drop_chance": [
 					{
-						"drop_chance": 0.5,
+						"drop_chance": 0,
 						"slot": "slot.weapon.mainhand"
 					},
 					{

@@ -15,6 +15,17 @@
 			"minecraft:hand_equipped": true,
 			"minecraft:weapon": {},
 			"minecraft:damage": 7,
+			"minecraft:enchantable": {
+				"slot": "sword",
+				"value": 10
+			},
+			"minecraft:durability": {
+				"damage_chance": {
+					"min": 60,
+					"max": 100
+				},
+				"max_durability": 1024
+			},
 			"minecraft:on_use": {
 				"on_use": {
 					"event": "total_swoop",
@@ -23,7 +34,7 @@
 			},
 			"minecraft:cooldown": {
 				"category": "paladin_blade",
-				"duration": 1
+				"duration": 2
 			}
 		},
 		"events": {
