@@ -19,34 +19,6 @@
 			}
 		]
 	},
-	"ae_image": {
-		"type": "image",
-		"anchor_from": "bottom_left",
-		"anchor_to": "bottom_left",
-		"texture": "textures/ui/platinum_icon",
-		"size": [ 25, 25 ],
-		"layer": 2,
-		"offset": [
-			5,-4
-		]
-	},
-	"version_label": {
-		"type": "label",
-		"text": "Beta 1.7",
-		"color": [
-			5,
-			10,
-			2
-		],
-		"shadow": true,
-		"font_size": "medium",
-		"anchor_from": "bottom_left",
-		"anchor_to": "bottom_left",
-		"alpha": 10,
-		"offset": [
-			35, -10
-		]
-	},
 	"special_render": {
 		"type": "custom",
 		"renderer": "debug_screen_renderer"
@@ -66,12 +38,32 @@
 				"special_render@debug_screen.special_render": {}
 			},
 			{
-				"version_label@debug_screen.version_label": {}
+				"version_info@debug_screen.version_info": {}
 			},
 			{
-				"ae_image@debug_screen.ae_image": {}
+				"ae_background@debug_screen.ae_background": {}
 			}
 		]
+	},
+	"ae_background": {
+		"type": "image",
+		"texture": "textures/ui/platinum_icon",
+		"size": [ 16, 16 ],
+		"anchor_from": "bottom_left",
+		"anchor_to": "bottom_left",
+		"offset": [ 5, -5 ],
+		"layer": 3
+	},
+	"version_info": {
+		"type": "label",
+		"text": "Beta v1.7",
+		"shadow": true,
+		"layer": 3,
+		"color": [ 0.7, 0.7, 1 ],
+		"font_type": "MinecraftTen",
+		"anchor_from": "bottom_left",
+		"anchor_to": "bottom_left",
+		"offset": [ 23, -8 ]
 	},
 	"debug_screen@common.base_screen": {
 		"send_telemetry": false,
