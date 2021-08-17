@@ -1,0 +1,14 @@
+{
+    "format_version": "1.13.0",
+    "minecraft:structure_template_feature": {
+        "description": {
+            "identifier": "exdrill:shadow_dungeon"
+        },
+        "structure_name": "dungeon:hole",
+        "adjustment_radius": 8,
+        "facing_direction": "east",
+        "constraints": {
+            "grounded": {}
+        }
+    }
+}

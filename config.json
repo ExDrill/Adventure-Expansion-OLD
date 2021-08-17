@@ -5,11 +5,16 @@
 	"author": "ExDrill",
 	"targetVersion": "1.17.10",
 	"description": "",
-	"capabilities": [
-		"gameTestAPI"
-	],
 	"packs": {
 		"behaviorPack": "./BP",
 		"resourcePack": "./RP"
+	},
+	"experimentalGameplay": {
+		"additionalModdingCapabilities": false,
+		"cavesAndCliffs": true,
+		"holidayCreatorFeatures": true,
+		"creationOfCustomBiomes": true,
+		"upcomingCreatorFeatures": true,
+		"enableGameTestFramework": true
 	}
 }

@@ -6,15 +6,10 @@
 			"places_feature": "exdrill:dragon_den"
 		},
 		"conditions": {
-			"placement_pass": "surface_pass",
+			"placement_pass": "before_surface_pass",
 			"minecraft:biome_filter": [
 				{
 					"any_of": [
-						{
-							"test": "has_biome_tag",
-							"operator": "==",
-							"value": "overworld_generation"
-						},
 						{
 							"test": "has_biome_tag",
 							"operator": "==",
@@ -23,6 +18,11 @@
 						{
 							"test": "has_biome_tag",
 							"operator": "==",
+							"value": "overworld_generation"
+						},
+						{
+							"test": "has_biome_tag",
+							"operator": "!=",
 							"value": "ocean"
 						}
 					]
@@ -30,22 +30,10 @@
 			]
 		},
 		"distribution": {
-			"iterations": 1,
-			"x": {
-				"extent": [
-					0,
-					512
-				],
-				"distribution": "gaussian"
-			},
+			"iterations": "math.mod(math.floor(v.originx / 16), 50) == 0 && math.mod(math.floor(v.originz / 16), 50) == 0",
+			"x": 0,
 			"y": "query.heightmap(variable.worldx, variable.worldz)-2",
-			"z": {
-				"extent": [
-					0,
-					512
-				],
-				"distribution": "gaussian"
-			}
+			"z": 0
 		}
 	}
 }

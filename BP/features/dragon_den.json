@@ -7,6 +7,8 @@
 		"structure_name": "mystructure:dragon_den_structure",
 		"adjustment_radius": 8,
 		"facing_direction": "north",
-		"constraints": {}
+		"constraints": {
+			"grounded": {}
+		}
 	}
 }
