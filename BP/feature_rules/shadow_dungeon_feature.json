@@ -12,12 +12,7 @@
 						{
 							"test": "has_biome_tag",
 							"operator": "==",
-							"value": "overworld_generation"
-						},
-						{
-							"test": "has_biome_tag",
-							"operator": "==",
-							"value": "overworld"
+							"value": "plains"
 						}
 					]
 				}
@@ -26,9 +21,15 @@
 		},
 		"distribution": {
 			"iterations": 1,
-			"x": 16,
-			"y": "query.heightmap(variable.worldx, variable.worldz)",
-			"z": 16
+			"x": {
+				"extent": [ 0, 512 ],
+				"distribution": "uniform"
+			},
+			"y": "query.heightmap(variable.worldx,variable.worldz)-17",
+			"z": {
+				"extent": [ 0, 512 ],
+				"distribution": "uniform"
+			}
 		}
 	}
 }

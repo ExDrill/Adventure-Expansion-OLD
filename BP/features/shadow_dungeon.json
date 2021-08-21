@@ -6,9 +6,7 @@
         },
         "structure_name": "dungeon:hole",
         "adjustment_radius": 8,
-        "facing_direction": "east",
-        "constraints": {
-            "grounded": {}
-        }
+        "facing_direction": "south",
+        "constraints": {}
     }
 }

@@ -26,13 +26,12 @@
 			"place_entrance": {
 				"run_command": {
 					"command": [
-						"structure load dungeon:entrance ~-7 ~-31 ~-7",
-						"say HELLO I AM HERE"
+						"structure load dungeon:entrance ~-7 ~-31 ~-7"
 					],
 					"target": "self"
 				},
 				"set_block": {
-					"block_type": "minecraft:diamond_block"
+					"block_type": "minecraft:air"
 				}
 			}
 		}
