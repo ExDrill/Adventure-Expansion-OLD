@@ -67,16 +67,6 @@
 				"textures/blocks/large_experience_storage_filled"
 			]
 		},
-		"mana_generator_empty": {
-			"textures": [
-				"textures/blocks/mana_generator"
-			]
-		},
-		"mana_generator_filled": {
-			"textures": [
-				"textures/blocks/mana_generator_filled"
-			]
-		},
 		"magic_berry_bush_stage1": {
 			"textures": [
 				"textures/blocks/magic_berry_bush/magic_berry_bush_stage_1"

@@ -1,26 +1,7 @@
-//bridge-file-version: #7
 {
 	"tiers": [
 		{
 			"trades": [
-				{
-					"wants": [
-						{
-							"item": "exdrill:green_mana",
-							"quantity": 32
-						},
-						{
-							"item": "minecraft:gold_ingot",
-							"quantity": 10
-						}
-					],
-					"gives": [
-						{
-							"item": "exdrill:green_energy_staff",
-							"quantity": 1
-						}
-					]
-				},
 				{
 					"wants": [
 						{
@@ -59,24 +40,6 @@
 					"gives": [
 						{
 							"item": "exdrill:large_experience_storage",
-							"quantity": 1
-						}
-					]
-				},
-				{
-					"wants": [
-						{
-							"item": "minecraft:emerald",
-							"quantity": 10
-						},
-						{
-							"item": "minecraft:glass",
-							"quantity": 5
-						}
-					],
-					"gives": [
-						{
-							"item": "exdrill:mana_generator",
 							"quantity": 1
 						}
 					]

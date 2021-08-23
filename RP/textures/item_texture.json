@@ -60,11 +60,6 @@
 				"textures/items/goblin_club"
 			]
 		},
-		"green_energy_staff": {
-			"textures": [
-				"textures/items/green_energy_staff"
-			]
-		},
 		"green_mana": {
 			"textures": [
 				"textures/items/green_mana"
