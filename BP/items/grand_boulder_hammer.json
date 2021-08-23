@@ -9,7 +9,7 @@
 				"texture": "grand_boulder_hammer"
 			},
 			"minecraft:display_name": {
-				"value": "Grand Boulder Hammer"
+				"value": "Grand Boulder"
 			},
 			"minecraft:damage": 6,
 			"minecraft:hand_equipped": true,
@@ -30,21 +30,44 @@
 		},
 		"events": {
 			"grand_boulder_smash": {
-				"randomize": [
+				"sequence": [
+					{
+						"sequence": [
+							{
+								"run_command": {
+									"command": [
+										"summon exdrill:area_attack ~ ~ ~",
+										"playsound random.explode @a ~ ~ ~",
+										"particle minecraft:dragon_death_explosion_emitter ~ ~ ~"
+									],
+									"target": "other"
+								}
+							},
+							{
+								"run_command": {
+									"command": [
+										"scoreboard players set @s HammerSlamDown 0"
+									],
+									"target": "holder"
+								}
+							}
+						],
+						"condition": "query.scoreboard('HammerSlamDown') == 5"
+					},
 					{
 						"run_command": {
 							"command": [
-								"summon exdrill:area_attack ~ ~ ~",
-								"playsound random.explode @a ~ ~ ~",
-								"particle minecraft:dragon_death_explosion_emitter ~ ~ ~"
-							],
-							"target": "other"
+								"function grand_chunk_ability"
+							]
 						},
-						"swing": {},
-						"weight": 1
+						"condition": "query.scoreboard('HammerSlamDown') != 5"
 					},
 					{
-						"weight": 4
+						"damage": {
+							"amount": 5,
+							"target": "self",
+							"type": "durability"
+						}
 					}
 				]
 			}

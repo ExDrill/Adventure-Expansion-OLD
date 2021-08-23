@@ -13,7 +13,12 @@
 			},
 			"minecraft:max_stack_size": 1,
 			"minecraft:hand_equipped": true,
-			"minecraft:weapon": {},
+			"minecraft:weapon": {
+				"on_hurt_entity": {
+					"event": "damage",
+					"target": "self"
+				}
+			},
 			"minecraft:damage": 7,
 			"minecraft:enchantable": {
 				"slot": "sword",
@@ -34,7 +39,7 @@
 			},
 			"minecraft:cooldown": {
 				"category": "paladin_blade",
-				"duration": 2
+				"duration": 2.5
 			}
 		},
 		"events": {
@@ -44,6 +49,18 @@
 						"playanimation @s animation.player.sweep t 10",
 						"summon exdrill:total_swoop"
 					]
+				},
+				"damage": {
+					"amount": 5,
+					"target": "self",
+					"type": "durability"
+				}
+			},
+			"damage": {
+				"damage": {
+					"amount": 5,
+					"target": "self",
+					"type": "durability"
 				}
 			}
 		}

@@ -13,6 +13,11 @@
 							"test": "has_biome_tag",
 							"operator": "==",
 							"value": "plains"
+						},
+						{
+							"test": "has_biome_tag",
+							"operator": "==",
+							"value": "desert"
 						}
 					]
 				}
@@ -25,7 +30,7 @@
 				"extent": [ 0, 512 ],
 				"distribution": "uniform"
 			},
-			"y": "query.heightmap(variable.worldx,variable.worldz)-17",
+			"y": "query.heightmap(variable.worldx,variable.worldz)-18",
 			"z": {
 				"extent": [ 0, 512 ],
 				"distribution": "uniform"

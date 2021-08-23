@@ -9,7 +9,8 @@
 			"minecraft:on_interact": {
 				"event": "attempt_to_open",
 				"target": "self"
-			}
+			},
+			"minecraft:loot": "loot_tables/blocks/crate.json"
 		},
 		"events": {
 			"attempt_to_open": {
