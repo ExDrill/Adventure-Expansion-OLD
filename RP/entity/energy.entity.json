@@ -1,0 +1,28 @@
+{
+	"format_version": "1.10.0",
+	"minecraft:client_entity": {
+		"description": {
+			"identifier": "exdrill:energy",
+			"materials": {
+				"default": "entity_alphatest"
+			},
+			"textures": {
+				"default": "textures/entity/energy"
+			},
+			"geometry": {
+				"default": "geometry.energy"
+			},
+			"animations": {
+				"move": "animation.energy.move"
+			},
+			"scripts": {
+				"animate": [
+					"move"
+				]
+			},
+			"render_controllers": [
+				"controller.render.default"
+			]
+		}
+	}
+}

@@ -1,0 +1,25 @@
+{
+	"format_version": "1.8.0",
+	"animations": {
+		"animation.energy.move": {
+			"loop": true,
+			"bones": {
+				"ball": {
+					"rotation": ["-query.anim_time * 180", "-query.anim_time * 180", 0]
+				},
+				"ring0": {
+					"rotation": ["query.anim_time * 180", "query.anim_time * 180", 0]
+				},
+				"ring1": {
+					"rotation": ["query.anim_time * 180", "query.anim_time * 180", 0]
+				},
+				"ring2": {
+					"rotation": ["query.anim_time * 180", "query.anim_time * 180", 0]
+				},
+				"rings": {
+					"scale": 0.8
+				}
+			}
+		}
+	}
+}
