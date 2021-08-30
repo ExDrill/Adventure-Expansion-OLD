@@ -27,13 +27,13 @@
 		"distribution": {
 			"iterations": 1,
 			"x": {
-				"extent": [ 0, 512 ],
-				"distribution": "uniform"
+				"extent": [ 0, 256 ],
+				"distribution": "gaussian"
 			},
 			"y": "query.heightmap(variable.worldx,variable.worldz)-18",
 			"z": {
-				"extent": [ 0, 512 ],
-				"distribution": "uniform"
+				"extent": [ 0, 256 ],
+				"distribution": "gaussian"
 			}
 		}
 	}
