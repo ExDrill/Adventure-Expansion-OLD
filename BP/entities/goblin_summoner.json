@@ -1,47 +1,40 @@
-//bridge-file-version: #15
 {
-	"format_version": "1.16.100",
+	"format_version": "1.17.0",
 	"minecraft:entity": {
 		"description": {
 			"identifier": "exdrill:goblin_summoner",
 			"is_spawnable": true,
-			"is_summonable": true,
-			"is_experimental": false
+			"is_summonable": true
 		},
 		"component_groups": {
-			"exdrill:hardmode_configuration": {
-				"minecraft:behavior.summon_entity": {
-					"priority": 5,
-					"summon_choices": [
-						{
-							"min_activation_range": 0,
-							"max_activation_range": 3,
-							"cooldown_time": 5,
-							"weight": 3,
-							"cast_duration": 2,
-							"particle_color": "#FF664D59",
-							"start_sound_event": "cast.spell",
-							"sequence": [
-								{
-									"shape": "circle",
-									"target": "self",
-									"base_delay": 1,
-									"delay_per_summon": 0,
-									"num_entities_spawned": 6,
-									"entity_type": "exdrill:blockling",
-									"size": 1.5,
-									"sound_event": "prepare.attack"
-								}
-							]
-						}
-					]
-				},
-				"minecraft:loot": {
-					"table": "loot_tables/entities/hardmode_goblin_loot.json"
+			"spawn_for_raid": {
+				"minecraft:on_death": {
+					"event": "award_point_to_banner",
+					"target": "self"
 				}
 			}
 		},
 		"components": {
+			"minecraft:health": {
+				"value": 50,
+				"max": 50
+			},
+			"minecraft:movement": {
+				"value": 0.15
+			},
+			"minecraft:physics": {},
+			"minecraft:pushable": {},
+			"minecraft:nameable": {},
+			"minecraft:breathable": {
+				"total_supply": 20,
+				"suffocate_time": 15
+			},
+			"minecraft:behavior.melee_attack": {
+				"priority": 10
+			},
+			"minecraft:behavior.float": {
+				"priority": 0
+			},
 			"minecraft:type_family": {
 				"family": [
 					"goblin",
@@ -49,166 +42,100 @@
 					"monster"
 				]
 			},
-			"minecraft:breathable": {
-				"total_supply": 15,
-				"suffocate_time": 0
-			},
-			"minecraft:nameable": {},
-			"minecraft:health": {
-				"value": 20,
-				"max": 20
-			},
-			"minecraft:hurt_on_condition": {
-				"damage_conditions": [
-					{
-						"filters": {
-							"test": "in_lava",
-							"subject": "self",
-							"operator": "==",
-							"value": true
-						},
-						"cause": "lava",
-						"damage_per_tick": 4
-					}
-				]
-			},
-			"minecraft:collision_box": {
-				"width": 0.6,
-				"height": 1.8
-			},
-			"minecraft:movement": {
-				"value": 0.25
-			},
-			"minecraft:navigation.walk": {
-				"can_path_over_water": true,
-				"can_pass_doors": true,
-				"can_open_doors": true,
-				"avoid_water": true
-			},
-			"minecraft:movement.basic": {},
-			"minecraft:jump.static": {},
-			"minecraft:can_climb": {},
-			"minecraft:behavior.float": {
-				"priority": 0
-			},
 			"minecraft:behavior.summon_entity": {
-				"priority": 5,
+				"priority": 0,
 				"summon_choices": [
 					{
-						"min_activation_range": 0,
-						"max_activation_range": 3,
+						"cast_duration": 1,
+						"do_casting": true,
+						"weight": 1,
+						"min_activation_range": 1,
+						"max_activation_range": 30,
+						"particle_color": "#e600ff",
 						"cooldown_time": 5,
-						"weight": 3,
-						"cast_duration": 2,
-						"particle_color": "#FF664D59",
-						"start_sound_event": "cast.spell",
 						"sequence": [
 							{
 								"shape": "circle",
 								"target": "self",
-								"base_delay": 1,
-								"delay_per_summon": 0,
-								"num_entities_spawned": 4,
+								"size": 5,
+								"base_delay": 0,
+								"delay_per_summon": 0.0,
 								"entity_type": "exdrill:blockling",
-								"size": 1.5,
-								"sound_event": "prepare.attack"
+								"num_entities_spawned": 5
 							}
 						]
 					}
 				]
 			},
-			"minecraft:behavior.random_stroll": {
-				"priority": 8,
-				"speed_multiplier": 0.6
+			"minecraft:behavior.look_at_target": {
+				"look_time": [ 5, 7 ],
+				"priority": 1,
+				"probablity": 1,
+				"look_distance": 10
 			},
+			"minecraft:movement.generic": {},
+			"minecraft:navigation.generic": {},
 			"minecraft:behavior.nearest_attackable_target": {
-				"priority": 2,
+				"priority": 0,
 				"must_see": true,
-				"entity_types": [
-					{
-						"filters": {
-							"any_of": [
-								{
-									"test": "is_family",
-									"subject": "other",
-									"value": "player"
-								},
-								{
-									"test": "is_family",
-									"subject": "other",
-									"value": "snowgolem"
-								},
-								{
-									"test": "is_family",
-									"subject": "other",
-									"value": "irongolem"
-								}
-							]
-						}
+				"entity_types": {
+					"filters": {
+						"any_of": [
+							{
+								"test": "is_family",
+								"subject": "other",
+								"value": "player"
+							},
+							{
+								"test": "is_family",
+								"subject": "other",
+								"value": "irongolem"
+							},
+							{
+								"test": "is_family",
+								"subject": "other",
+								"value": "snowgolem"
+							}
+						]
 					}
-				]
-			},
-			"minecraft:behavior.look_at_player": {
-				"priority": 9,
-				"look_distance": 3,
-				"probability": 1
-			},
-			"minecraft:behavior.look_at_entity": {
-				"priority": 10,
-				"look_distance": 8,
-				"filters": {
-					"test": "is_family",
-					"subject": "other",
-					"value": "mob"
 				}
-			},
-			"minecraft:behavior.hurt_by_target": {
-				"priority": 1
 			},
 			"minecraft:persistent": {},
-			"minecraft:physics": {},
-			"minecraft:pushable": {
-				"is_pushable": true,
-				"is_pushable_by_piston": true
+			"minecraft:behavior.random_stroll": {
+				"priority": 2,
+				"interval": 3,
+				"speed_multiplier": 1.2,
+				"xz_dist": 5,
+				"y_dist": 2
 			},
-			"minecraft:follow_range": {
-				"value": 64
+			"minecraft:dweller": {
+				"dwelling_type": "village",
+				"can_migrate": false,
+				"can_find_poi": false,
+				"dweller_role": "hostile",
+				"first_founding_reward": 0,
+				"update_interval_base": 60,
+				"update_interval_variant": 40
 			},
-			"minecraft:conditional_bandwidth_optimization": {},
-			"minecraft:loot": {
-				"table": "loot_tables/entities/goblin_summoner_loot.json"
-			},
-			"minecraft:equipment": {
-				"table": "loot_tables/equipment/goblin_summoner.json",
-				"slot_drop_chance": [
-					{
-						"slot": "slot.armor.head",
-						"drop_chance": 0.01
-					}
-				]
+			"minecraft:behavior.move_to_village": {
+				"priority": 1,
+				"goal_radius": 2.0,
+				"speed_multiplier": 1
 			}
+
 		},
 		"events": {
-			"minecraft:entity_spawned": {},
-			"exdrill:spread": {
+			"award_point_to_banner": {
 				"run_command": {
 					"command": [
-						"spreadplayers ~ ~ 1 20 @e[type=exdrill:goblin_summoner,r=5]"
+						"scoreboard players add @e[type=exdrill:goblin_banner] KillCount 1"
 					]
 				}
 			},
-			"exdrill:hardmode_configuration": {
+			"spawn_for_raid": {
 				"add": {
 					"component_groups": [
-						"exdrill:hardmode_configuration"
-					]
-				},
-				"trigger": "exdrill:spread"
-			},
-			"exdrill:hardmode": {
-				"add": {
-					"component_groups": [
-						"exdrill:hardmode_configuration"
+						"spawn_for_raid"
 					]
 				}
 			}

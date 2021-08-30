@@ -4,10 +4,10 @@
 		"description": {
 			"identifier": "exdrill:blockling",
 			"materials": {
-				"default": "entity_alphatest"
+				"default": "wolf"
 			},
 			"textures": {
-				"default": "textures/entity/blockling_v2"
+				"default": "textures/entity/blockling"
 			},
 			"geometry": {
 				"default": "geometry.blockling"
@@ -19,7 +19,7 @@
 			"scripts": {
 				"animate": [
 					{
-						"walk": "query.modified_move_speed"
+						"walk": "query.modified_move_speed * 2"
 					},
 					"look_at_target"
 				]

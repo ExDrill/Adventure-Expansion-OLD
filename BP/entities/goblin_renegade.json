@@ -1,0 +1,58 @@
+{
+	"format_version": "1.17.0",
+	"minecraft:entity": {
+		"description": {
+			"identifier": "exdrill:goblin_renegade",
+			"is_summonable": true,
+			"is_spawnable": true
+		},
+		"component_groups": {
+			"test": {
+				"minecraft:variant": {
+					"value": 1
+				},
+				"minecraft:timer": {
+					"looping": false,
+					"time": 1,
+					"time_down_event": {
+						"event": "set_back"
+					}
+				}
+			},
+			"set": {
+				"minecraft:variant": {
+					"value": 0
+				}
+			}
+		},
+		"components": {
+			"minecraft:physics": {}
+		},
+		"events": {
+			"test": {
+				"add": {
+					"component_groups": [
+						"test"
+					]
+				},
+				"remove": {
+					"component_groups": [
+						"set"
+					]
+				}
+			},
+			"set_back": {
+				"add": {
+					"component_groups": [
+						"set"
+					]
+				},
+				"remove": {
+					"component_groups": [
+						"test"
+					]
+				}
+			}
+		}
+	}
+}

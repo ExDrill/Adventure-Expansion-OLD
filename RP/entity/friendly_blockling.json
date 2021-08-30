@@ -4,39 +4,38 @@
 		"description": {
 			"identifier": "exdrill:friendly_blockling",
 			"materials": {
-				"default": "entity_alphatest"
+				"default": "wolf",
+				"chest": "entity_alphatest"
 			},
 			"textures": {
-				"red": "textures/entity/friendly_blockling/red",
-				"blue": "textures/entity/friendly_blockling/blue",
-				"yellow": "textures/entity/friendly_blockling/yellow",
-				"green": "textures/entity/friendly_blockling/green"
+				"default": "textures/entity/blockling",
+				"chest": "textures/entity/blockling_chest"
 			},
 			"geometry": {
-				"default": "geometry.blockling"
+				"default": "geometry.blockling",
+				"chest": "geometry.blockling_chest"
 			},
 			"animations": {
 				"walk": "animation.blockling.walk",
 				"look_at_target": "animation.common.look_at_target",
-				"sit": "animation.blockling.sit",
-				"stand": "animation.blockling.stand"
+				"sit": "animation.blockling.sit"
 			},
 			"scripts": {
 				"animate": [
 					{
-						"walk": "query.modified_move_speed"
+						"walk": "query.modified_move_speed * 2"
 					},
 					"look_at_target",
 					{
 						"sit": "query.is_sitting"
-					},
-					{
-						"stand": "!query.is_sitting"
 					}
 				]
 			},
 			"render_controllers": [
-				"controller.render.friendly_blockling"
+				"controller.render.default",
+				{
+					"controller.render.blockling_chest": "query.variant == 1"
+				}
 			],
 			"spawn_egg": {
 				"texture_index": 0,

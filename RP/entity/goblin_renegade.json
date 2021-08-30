@@ -2,32 +2,33 @@
 	"format_version": "1.10.0",
 	"minecraft:client_entity": {
 		"description": {
-			"identifier": "exdrill:goblin_warrior",
+			"identifier": "exdrill:goblin_renegade",
 			"materials": {
 				"default": "entity_alphatest"
 			},
 			"textures": {
-				"default": "textures/entity/goblin_warrior"
+				"default": "textures/entity/goblin_renegade"
 			},
 			"geometry": {
-				"default": "geometry.goblin_warrior"
+				"default": "geometry.goblin_renegade"
 			},
 			"scripts": {
 				"animate": [
 					"setup",
-					"look_at_target",
 					"bob"
 				]
+			},
+			"particle_effects": {
+				"potion_blast": "minecraft:egg_destroy_emitter"
 			},
 			"animations": {
 				"move_arms": "animation.common_humanoid.move.arms",
 				"move_legs": "animation.common_humanoid.move.legs",
-				"attack_rotations": "animation.common_humanoid.attack.rotations",
-				"attack_positions": "animation.common_humanoid.attack.positions",
+				"wield": "animation.goblin_renegade.wield",
+				"throw_potion": "animation.goblin_renegade.throw_potion",
 				"look_at_target": "animation.common.look_at_target",
-				"block": "animation.common_humanoid.block",
 				"bob": "animation.player.bob",
-				"setup": "controller.animation.goblin_warrior"
+				"setup": "controller.animation.goblin_renegade"
 			},
 			"render_controllers": [
 				"controller.render.default"

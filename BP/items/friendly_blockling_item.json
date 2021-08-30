@@ -6,17 +6,26 @@
 		},
 		"components": {
 			"minecraft:max_stack_size": 1,
-			"minecraft:render_offsets": "blaze_rod",
-			"minecraft:entity_placer": {
-				"entity": "exdrill:friendly_blockling"
-			},
 			"minecraft:icon": {
 				"texture": "friendly_blockling"
 			},
 			"minecraft:display_name": {
 				"value": "Friendly Blockling"
+			},
+			"minecraft:on_use": {
+				"on_use": {
+					"event": "shoot",
+					"target": "self"
+				}
 			}
 		},
-		"events": {}
+		"events": {
+			"shoot": {
+				"shoot": {
+					"projectile": "exdrill:summon_tamed_blockling",
+					"launch_power": 1
+				}
+			}
+		}
 	}
 }

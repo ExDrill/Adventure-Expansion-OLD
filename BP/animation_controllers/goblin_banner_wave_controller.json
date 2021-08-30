@@ -1,0 +1,22 @@
+{
+    "format_version": "1.10.0",
+    "animation_controllers": {
+        "controller.animation.wave_controller": {
+            "initial_state": "wave_1",
+            "states": {
+                // Normal Mode Waves
+                "wave_1": {},
+                "wave_2": {},
+                "wave_3": {},
+                "wave_4": {},
+                "wave_5": {},
+                "wave_6": {},
+                "wave_7": {},
+                // Hard Mode Waves
+                "wave_8": {},
+                "wave_9": {},
+                "wave_10": {}
+            }
+        }
+    }
+}

@@ -26,6 +26,7 @@
 			}
 		},
 		"animation.blockling.sit": {
+			"loop": true,
 			"bones": {
 				"head": {
 					"position": [0,-1,0]

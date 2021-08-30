@@ -1,38 +1,16 @@
 {
 	"format_version": "1.8.0",
 	"animations": {
-		"animation.goblin_ranger.walk": {
-			"loop": true,
-			"animation_length": 0.72,
-			"bones": {
-				"rightleg": {
-					"rotation": {
-						"0.0": [0, 0, 0],
-						"0.2": [45, 0, 0],
-						"0.4": [0, 0, 0],
-						"0.6": [-45, 0, 0],
-						"0.72": [0, 0, 0]
-					}
-				},
-				"leftleg": {
-					"rotation": {
-						"0.0": [0, 0, 0],
-						"0.2": [-45, 0, 0],
-						"0.4": [0, 0, 0],
-						"0.6": [45, 0, 0],
-						"0.72": [0, 0, 0]
-					}
-				}
-			}
-		},
-		"animation.goblin_ranger.hold": {
+		"animation.goblin_ranger.wield": {
 			"loop": true,
 			"bones": {
-				"rightarm": {
-					"rotation": [-90, -12.5, 0]
+				"leftArm": {
+					"rotation": [-90, 45, 0],
+					"position": [-1, 0, -1]
 				},
-				"leftarm": {
-					"rotation": [-90, 45, 0]
+				"rightArm": {
+					"rotation": [-90, 0, 0],
+					"position": [0, 0, -1]
 				}
 			}
 		}

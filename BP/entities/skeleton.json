@@ -9,6 +9,7 @@
     },
     "component_groups": {
       "spawn_as_rare_mob": {
+        "minecraft:persistent": {},
         "minecraft:equipment": {
           "table": "loot_tables/equipment/rare_skeleton_gear.json",
           "slot_drop_chance": [
@@ -39,6 +40,7 @@
         }
       },
       "spawn_as_common_mob": {
+        "minecraft:persistent": {},
         "minecraft:equipment": {
           "table": "loot_tables/equipment/common_skeleton_gear.json",
           "slot_drop_chance": [

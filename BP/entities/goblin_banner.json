@@ -1,178 +1,85 @@
-//bridge-file-version: #28
 {
-	"format_version": "1.16.100",
+	"format_version": "1.17.0",
 	"minecraft:entity": {
 		"description": {
 			"identifier": "exdrill:goblin_banner",
+			"is_spawnable": true,
 			"is_summonable": true,
-			"is_spawnable": true
+			"animations": {
+				"wave_controller": "controller.animation.wave_controller"
+			},
+			"scripts": {
+				"animate": [
+					"wave_controller"
+				]
+			}
 		},
 		"component_groups": {
-			"interact": {
+			"configuration": {
 				"minecraft:interact": {
 					"interactions": [
 						{
-							"interact_text": "Start the Raid",
+							"swing": true,
+							"interact_text": "action.interact.activate",
 							"on_interact": {
-								"event": "exdrill:begin_normalmode",
-								"target": "self",
+								"event": "normal_mode",
 								"filters": {
-									"all_of": [
-										{
-											"test": "has_equipment",
-											"subject": "other",
-											"domain": "hand",
-											"operator": "!=",
-											"value": "exdrill:totem_of_enraging"
-										},
-										{
-											"test": "is_family",
-											"subject": "other",
-											"value": "player"
-										}
-									]
+									"test": "has_equipment",
+									"subject": "other",
+									"domain": "hand",
+									"operator": "not",
+									"value": "exdrill:totem_of_enraging"
 								}
-							},
-							"swing": true
+							}
 						},
 						{
 							"use_item": true,
-							"interact_text": "Start the Hardmode Raid",
 							"swing": true,
+							"interact_text": "action.interact.hard_mode_active",
 							"on_interact": {
-								"event": "exdrill:begin_hardmode",
-								"target": "self",
+								"event": "hard_mode",
 								"filters": {
-									"all_of": [
-										{
-											"test": "has_equipment",
-											"subject": "other",
-											"domain": "hand",
-											"value": "exdrill:totem_of_enraging"
-										},
-										{
-											"test": "is_family",
-											"subject": "other",
-											"value": "player"
-										}
-									]
+									"test": "has_equipment",
+									"subject": "other",
+									"domain": "hand",
+									"operator": "equals",
+									"value": "exdrill:totem_of_enraging"
 								}
 							}
 						}
 					]
 				}
 			},
-			"hardmode": {
-				"minecraft:timer": {
-					"looping": false,
-					"time": 300,
-					"time_down_event": {
-						"event": "exdrill:summon_boss"
-					}
-				},
-				"minecraft:spawn_entity": {
-					"entities": [
-						{
-							"spawn_entity": "exdrill:goblin_warrior",
-							"num_to_spawn": 2,
-							"spawn_event": "exdrill:hardmode_configuration",
-							"min_wait_time": 8,
-							"max_wait_time": 10,
-							"single_use": false
-						},
-						{
-							"spawn_entity": "exdrill:goblin_ranger",
-							"num_to_spawn": 1,
-							"spawn_event": "exdrill:hardmode_configuration",
-							"min_wait_time": 8,
-							"max_wait_time": 10,
-							"single_use": false
-						},
-						{
-							"spawn_entity": "exdrill:goblin_grunt",
-							"num_to_spawn": 1,
-							"spawn_event": "exdrill:hardmode_configuration",
-							"min_wait_time": 12,
-							"max_wait_time": 15,
-							"single_use": false
-						},
-						{
-							"spawn_entity": "exdrill:goblin_summoner",
-							"num_to_spawn": 1,
-							"spawn_event": "exdrill:hardmode_configuration",
-							"min_wait_time": 15,
-							"max_wait_time": 20,
-							"single_use": false
-						}
-					]
+			"normal_mode": {
+				"minecraft:variant": {
+					"value": 0
 				}
 			},
-			"normalmode": {
-				"minecraft:timer": {
-					"looping": false,
-					"time": 300,
-					"time_down_event": {
-						"event": "exdrill:summon_boss"
-					}
-				},
-				"minecraft:spawn_entity": {
-					"entities": [
-						{
-							"spawn_entity": "exdrill:goblin_warrior",
-							"num_to_spawn": 2,
-							"spawn_event": "exdrill:spread",
-							"min_wait_time": 8,
-							"max_wait_time": 10,
-							"single_use": false
-						},
-						{
-							"spawn_entity": "exdrill:goblin_ranger",
-							"num_to_spawn": 1,
-							"spawn_event": "exdrill:spread",
-							"min_wait_time": 8,
-							"max_wait_time": 10,
-							"single_use": false
-						},
-						{
-							"spawn_entity": "exdrill:goblin_grunt",
-							"num_to_spawn": 1,
-							"spawn_event": "exdrill:spread",
-							"min_wait_time": 12,
-							"max_wait_time": 15,
-							"single_use": false
-						},
-						{
-							"spawn_entity": "exdrill:goblin_summoner",
-							"num_to_spawn": 1,
-							"spawn_event": "exdrill:spread",
-							"min_wait_time": 15,
-							"max_wait_time": 20,
-							"single_use": false
-						}
-					]
+			"hard_mode": {
+				"minecraft:variant": {
+					"value": 1
 				}
-			}
+			},
+			// Normal Mode Waves
+			"wave_1": {},
+			"wave_2": {},
+			"wave_3": {},
+			"wave_4": {},
+			"wave_5": {},
+			"wave_6": {},
+			"wave_7": {},
+			// Hard Mode Waves
+			"wave_8": {},
+			"wave_9": {},
+			"wave_10": {}
 		},
 		"components": {
-			"minecraft:collision_box": {
-				"width": 0.5,
-				"height": 1.8
-			},
-			"minecraft:health": {
-				"value": 10,
-				"max": 10
-			},
-			"minecraft:boss": {
-				"should_darken_sky": false,
-				"hud_range": 50,
-				"name": "Goblin Raid"
-			},
-			"minecraft:persistent": {},
 			"minecraft:physics": {},
-			"minecraft:knockback_resistance": {
-				"value": 10,
-				"max": 10
+			"minecraft:health": {
+				"value": 999,
+				"max": 999
 			},
+			"minecraft:timer": {},
 			"minecraft:damage_sensor": {
 				"triggers": [
 					{
@@ -183,51 +90,40 @@
 			}
 		},
 		"events": {
-			"exdrill:summon_boss": {
-				"run_command": {
-					"command": [
-						"summon exdrill:goblin_beast ~ ~ ~",
-						"kill @s"
-					]
-				}
-			},
 			"minecraft:entity_spawned": {
 				"add": {
 					"component_groups": [
-						"interact"
-					]
-				}
-			},
-			"exdrill:begin_hardmode": {
-				"add": {
-					"component_groups": [
-						"hardmode"
+						"configuration"
 					]
 				},
-				"remove": {
-					"component_groups": [
-						"interact"
-					]
-				},
-				"trigger": "sound"
-			},
-			"exdrill:begin_normalmode": {
-				"add": {
-					"component_groups": [
-						"normalmode"
-					]
-				},
-				"remove": {
-					"component_groups": [
-						"interact"
-					]
-				}
-			},
-			"sound": {
 				"run_command": {
 					"command": [
-						"title @a[r=20] title Hardmode Raid!",
-						"playsound mob.wither.spawn @a ~ ~ ~"
+						"scoreboard objectives add KillCount dummy",
+						"scoreboard players set @s KillCount 0"
+					]
+				}
+			},
+			"normal_mode": {
+				"add": {
+					"component_groups": [
+						"normal_mode"
+					]
+				},
+				"remove": {
+					"component_groups": [
+						"configuration"
+					]
+				}
+			},
+			"hard_mode": {
+				"add": {
+					"component_groups": [
+						"hard_mode"
+					]
+				},
+				"remove": {
+					"component_groups": [
+						"configuration"
 					]
 				}
 			}

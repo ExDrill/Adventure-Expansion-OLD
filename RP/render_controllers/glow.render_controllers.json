@@ -1,10 +1,9 @@
-//bridge-file-version: #13
 {
-	"format_version": "1.8.0",
+	"format_version": "1.10.0",
 	"render_controllers": {
 		"controller.render.glow": {
 			"textures": [
-				"Texture.glow"
+				"Texture.default"
 			],
 			"materials": [
 				{

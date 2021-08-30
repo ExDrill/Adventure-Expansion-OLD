@@ -86,3 +86,5 @@ tile.exdrill:replica_cracked_shadow_stone_bricks.name=Replica Cracked Shadow Sto
 tile.exdrill:replica_chiseled_shadow_stone_bricks.name=Replica Cracked Shadow Stone Bricks
 tile.exdrill:shadow_binder.name=Shadow Binder
 tile.exdrill:crate.name=Dungeon Crate
+action.interact.activate=Active Normal Mode
+action.interact.hard_mode_active=Activate Hard Mode

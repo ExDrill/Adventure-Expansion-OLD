@@ -21,7 +21,7 @@
 				]
 			},
 			"render_controllers": [
-				"controller.render.default"
+				"controller.render.glow"
 			]
 		}
 	}

@@ -4,7 +4,7 @@
 		"description": {
 			"identifier": "exdrill:energy",
 			"is_summonable": true,
-			"runtime_identifier": "arrow"
+			"runtime_identifier": "minecraft:snowball"
 		},
 		"component_groups": {},
 		"components": {
@@ -21,7 +21,14 @@
 						"destroy_on_hit": true,
 						"knockback": false
 					},
-					"remove_on_hit": {}
+					"remove_on_hit": {},
+					"definition_event": {
+						"affect_projectile": true,
+						"event_trigger": {
+							"event": "particle",
+							"target": "self"
+						}
+					}
 				}
 			},
 			"minecraft:collision_box": {
@@ -29,6 +36,14 @@
 				"width": 0.25
 			}
 		},
-		"events": {}
+		"events": {
+			"particle": {
+				"run_command": {
+					"command": [
+						"particle exdrill:energy_hit ~ ~ ~"
+					]
+				}
+			}
+		}
 	}
 }

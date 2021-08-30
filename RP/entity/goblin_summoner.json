@@ -1,4 +1,3 @@
-//bridge-file-version: #5
 {
 	"format_version": "1.10.0",
 	"minecraft:client_entity": {
@@ -11,21 +10,24 @@
 				"default": "textures/entity/goblin_summoner"
 			},
 			"geometry": {
-				"default": "geometry.goblin"
+				"default": "geometry.goblin_summoner"
+			},
+			"particle_effects": {
+				"spell": "minecraft:evoker_spell"
 			},
 			"animations": {
-				"walk": "animation.goblin.walk",
+				"move_arms": "animation.common_humanoid.move.arms",
+				"move_legs": "animation.common_humanoid.move.legs",
 				"casting": "animation.goblin_summoner.cast",
 				"look_at_target": "animation.common.look_at_target",
-				"controller_general": "controller.animation.goblin_summoner.general"
+				"bob": "animation.player.bob",
+				"setup": "controller.animation.goblin_summoner"
 			},
 			"scripts": {
 				"animate": [
-					{
-						"walk": "query.modified_move_speed"
-					},
+					"setup",
 					"look_at_target",
-					"controller_general"
+					"bob"
 				]
 			},
 			"render_controllers": [
