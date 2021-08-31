@@ -43,14 +43,14 @@
 				},
 				"minecraft:behavior.melee_attack": {
 					"priority": 0,
-					"speed_multiplier": 1.3
+					"speed_multiplier": 1.5
 				}
 			}
 		},
 		"components": {
 			"minecraft:health": {
-				"value": 40,
-				"max": 40
+				"value": 35,
+				"max": 35
 			},
 			"minecraft:physics": {},
 			"minecraft:pushable": {},
@@ -66,7 +66,7 @@
 				"value": 0.2
 			},
 			"minecraft:attack": {
-				"damage": 1
+				"damage": 2
 			},
 			"minecraft:behavior.float": {
 				"priority": 0
@@ -92,17 +92,23 @@
 				"xz_dist": 5,
 				"y_dist": 2
 			},
-			"minecraft:navigation.generic": {},
+			"minecraft:navigation.walk": {},
 			"minecraft:movement.generic": {},
 			"minecraft:breathable": {
 				"suffocate_time": 15,
 				"total_supply": 20
 			},
+			"minecraft:follow_range": {
+				"value": 64
+			},
+			"minecraft:jump.static": {},
 			"minecraft:persistent": {},
 			"minecraft:behavior.nearest_attackable_target": {
 				"priority": 0,
-				"must_see": true,
+				"must_see": false,
 				"entity_types": {
+					"walk_speed_multiplier": 2,
+					"max_dist": 128,
 					"filters": {
 						"any_of": [
 							{
@@ -161,11 +167,6 @@
 								"defense"
 							]
 						},
-						"remove": {
-							"component_groups": [
-								"offense"
-							]
-						},
 						"weight": 1
 					},
 					{
@@ -195,6 +196,11 @@
 					"component_groups": [
 						"spawn_for_raid",
 						"offense"
+					]
+				},
+				"run_command": {
+					"command": [
+						"spreadplayers ~ ~ 20 50 @s"
 					]
 				}
 			}

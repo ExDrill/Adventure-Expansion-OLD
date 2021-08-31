@@ -21,23 +21,28 @@
 		},
 		"components": {
 			"minecraft:health": {
-				"value": 25,
-				"max": 25
+				"value": 15,
+				"max": 15
 			},
 			"minecraft:movement": {
-				"value": 0.27
+				"value": 0.26
 			},
 			"minecraft:behavior.float": {
 				"priority": 0
 			},
 			"minecraft:attack": {
-				"damage": 3,
-				"effect_name": "poison"
+				"damage": 1,
+				"effect_name": "poison",
+				"effect_duration": 3
 			},
 			"minecraft:breathable": {
 				"total_supply": 20,
 				"suffocate_time": 15
 			},
+			"minecraft:follow_range": {
+				"value": 64
+			},
+			"minecraft:jump.static": {},
 			"minecraft:physics": {},
 			"minecraft:nameable": {},
 			"minecraft:pushable": {},
@@ -45,8 +50,9 @@
 			"minecraft:navigation.generic": {},
 			"minecraft:behavior.nearest_attackable_target": {
 				"priority": 0,
-				"must_see": true,
+				"must_see": false,
 				"entity_types": {
+					"max_dist": 128,
 					"filters": {
 						"any_of": [
 							{
@@ -124,6 +130,11 @@
 					"component_groups": [
 						"spawn_for_raid",
 						"scale_down"
+					]
+				},
+				"run_command": {
+					"command": [
+						"spreadplayers ~ ~ 20 50 @s"
 					]
 				}
 			}

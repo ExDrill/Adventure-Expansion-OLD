@@ -29,7 +29,8 @@
 			"minecraft:cooldown": {
 				"category": "harpoon",
 				"duration": 1
-			}
+			},
+			"tag:exdrill:crossbow_hold": {}
 		},
 		"events": {
 			"shoot": {

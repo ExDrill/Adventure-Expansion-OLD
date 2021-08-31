@@ -16,8 +16,8 @@
 		},
 		"components": {
 			"minecraft:health": {
-				"value": 50,
-				"max": 50
+				"value": 40,
+				"max": 40
 			},
 			"minecraft:movement": {
 				"value": 0.15
@@ -42,11 +42,20 @@
 					"monster"
 				]
 			},
+			"minecraft:follow_range": {
+				"value": 64
+			},
+			"minecraft:behavior.move_towards_target": {
+				"priority": 1,
+				"speed_multiplier": 2,
+				"within_radius": 128
+			},
+			"minecraft:jump.static": {},
 			"minecraft:behavior.summon_entity": {
 				"priority": 0,
 				"summon_choices": [
 					{
-						"cast_duration": 1,
+						"cast_duration": 2,
 						"do_casting": true,
 						"weight": 1,
 						"min_activation_range": 1,
@@ -77,8 +86,9 @@
 			"minecraft:navigation.generic": {},
 			"minecraft:behavior.nearest_attackable_target": {
 				"priority": 0,
-				"must_see": true,
+				"must_see": false,
 				"entity_types": {
+					"max_dist": 128,
 					"filters": {
 						"any_of": [
 							{
@@ -136,6 +146,11 @@
 				"add": {
 					"component_groups": [
 						"spawn_for_raid"
+					]
+				},
+				"run_command": {
+					"command": [
+						"spreadplayers ~ ~ 10 30 @s"
 					]
 				}
 			}

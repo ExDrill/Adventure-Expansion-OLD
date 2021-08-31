@@ -61,8 +61,66 @@
 				}
 			},
 			// Normal Mode Waves
-			"wave_1": {},
-			"wave_2": {},
+			"wave_1": {
+				"minecraft:spawn_entity": {
+					"entities": [
+						{
+							"single_use": true,
+							"min_wait_time": 5,
+							"max_wait_time": 5,
+							"num_to_spawn": 2,
+							"spawn_entity": "exdrill:goblin_warrior",
+							"spawn_event": "spawn_for_raid"
+						},
+						{
+							"single_use": true,
+							"min_wait_time": 5,
+							"max_wait_time": 5,
+							"num_to_spawn": 2,
+							"spawn_entity": "exdrill:goblin_ranger",
+							"spawn_event": "spawn_for_raid"
+						},
+						{
+							"single_use": true,
+							"min_wait_time": 5,
+							"max_wait_time": 5,
+							"num_to_spawn": 2,
+							"spawn_entity": "exdrill:goblin_grunt",
+							"spawn_event": "spawn_for_raid"
+						}
+					]
+				}
+			},
+			"wave_2": {
+				"minecraft:spawn_entity": {
+					"entities": [
+						{
+							"single_use": true,
+							"min_wait_time": 5,
+							"max_wait_time": 5,
+							"num_to_spawn": 3,
+							"spawn_entity": "exdrill:goblin_warrior",
+							"spawn_event": "spawn_for_raid"
+						},
+						{
+							"single_use": true,
+							"min_wait_time": 5,
+							"max_wait_time": 5,
+							"num_to_spawn": 3,
+							"spawn_entity": "exdrill:goblin_ranger",
+							"spawn_event": "spawn_for_raid"
+						},
+						{
+							"single_use": true,
+							"min_wait_time": 5,
+							"max_wait_time": 5,
+							"num_to_spawn": 2,
+							"spawn_entity": "exdrill:goblin_grunt",
+							"spawn_event": "spawn_for_raid"
+						}
+					]
+				}
+			},
 			"wave_3": {},
 			"wave_4": {},
 			"wave_5": {},
@@ -109,6 +167,7 @@
 						"normal_mode"
 					]
 				},
+				"trigger": "wave_1",
 				"remove": {
 					"component_groups": [
 						"configuration"
@@ -121,12 +180,56 @@
 						"hard_mode"
 					]
 				},
+				"trigger": "wave_1",
 				"remove": {
 					"component_groups": [
 						"configuration"
 					]
 				}
-			}
+			},
+			"wave_1": {
+				"add": {
+					"component_groups": [
+						"wave_1"
+					]
+				},
+				"run_command": {
+					"command": [
+						"title @a[r=25] actionbar Wave 1!"
+					]
+				}
+			},
+			"wave_2": {
+				"add": {
+					"component_groups": [
+						"wave_2"
+					]
+				},
+				"run_command": {
+					"command": [
+						"title @a[r=25] actionbar Wave 2!"
+					]
+				}
+			},
+			"wave_3": {
+				"add": {
+					"component_groups": [
+						"wave_3"
+					]
+				},
+				"run_command": {
+					"command": [
+						"title @a[r=25] actionbar Wave 3!"
+					]
+				}
+			},
+			"wave_4": {},
+			"wave_5": {},
+			"wave_6": {},
+			"wave_7": {},
+			"wave_8": {},
+			"wave_9": {},
+			"wave_10": {}
 		}
 	}
 }

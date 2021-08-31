@@ -1,0 +1,26 @@
+{
+    "format_version": "1.10.0",
+    "animations": {
+        "animation.blowdart.first_person": {
+            "animation_length": 0,
+            "loop": true,
+            "bones": {
+                "body": {
+                    "position": [ 2, 20, 0],
+                    "rotation": [ 90, 60, -50],
+                    "scale": 1.5
+                }
+            }
+        },
+        "animation.blowdart.third_person": {
+            "animation_length": 0,
+            "loop": true,
+            "bones": {
+                "body": {
+                    "position": [ 3, 20, -1 ],
+                    "rotation": [ 90, 0, 0 ]
+                }
+            }
+        }
+    }
+}

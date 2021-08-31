@@ -25,6 +25,12 @@
                     "animations": [
                         "block",
                         "move_legs",
+                        {
+                            "attack_positions": "variable.attack_time > 0"
+                        },
+                        {
+                            "attack_rotations": "variable.attack_time > 0"
+                        }
                     ],
                     "transitions": [
                         {
@@ -97,6 +103,9 @@
                     "transitions": [
                         {
                             "default": "!query.has_target"
+                        },
+                        {
+                            "throw_potion": "query.variant == 1"
                         }
                     ]
                 },

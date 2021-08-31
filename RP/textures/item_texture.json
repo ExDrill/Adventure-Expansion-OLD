@@ -222,6 +222,9 @@
 		},
 		"energy_staff": {
 			"textures": "textures/items/energy_staff"
+		},
+		"blowdart": {
+			"textures": "textures/items/blowdart"
 		}
 	}
 }
