@@ -12,7 +12,40 @@
 				"value": "Blowdart"
 			},
 			"minecraft:max_stack_size": 1,
-			"tag:exdrill:crossbow_hold": {}
+			"tag:exdrill:crossbow_hold": {},
+			"minecraft:on_use": {
+				"on_use": {
+					"event": "shoot",
+					"target": "self"
+				}
+			}
+		},
+		"events": {
+			"shoot": {
+				"sequence": [
+					{
+						"shoot": {
+							"projectile": "exdrill:dart",
+							"launch_power": 1
+						},
+						"run_command": {
+							"command": [
+								"clear @s exdrill:dart 0 1"
+							]
+						},
+						"condition": "query.get_equipped_item_name('off_hand')=='dart'"
+					},
+					{
+						"run_command": {
+							"command": [
+								"playsound mob.llama.spit @a ~ ~ ~"
+							],
+							"target": "self"
+						},
+						"condition": "query.equipped_item_any_tag('slot.weapon.offhand', 'exdrill:dart')"
+					}
+				]
+			}
 		}
 	}
 }

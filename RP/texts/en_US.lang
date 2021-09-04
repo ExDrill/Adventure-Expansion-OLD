@@ -1,4 +1,3 @@
-##bridge-file-version: #55
 ###pack.name=Adventure! RP
 pack.description=Created by ExDrill
 
@@ -88,3 +87,6 @@ tile.exdrill:shadow_binder.name=Shadow Binder
 tile.exdrill:crate.name=Dungeon Crate
 action.interact.activate=Active Normal Mode
 action.interact.hard_mode_active=Activate Hard Mode
+tile.exdrill:thorn_block.name=Thorn Block
+entity.exdrill:goblin_renegade.name=Goblin Renegade
+item.spawn_egg.entity.exdrill:goblin_renegade.name=Spawn Goblin Renegade

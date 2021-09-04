@@ -14,7 +14,7 @@
 				"gravity": 0.05,
 				"uncertainty_base": 1,
 				"uncertainty_multiplier": 1.5,
-				"offset": [0, 1, -10],
+				"offset": [0, -0.1, 0],
 				"on_hit": {
 					"impact_damage": {
 						"damage": 5,

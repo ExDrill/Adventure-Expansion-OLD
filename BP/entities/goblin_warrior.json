@@ -43,7 +43,7 @@
 				},
 				"minecraft:behavior.melee_attack": {
 					"priority": 0,
-					"speed_multiplier": 1.5
+					"speed_multiplier": 1.1
 				}
 			}
 		},
@@ -64,6 +64,10 @@
 			},
 			"minecraft:movement": {
 				"value": 0.2
+			},
+			"minecraft:collision_box": {
+				"height": 1.9,
+				"width": 0.5
 			},
 			"minecraft:attack": {
 				"damage": 2
@@ -200,7 +204,7 @@
 				},
 				"run_command": {
 					"command": [
-						"spreadplayers ~ ~ 20 50 @s"
+						"spreadplayers ~ ~ 0 35 @s"
 					]
 				}
 			}

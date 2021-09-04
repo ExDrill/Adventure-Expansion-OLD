@@ -7,27 +7,30 @@
 		"components": {
 			"minecraft:destroy_time": 2000,
 			"minecraft:ticking": {
-				"looping": true,
+				"looping": false,
 				"range": [
-					10000,
-					10001
+					999998,
+					999999
 				],
 				"on_tick": {
-					"event": "exdrill:summon_boss",
+					"event": "summon_boss",
 					"target": "self"
 				}
+			},
+			"minecraft:on_interact": {
+				"event": "summon_boss",
+				"target": "self"
 			}
 		},
 		"events": {
-			"exdrill:summon_boss": {
+			"summon_boss": {
 				"run_command": {
 					"command": [
-						"summon exdrill:battle_golem"
+						"summon exdrill:battle_golem ~ ~ ~",
+						"setblock ~ ~ ~ air",
+						"tell @a[tag=debug] I Work!"
 					],
 					"target": "self"
-				},
-				"set_block": {
-					"block_type": "minecraft:air"
 				}
 			}
 		}

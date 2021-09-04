@@ -16,11 +16,11 @@
 		},
 		"components": {
 			"minecraft:health": {
-				"value": 25,
-				"max": 25
+				"value": 20,
+				"max": 20
 			},
 			"minecraft:movement": {
-				"value": 0.2
+				"value": 0.18
 			},
 			"minecraft:shooter": {
 				"def": "minecraft:arrow",
@@ -33,6 +33,10 @@
 				"total_supply": 20,
 				"suffocate_time": 15
 			},
+			"minecraft:collision_box": {
+				"height": 1.9,
+				"width": 0.5
+			},
 			"minecraft:behavior.float": {
 				"priority": 0
 			},
@@ -44,6 +48,13 @@
 			},
 			"minecraft:follow_range": {
 				"value": 64
+			},
+			"minecraft:type_family": {
+				"family": [
+					"goblin",
+					"mob",
+					"monster"
+				]
 			},
 			"minecraft:jump.static": {},
 			"minecraft:navigation.generic": {},
@@ -77,9 +88,9 @@
 			"minecraft:persistent": {},
 			"minecraft:behavior.ranged_attack": {
 				"priority": 0,
-				"attack_interval": 2,
-				"attack_radius": 15,
-				"speed_multiplier": 2
+				"attack_interval": 2.5,
+				"attack_radius": 10,
+				"speed_multiplier": 1.5
 			},
 			"minecraft:equipment": {
 				"table": "loot_tables/equipment/goblin_ranger_equipment.json",
@@ -129,7 +140,7 @@
 				},
 				"run_command": {
 					"command": [
-						"spreadplayers ~ ~ 20 50 @s"
+						"spreadplayers ~ ~ 0 35 @s"
 					]
 				}
 			}

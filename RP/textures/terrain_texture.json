@@ -143,6 +143,12 @@
 		},
 		"shadow_binder": {
 			"textures": "textures/blocks/shadow_binder"
+		},
+		"thorn_block": {
+			"textures": "textures/blocks/thorn_block"
+		},
+		"cloud_block": {
+			"textures": "textures/blocks/cloud_block"
 		}
 	}
 }

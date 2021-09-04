@@ -25,7 +25,11 @@
 				}
 			},
 			"minecraft:hand_equipped": true,
-			"minecraft:max_stack_size": 1
+			"minecraft:max_stack_size": 1,
+			"minecraft:cooldown": {
+				"category": "energy_staff",
+				"duration": 0.5
+			}
 		},
 		"events": {
 			"on_use": {

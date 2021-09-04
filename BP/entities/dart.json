@@ -1,0 +1,72 @@
+{
+	"format_version": "1.17.0",
+	"minecraft:entity": {
+		"description": {
+			"identifier": "exdrill:dart",
+			"is_summonable": true,
+			"is_spawnable": false,
+			"runtime_identifier": "minecraft:arrow"
+		},
+		"component_groups": {
+			"drop_item": {
+				"minecraft:instant_despawn": {},
+				"minecraft:spawn_entity": {
+					"entities": [
+						{
+							"spawn_item": "exdrill:dart",
+							"min_wait_time": 0,
+							"max_wait_time": 0,
+							"num_to_spawn": 1,
+							"single_use": true
+						}
+					]
+				}
+			}
+		},
+		"components": {
+			"minecraft:projectile": {
+				"power": 1.5,
+				"gravity": 0.08,
+				"uncertainty_base": 1,
+				"uncertainty_multiplier": 0,
+				"anchor": 1,
+				"should_bounce": true,
+				"offset": [ 0, -0.1, 0 ],
+				"on_hit": {
+					"impact_damage": {
+						"damage": 5,
+						"destroy_on_hit": true
+					},
+					"stick_in_ground": {
+						"shake_time": 0.35
+					}
+				}	
+			},
+			"minecraft:collision_box": {
+				"height": 0.3,
+				"width": 0.3
+			},
+			"minecraft:physics": {},
+			"minecraft:environment_sensor": {
+				"triggers": {
+					"event": "drop_item",
+					"filters": {
+						"test": "on_ground",
+						"subject": "self",
+						"value": true
+					},
+					"target": "self"
+				}
+			}
+		},
+		"events": {
+			"drop_item": {
+				"add": {
+					"component_groups": [
+						"drop_item"
+					]
+				}
+			}
+		}
+	}
+}

@@ -15,17 +15,19 @@
 					"event": "structure",
 					"target": "self"
 				}
+			},
+			"minecraft:on_interact": {
+				"event": "structure",
+				"target": "self"
 			}
 		},
 		"events": {
 			"structure": {
 				"run_command": {
 					"command": [
-						"structure load mystructure:pirate_ship ~ 62 ~"
+						"structure load mystructure:pirate_ship ~ 62 ~",
+						"setblock ~ ~ ~ air"
 					]
-				},
-				"set_block": {
-					"block_type": "minecraft:air"
 				}
 			}
 		}

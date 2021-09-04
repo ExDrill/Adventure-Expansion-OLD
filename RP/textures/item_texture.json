@@ -225,6 +225,9 @@
 		},
 		"blowdart": {
 			"textures": "textures/items/blowdart"
+		},
+		"dart": {
+			"textures": "textures/items/dart"
 		}
 	}
 }

@@ -35,6 +35,10 @@
 			"minecraft:behavior.float": {
 				"priority": 0
 			},
+			"minecraft:collision_box": {
+				"height": 2.1,
+				"width": 0.5
+			},
 			"minecraft:type_family": {
 				"family": [
 					"goblin",
@@ -150,7 +154,7 @@
 				},
 				"run_command": {
 					"command": [
-						"spreadplayers ~ ~ 10 30 @s"
+						"spreadplayers ~ ~ 0 35 @s"
 					]
 				}
 			}

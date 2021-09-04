@@ -14,7 +14,8 @@
 			},
 			"animations": {
 				"first_person": "animation.blowdart.first_person",
-				"third_person": "animation.blowdart.third_person"
+				"third_person": "animation.blowdart.third_person",
+				"use": "animation.blowdart.use"
 			},
 			"scripts": {
 				"animate": [

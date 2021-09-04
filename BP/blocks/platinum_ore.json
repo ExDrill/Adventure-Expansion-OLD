@@ -8,6 +8,7 @@
 			"minecraft:destroy_time": 0.5,
 			"minecraft:loot": "loot_tables/blocks/platinum_ore_loot.json",
 			"tag:stone": {}
+
 		}
 	}
 }

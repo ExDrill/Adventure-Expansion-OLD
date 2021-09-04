@@ -27,6 +27,7 @@
 					"command": [
 						"summon armor_stand ~ ~ ~ minecraft:entity_spawned key_opener",
 						"execute @e[type=armor_stand,name=key_opener] ~ ~ ~ fill ~5 ~5 ~5 ~-5 ~-5 ~-5 air 0 replace exdrill:locked_darkbrick",
+						"execute @e[type=armor_stand,name=key_opener] ~ ~ ~ playsound locked_shadow_brick.open @a ~ ~ ~",
 						"tp @e[type=armor_stand,name=key_opener] ~ ~-100 ~"
 					],
 					"target": "block"

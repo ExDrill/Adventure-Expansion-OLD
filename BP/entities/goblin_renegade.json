@@ -73,7 +73,7 @@
 				"max": 25
 			},
 			"minecraft:shooter": {
-				"def": "minecraft:llama_spit"
+				"def": "exdrill:dart"
 			},
 			"minecraft:physics": {},
 			"minecraft:pushable": {},
@@ -81,6 +81,13 @@
 			"minecraft:breathable": {
 				"total_supply": 20,
 				"suffocate_time": 15
+			},
+			"minecraft:type_family": {
+				"family": [
+					"goblin",
+					"mob",
+					"monster"
+				]
 			},
 			"minecraft:behavior.float": {
 				"priority": 0
@@ -123,6 +130,10 @@
 					}
 				}
 			},
+			"minecraft:collision_box": {
+				"height": 1.9,
+				"width": 0.5
+			},
 			"minecraft:persistent": {},
 			"minecraft:behavior.random_stroll": {
 				"priority": 2,
@@ -163,7 +174,7 @@
 				},
 				"run_command": {
 					"command": [
-						"spreadplayers ~ ~ 20 50 @s"
+						"spreadplayers ~ ~ 0 35 @s"
 					]
 				}
 			},
