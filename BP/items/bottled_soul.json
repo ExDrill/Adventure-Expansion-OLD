@@ -1,0 +1,16 @@
+{
+	"format_version": "1.16.100",
+	"minecraft:item": {
+		"description": {
+			"identifier": "exdrill:bottled_soul"
+		},
+		"components": {
+			"minecraft:icon": {
+				"texture": "bottled_soul"
+			},
+			"minecraft:display_name": {
+				"value": "Bottled Soul"
+			}
+		}
+	}
+}

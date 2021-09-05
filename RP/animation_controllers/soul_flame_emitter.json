@@ -1,0 +1,36 @@
+{
+    "format_version": "1.10.0",
+    "animation_controllers": {
+        "controller.animation.soul_flame_emitter": {
+            "initial_state": "default",
+            "states": {
+                "default": {
+                    "particle_effects": [
+                        {
+                            "effect": "soul_flame",
+                            "locator": "emitter"
+                        }
+                    ],
+                    "transitions": [
+                        {
+                            "emit": "query.is_alive"
+                        }
+                    ]
+                },
+                "emit": {
+                    "particle_effects": [
+                        {
+                            "effect": "soul_flame",
+                            "locator": "emitter"
+                        }
+                    ],
+                    "transitions": [
+                        {
+                            "default": "query.is_alive"
+                        }
+                    ]
+                }
+            }
+        }
+    }
+}

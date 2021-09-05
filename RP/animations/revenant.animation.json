@@ -68,6 +68,14 @@
 					}
 				}
 			}
+		},
+		"animation.revenant.death": {
+			"loop": true,
+			"bones": {
+				"body": {
+					"scale": 0
+				}
+			}
 		}
 	}
 }

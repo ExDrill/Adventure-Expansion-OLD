@@ -228,6 +228,9 @@
 		},
 		"dart": {
 			"textures": "textures/items/dart"
+		},
+		"bottled_soul": {
+			"textures": "textures/items/bottled_soul"
 		}
 	}
 }

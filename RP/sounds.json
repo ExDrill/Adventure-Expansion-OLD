@@ -101,6 +101,15 @@
 					"ambient": "mob.vindicator.idle"
 				}
 			},
+			"exdrill:goblin_renegade": {
+				"volume": 1,
+				"pitch": 0.9,
+				"events": {
+					"hurt": "mob.vindicator.hurt",
+					"death": "mob.vindicator.death",
+					"ambient": "mob.vindicator.idle"
+				}
+			},
 			"exdrill:battle_golem": {
 				"volume": 1,
 				"pitch": 0.7,
@@ -136,6 +145,13 @@
 					"hurt": "mob.pillager.hurt",
 					"death": "mob.pillager.death",
 					"ambient": "mob.pillager.idle"
+				}
+			},
+			"exdrill:revenant": {
+				"volume": 1,
+				"pitch": 1,
+				"events": {
+					"hurt": "mob.revenant.sound"
 				}
 			}
 		}

@@ -60,6 +60,13 @@
 			 "sounds": [
 				 "sounds/tile/locked_shadow_brick/open"
 			 ]
+		},
+		"mob.revenant.sound": {
+			"category": "hostile",
+			"min_distance": 12,
+			"sounds": [
+				"sounds/ambient/nether/soulsand_valley/mood"
+			]
 		}
 	}
 }

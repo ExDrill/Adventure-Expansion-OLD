@@ -28,8 +28,8 @@
 				"y_offset": -2,
 				"interval": 1,
 				"hover_height": [
-					6,
-					12
+					1,
+					4
 				]
 			},
 			"minecraft:behavior.float": {
