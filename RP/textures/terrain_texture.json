@@ -149,6 +149,12 @@
 		},
 		"cloud_block": {
 			"textures": "textures/blocks/cloud_block"
+		},
+		"magician_workbench": {
+			"textures": "textures/blocks/magician_workbench"
+		},
+		"energy_ball": {
+			"textures": "textures/blocks/energy_ball"
 		}
 	}
 }

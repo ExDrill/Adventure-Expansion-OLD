@@ -12,11 +12,6 @@
 				"minecraft:instant_despawn": {
 					"remove_child_entities": true
 				}
-			},
-			"scale": {
-				"minecraft:scale": {
-					"value": 2.5
-				}
 			}
 		},
 		"components": {
@@ -97,13 +92,6 @@
 				"add": {
 					"component_groups": [
 						"instant_despawn"
-					]
-				}
-			},
-			"minecraft:entity_spawned": {
-				"add": {
-					"component_groups": [
-						"scale"
 					]
 				}
 			}

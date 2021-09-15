@@ -61,11 +61,34 @@
 				 "sounds/tile/locked_shadow_brick/open"
 			 ]
 		},
-		"mob.revenant.sound": {
+		"mob.revenant.ambient": {
 			"category": "hostile",
 			"min_distance": 12,
 			"sounds": [
-				"sounds/ambient/nether/soulsand_valley/mood"
+				"sounds/mob/revenant/ambient"
+			]
+		},
+		"mob.revenant.attack": {
+			"category": "hostile",
+			"min_distance": 12,
+			"sounds": [
+				"sounds/mob/revenant/attack"
+			]
+		},
+		"mob.revenant.hurt": {
+			"category": "hostile",
+			"min_distance": 12,
+			"sounds": [
+				"sounds/mob/revenant/hurt1",
+				"sounds/mob/revenant/hurt2"
+			]
+		},
+		"mob.revenant.death": {
+			"category": "hostile",
+			"min_distance": 12,
+			"sounds": [
+				"sounds/mob/revenant/death1",
+				"sounds/mob/revenant/death2"
 			]
 		}
 	}

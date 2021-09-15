@@ -18,6 +18,13 @@
 					"event": "shoot",
 					"target": "self"
 				}
+			},
+			"minecraft:durability": {
+				"damage_chance": {
+					"min": 60,
+					"max": 100
+				},
+				"max_durability": 512
 			}
 		},
 		"events": {
@@ -36,10 +43,27 @@
 						"condition": "query.get_equipped_item_name('off_hand')=='dart'"
 					},
 					{
+						"shoot": {
+							"projectile": "exdrill:weighted_dart",
+							"launch_power": 1
+						},
+						"run_command": {
+							"command": [
+								"clear @s exdrill:weighted_dart 0 1"
+							]
+						},
+						"condition": "query.get_equipped_item_name('off_hand')=='weighted_dart'"
+					},
+					{
 						"run_command": {
 							"command": [
 								"playsound mob.llama.spit @a ~ ~ ~"
 							],
+							"target": "self"
+						},
+						"damage": {
+							"amount": 1,
+							"type": "durability",
 							"target": "self"
 						},
 						"condition": "query.equipped_item_any_tag('slot.weapon.offhand', 'exdrill:dart')"

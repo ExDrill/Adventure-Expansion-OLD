@@ -90,3 +90,5 @@ action.interact.hard_mode_active=Activate Hard Mode
 tile.exdrill:thorn_block.name=Thorn Block
 entity.exdrill:goblin_renegade.name=Goblin Renegade
 item.spawn_egg.entity.exdrill:goblin_renegade.name=Spawn Goblin Renegade
+tile.exdrill:magician_workbench.name=Magician's Workbench
+tile.exdrill:energy_ball.name=Energy Ball

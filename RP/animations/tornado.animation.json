@@ -3,13 +3,14 @@
 	"animations": {
 		"animation.tornado.general": {
 			"loop": true,
-			"animation_length": 0.52,
 			"bones": {
-				"tornado": {
-					"rotation": {
-						"0.0": [0, 0, 0],
-						"0.52": [0, -360, 0]
-					}
+				"body": {
+					"rotation": [0, "query.anim_time * 1440", 0],
+					"scale": 1.5
+				},
+				"wind": {
+					"rotation": [0, "- query.anim_time * 2880", 0],
+					"scale": " 1.5 + math.cos(query.anim_time * 90) * 0.5"
 				}
 			}
 		}

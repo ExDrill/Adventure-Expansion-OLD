@@ -73,7 +73,7 @@
 				"max": 25
 			},
 			"minecraft:shooter": {
-				"def": "exdrill:dart"
+				"def": "exdrill:weighted_dart"
 			},
 			"minecraft:physics": {},
 			"minecraft:pushable": {},

@@ -2,26 +2,25 @@
 	"format_version": "1.16.100",
 	"minecraft:item": {
 		"description": {
-			"identifier": "exdrill:wind_staff"
+			"identifier": "exdrill:tornado_staff"
 		},
 		"components": {
 			"minecraft:max_stack_size": 1,
 			"minecraft:icon": {
-				"texture": "wind_staff"
+				"texture": "tornado_staff"
 			},
 			"minecraft:display_name": {
-				"value": "Wind Staff\n§5Summon a tornado!"
+				"value": "Tornado Staff"
 			},
 			"minecraft:hand_equipped": true,
 			"minecraft:on_use": {
 				"on_use": {
 					"event": "summon_tornado",
-					"target": "self",
-					"condition": "query.get_equipped_item_name('off_hand')=='magic_cell'"
+					"target": "self"
 				}
 			},
 			"minecraft:cooldown": {
-				"category": "magic",
+				"category": "tornado_staff",
 				"duration": 10
 			}
 		},
@@ -29,8 +28,7 @@
 			"summon_tornado": {
 				"run_command": {
 					"command": [
-						"summon exdrill:tornado ~ ~ ~",
-						"clear @s exdrill:magic_cell 0 1"
+						"summon exdrill:tornado ~ ~ ~"
 					],
 					"target": "holder"
 				},

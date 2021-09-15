@@ -151,7 +151,11 @@
 				"volume": 1,
 				"pitch": 1,
 				"events": {
-					"hurt": "mob.revenant.sound"
+					"hurt": "mob.revenant.hurt",
+					"ambient": "mob.revenant.ambient",
+					"death": "mob.revenant.death",
+					"attack": "mob.revenant.attack"
+
 				}
 			}
 		}
