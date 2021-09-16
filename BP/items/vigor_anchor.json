@@ -2,16 +2,17 @@
 	"format_version": "1.16.100",
 	"minecraft:item": {
 		"description": {
-			"identifier": "exdrill:bone_wand"
+			"identifier": "exdrill:vigor_anchor"
 		},
 		"components": {
 			"minecraft:display_name": {
-				"value": "I'm not useful right now, save me for next update ;)"
+				"value": "Vigor Anchor"
 			},
 			"minecraft:icon": {
-				"texture": "bone_wand"
+				"texture": "vigor_anchor"
 			},
-			"minecraft:max_stack_size": 1
+			"minecraft:max_stack_size": 1,
+			"minecraft:allow_off_hand": true
 		}
 	}
 }

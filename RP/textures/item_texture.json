@@ -206,8 +206,8 @@
 		"dungeon_crate_key": {
 			"textures": "textures/items/dungeon_crate_key"
 		},
-		"bone_wand": {
-			"textures": "textures/items/bone_wand"
+		"vigor_anchor": {
+			"textures": "textures/items/vigor_anchor"
 		},
 		"paladin_blade": {
 			"textures": "textures/items/paladin_blade"
