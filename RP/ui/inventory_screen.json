@@ -8,7 +8,7 @@
 				"operation": "insert_back",
 				"value": {
 					//you custom crafting ui
-					"custom_crafting_panel@cf.final_panel": {} //in custom craft file (namespace.final_panel)
+					"custom_crafting_panel@magician_workbench.final_panel": {} //in custom craft file (namespace.final_panel)
 				}
 			},
 			{

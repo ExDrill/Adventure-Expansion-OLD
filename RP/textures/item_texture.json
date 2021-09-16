@@ -165,11 +165,6 @@
 				"textures/items/tornado_staff"
 			]
 		},
-		"blockling_staff": {
-			"textures": [
-				"textures/items/blockling_staff"
-			]
-		},
 		"jumper_bottle": {
 			"textures": [
 				"textures/items/jumper_bottle"

@@ -7,7 +7,7 @@
 		"operation": "insert_front",
 		"value": {
 		//you custom crafting ui
-		"@cf.final_panel":{} //in custom craft file (namespace.final_panel)
+		"@magician_workbench.final_panel":{} //in custom craft file (namespace.final_panel)
 		}
 		}
 	  ]

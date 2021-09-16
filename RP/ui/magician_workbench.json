@@ -1,7 +1,7 @@
 {
-    "namespace": "cf", // make sure to change this namespace, this must be unique
+    "namespace": "magician_workbench", // make sure to change this namespace, this must be unique
     //ui picture	
-    "kitchen_image@horse.overlay_image": {
+    "magician_workbench_ui@horse.overlay_image": {
         "texture": "textures/ui/magician_workbench_ui",
         "alpha": 1
     },
@@ -286,7 +286,7 @@
         "controls": [
             //this the ui image
             {
-                "ki@kitchen_image": {
+                "ki@magician_workbench_ui": {
                     "layer": 2,
                     "size": [
                         "100%",
