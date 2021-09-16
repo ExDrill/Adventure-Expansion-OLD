@@ -417,7 +417,7 @@
             },
             {
                 "binding_type": "view",
-                "source_property_name": "(#crafting_label_text = 'Magicians Workbench')", //your custom crafting table default name (in the behaviors)
+                "source_property_name": "(#crafting_label_text = 'Magician's Workbench')", //your custom crafting table default name (in the behaviors)
                 "target_property_name": "#visible"
             }
         ]
