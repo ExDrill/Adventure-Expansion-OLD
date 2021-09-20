@@ -1,23 +1,14 @@
 {
 	"format_version": "1.8.0",
 	"animations": {
-		"animation.wizard.walk": {
+		"animation.zombified_wizard.raise_arms": {
 			"loop": true,
 			"bones": {
-				"head": {
-					"rotation": ["math.cos(query.anim_time*360)*5", 0, 0]
-				},
 				"leftArm": {
-					"rotation": ["Math.cos(query.anim_time*360)*20", 0, 0]
+					"rotation": [ -90, 0, 0 ]
 				},
 				"rightArm": {
-					"rotation": ["-math.cos(query.anim_time*360)*20", 0, 0]
-				},
-				"rightLeg": {
-					"rotation": ["Math.cos(query.anim_time*360)*10", 0, 0]
-				},
-				"leftLeg": {
-					"rotation": ["-Math.cos(query.anim_time*360)*10", 0, 0]
+					"rotation": [ -90, 0, 0 ]
 				}
 			}
 		},

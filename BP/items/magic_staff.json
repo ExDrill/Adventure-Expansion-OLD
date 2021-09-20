@@ -62,6 +62,11 @@
 							"projectile": "exdrill:rapid_soul",
 							"launch_power": 3
 						},
+						"run_command": {
+							"command": [
+								"playsound dig.soul_sand @s"
+							]
+						},
 						"condition": "query.get_equipped_item_name(1) == 'soul_vase'"
 					},
 					{
@@ -69,6 +74,11 @@
 						"shoot": {
 							"projectile": "exdrill:fireball",
 							"launch_power": 0.5
+						},
+						"run_command": {
+							"command": [
+								"playsound mob.blaze.shoot @s"
+							]
 						},
 						"condition": "query.get_equipped_item_name(1) == 'crimson_torch'"
 					}

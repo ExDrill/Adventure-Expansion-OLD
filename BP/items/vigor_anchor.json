@@ -12,7 +12,8 @@
 				"texture": "vigor_anchor"
 			},
 			"minecraft:max_stack_size": 1,
-			"minecraft:allow_off_hand": true
+			"minecraft:allow_off_hand": true,
+			"tag:exdrill:magic_modifier": {}
 		}
 	}
 }

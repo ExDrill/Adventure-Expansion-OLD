@@ -5,7 +5,7 @@
 				{
 					"wants": [
 						{
-							"item": "exdrill:orange_sapphire",
+							"item": "minecraft:emerald",
 							"quantity": 2
 						}
 					],
@@ -19,7 +19,7 @@
 				{
 					"wants": [
 						{
-							"item": "exdrill:orange_sapphire",
+							"item": "minecraft:emerald",
 							"quantity": 5
 						}
 					],
@@ -33,13 +33,41 @@
 				{
 					"wants": [
 						{
-							"item": "exdrill:orange_sapphire",
+							"item": "minecraft:emerald",
 							"quantity": 15
 						}
 					],
 					"gives": [
 						{
 							"item": "exdrill:large_experience_storage",
+							"quantity": 1
+						}
+					]
+				},
+				{
+					"wants": [
+						{
+							"item": "minecraft:emerald",
+							"quantity": 1
+						}
+					],
+					"gives": [
+						{
+							"item": "exdrill:energy_harness",
+							"quantity": 1
+						}
+					]
+				},
+				{
+					"wants": [
+						{
+							"item": "minecraft:emerald",
+							"quantity": 5
+						}
+					],
+					"gives": [
+						{
+							"item": "exdrill:magician_workbench",
 							"quantity": 1
 						}
 					]

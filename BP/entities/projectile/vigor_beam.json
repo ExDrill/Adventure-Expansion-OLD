@@ -1,0 +1,31 @@
+{
+	"format_version": "1.17.0",
+	"minecraft:entity": {
+		"description": {
+			"identifier": "exdrill:vigor_beam",
+			"is_summonable": true,
+			"is_spawnable": false,
+			"runtime_identifier": "minecraft:arrow"
+		},
+		"component_groups": {},
+		"components": {
+			"minecraft:timer": {
+				"looping": true,
+				"time": 0.01,
+				"time_down_event": {
+					"event": "particle",
+					"target": "self"
+				}
+			}
+		},
+		"events": {
+			"particle": {
+				"run_command": {
+					"command": [
+						"/particle exdrill:skeleton_magic ~ ~ ~"
+					]
+				}
+			}
+		}
+	}
+}

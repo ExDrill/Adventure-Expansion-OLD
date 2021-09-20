@@ -1,4 +1,3 @@
-//bridge-file-version: #1
 {
 	"format_version": "1.10.0",
 	"minecraft:client_entity": {
@@ -16,14 +15,17 @@
 			"scripts": {
 				"animate": [
 					"bob",
-					{"walk": "query.is_moving"},
-					"look_at_target"
+					"look_at_target",
+					"move_arms",
+					"move_legs"
 				]
 			},
 			"animations": {
-				"walk": "animation.wizard.walk",
+				"move_arms": "animation.common_humanoid.move.arms",
+				"move_legs": "animation.common_humanoid.move.legs",
 				"look_at_target": "animation.common.look_at_target",
 				"bob": "animation.wizard.bob"
+				
 			},
 			"render_controllers": [
 				"controller.render.default"

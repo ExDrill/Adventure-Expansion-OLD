@@ -92,3 +92,5 @@ entity.exdrill:goblin_renegade.name=Goblin Renegade
 item.spawn_egg.entity.exdrill:goblin_renegade.name=Spawn Goblin Renegade
 tile.exdrill:magician_workbench.name=Magician's Workbench
 tile.exdrill:energy_ball.name=Energy Ball
+entity.exdrill:revenant.name=Revenant
+item.spawn_egg.entity.exdrill:revenant.name=Spawn Revenant

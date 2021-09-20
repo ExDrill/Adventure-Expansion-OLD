@@ -18,7 +18,7 @@
 				"crafting_tags": [
 					"magic"
 				],
-				"custom_description": "Magician's Workbench",
+				"custom_description": "Magician Workbench",
 				"grid_size": 3
 			},
 			"minecraft:pick_collision": {
