@@ -1,7 +1,3 @@
-###pack.name=Adventure! RP
-pack.description=Created by ExDrill
-
-
 entity.exdrill:wagi.name=Wagi
 action.hint.exit.exdrill:wagi=Crouch to get off!
 entity.exdrill:blue_dragon.name=Blue Dragon

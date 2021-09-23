@@ -6,10 +6,10 @@
 		},
 		"components": {
 			"minecraft:ticking": {
-				"looping": false,
+				"looping": true,
 				"range": [
-					999998,
-					999999
+					0.0,
+					0.1
 				],
 				"on_tick": {
 					"event": "place_entrance",
@@ -27,10 +27,12 @@
 				"run_command": {
 					"command": [
 						"structure load dungeon:entrance ~-7 ~-31 ~-7",
-						"setblock ~ ~ ~ air",
 						"tell @a[tag=debug] I Work!"
 					],
 					"target": "self"
+				},
+				"set_block": {
+					"block_type": "minecraft:air"
 				}
 			}
 		}
