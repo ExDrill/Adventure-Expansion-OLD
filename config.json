@@ -18,5 +18,8 @@
 	},
 	"authors": [
 		"ExDrill"
-	]
+	],
+	"bridge": {
+		"darkTheme": "frederox.moonlight_dark"
+	}
 }
