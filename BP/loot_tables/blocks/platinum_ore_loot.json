@@ -5,11 +5,39 @@
 			"conditions": [
 				{
 					"condition": "match_tool",
-					"item": [
-						"minecraft:iron_pickaxe",
-						"minecraft:diamond_pickaxe",
-						"minecraft:netherite_pickaxe"
-					],
+					"item": "minecraft:iron_pickaxe",
+					"count": 1
+				}
+			],
+			"entries": [
+				{
+					"type": "item",
+					"name": "exdrill:raw_platinum"
+				}
+			]
+		},
+		{
+			"rolls": 1,
+			"conditions": [
+				{
+					"condition": "match_tool",
+					"item": "minecraft:diamond_pickaxe",
+					"count": 1
+				}
+			],
+			"entries": [
+				{
+					"type": "item",
+					"name": "exdrill:raw_platinum"
+				}
+			]
+		},
+		{
+			"rolls": 1,
+			"conditions": [
+				{
+					"condition": "match_tool",
+					"item": "minecraft:netherite_pickaxe",
 					"count": 1
 				}
 			],
