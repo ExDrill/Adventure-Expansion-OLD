@@ -21,5 +21,18 @@
 	],
 	"bridge": {
 		"darkTheme": "frederox.moonlight_dark"
+	},
+	"compiler": {
+		"plugins": [
+			"typeScript",
+			"entityIdentifierAlias",
+			"moLang",
+			[
+				"simpleRewrite",
+				{
+					"packName": "Adventure Expansion"
+				}
+			]
+		]
 	}
 }
