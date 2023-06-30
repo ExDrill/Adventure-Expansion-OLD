@@ -1,0 +1,45 @@
+{
+	"format_version": "1.10.0",
+	"minecraft:client_entity": {
+		"description": {
+			"identifier": "exdrill:revenant",
+			"materials": {
+				"default": "entity_alphatest"
+			},
+			"textures": {
+				"default": "textures/entity/revenant"
+			},
+			"geometry": {
+				"default": "geometry.revenant"
+			},
+			"animations": {
+				"general": "animation.revenant.general",
+				"attack": "animation.revenant.attack",
+				"death": "animation.revenant.death",
+				"emitter": "controller.animation.soul_flame_emitter"
+			},
+			"scripts": {
+				"animate": [
+					"general",
+					{
+						"attack": "variable.attack_time"
+					},
+					{
+						"death": "!query.is_alive"
+					},
+					"emitter"
+				]
+			},
+			"render_controllers": [
+				"controller.render.glow"
+			],
+			"particle_effects": {
+				"soul_flame": "minecraft:blue_flame_particle"
+			},
+			"spawn_egg": {
+				"base_color": "#4af3fd",
+				"overlay_color": "#7b725f"
+			}
+		}
+	}
+}

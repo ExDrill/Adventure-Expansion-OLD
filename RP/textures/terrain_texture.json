@@ -67,16 +67,6 @@
 				"textures/blocks/large_experience_storage_filled"
 			]
 		},
-		"mana_generator_empty": {
-			"textures": [
-				"textures/blocks/mana_generator"
-			]
-		},
-		"mana_generator_filled": {
-			"textures": [
-				"textures/blocks/mana_generator_filled"
-			]
-		},
 		"magic_berry_bush_stage1": {
 			"textures": [
 				"textures/blocks/magic_berry_bush/magic_berry_bush_stage_1"
@@ -153,6 +143,18 @@
 		},
 		"shadow_binder": {
 			"textures": "textures/blocks/shadow_binder"
+		},
+		"thorn_block": {
+			"textures": "textures/blocks/thorn_block"
+		},
+		"cloud_block": {
+			"textures": "textures/blocks/cloud_block"
+		},
+		"magician_workbench": {
+			"textures": "textures/blocks/magician_workbench"
+		},
+		"energy_ball": {
+			"textures": "textures/blocks/energy_ball"
 		}
 	}
 }

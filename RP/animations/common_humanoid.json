@@ -29,109 +29,23 @@
 		},
 		"animation.common_humanoid.move.arms": {
 			"loop": true,
-			"animation_length": 0.96,
 			"bones": {
 				"leftArm": {
-					"rotation": {
-						"0.0": {
-							"post": [0, 0, 0],
-							"lerp_mode": "catmullrom"
-						},
-						"0.24": {
-							"post": [30, 0, 0],
-							"lerp_mode": "catmullrom"
-						},
-						"0.48": {
-							"post": [0, 0, 0],
-							"lerp_mode": "catmullrom"
-						},
-						"0.72": {
-							"post": [-30, 0, 0],
-							"lerp_mode": "catmullrom"
-						},
-						"0.96": {
-							"post": [0, 0, 0],
-							"lerp_mode": "catmullrom"
-						}
-					}
+					"rotation": [ "(math.cos(query.modified_distance_moved * 38.17) * query.modified_move_speed / variable.gliding_speed_value) * 57.3", 0, 0 ]
 				},
 				"rightArm": {
-					"rotation": {
-						"0.0": {
-							"post": [0, 0, 0],
-							"lerp_mode": "catmullrom"
-						},
-						"0.24": {
-							"post": [-30, 0, 0],
-							"lerp_mode": "catmullrom"
-						},
-						"0.48": {
-							"post": [0, 0, 0],
-							"lerp_mode": "catmullrom"
-						},
-						"0.72": {
-							"post": [30, 0, 0],
-							"lerp_mode": "catmullrom"
-						},
-						"0.96": {
-							"post": [0, 0, 0],
-							"lerp_mode": "catmullrom"
-						}
-					}
+					"rotation": [ "-(math.cos(query.modified_distance_moved * 38.17) * query.modified_move_speed / variable.gliding_speed_value) * 57.3", 0, 0 ]
 				}
 			}
 		},
 		"animation.common_humanoid.move.legs": {
 			"loop": true,
-			"animation_length": 0.96,
 			"bones": {
 				"leftLeg": {
-					"rotation": {
-						"0.0": {
-							"post": [0, 0, 0],
-							"lerp_mode": "catmullrom"
-						},
-						"0.24": {
-							"post": [-30, 0, 0],
-							"lerp_mode": "catmullrom"
-						},
-						"0.48": {
-							"post": [0, 0, 0],
-							"lerp_mode": "catmullrom"
-						},
-						"0.72": {
-							"post": [30, 0, 0],
-							"lerp_mode": "catmullrom"
-						},
-						"0.96": {
-							"post": [0, 0, 0],
-							"lerp_mode": "catmullrom"
-						}
-					}
+					"rotation": [ "-(math.cos(query.modified_distance_moved * 38.17) * query.modified_move_speed / variable.gliding_speed_value) * 57.3", 0, 0 ]
 				},
 				"rightLeg": {
-					"rotation": {
-						"0.0": {
-							"post": [0, 0, 0],
-							"lerp_mode": "catmullrom"
-						},
-						"0.24": {
-							"post": [30, 0, 0],
-							"lerp_mode": "catmullrom"
-						},
-						"0.48": {
-							"post": [0, 0, 0],
-							"lerp_mode": "catmullrom"
-						},
-						"0.72": {
-							"post": [-30, 0, 0],
-							"lerp_mode": "catmullrom"
-						},
-						"0.96": {
-							"post": [0, 0, 0],
-							"lerp_mode": "catmullrom"
-						}
-					}
+					"rotation": [ "(math.cos(query.modified_distance_moved * 38.17) * query.modified_move_speed / variable.gliding_speed_value) * 57.3", 0, 0 ]
 				}
 			}
 		},

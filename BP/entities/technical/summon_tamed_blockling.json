@@ -1,0 +1,30 @@
+{
+	"format_version": "1.17.0",
+	"minecraft:entity": {
+		"description": {
+			"identifier": "exdrill:summon_tamed_blockling",
+			"is_summonable": true,
+			"runtime_identifier": "minecraft:arrow"
+		},
+		"component_groups": {
+			"transform": {
+				"minecraft:transformation": {
+					"into": "exdrill:friendly_blockling<exdrill:on_tamed>",
+					"keep_owner": true
+				}
+			}
+		},
+		"components": {
+			"minecraft:projectile": {}
+		},
+		"events": {
+			"minecraft:entity_spawned": {
+				"add": {
+					"component_groups": [
+						"transform"
+					]
+				}
+			}
+		}
+	}
+}

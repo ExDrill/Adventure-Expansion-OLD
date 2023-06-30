@@ -1,0 +1,19 @@
+{
+	"format_version": "1.16.100",
+	"minecraft:block": {
+		"description": {
+			"identifier": "exdrill:cloud_block"
+		},
+		"components": {
+			"minecraft:destroy_time": 0.1,
+			"minecraft:material_instances": {
+				"*": {
+					"texture": "cloud_block",
+					"ambient_occlusion": false,
+					"face_dimming": false,
+					"render_method": "blend"
+				}
+			}
+		}
+	}
+}

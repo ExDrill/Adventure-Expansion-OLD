@@ -1,4 +1,3 @@
-//bridge-file-version: #8
 {
 	"format_version": "1.10.0",
 	"minecraft:client_entity": {
@@ -8,10 +7,10 @@
 				"default": "entity_alphatest"
 			},
 			"textures": {
-				"default": "textures/entity/goblin"
+				"default": "textures/entity/goblin_ranger"
 			},
 			"geometry": {
-				"default": "geometry.goblin"
+				"default": "geometry.goblin_ranger"
 			},
 			"render_controllers": [
 				"controller.render.default"
@@ -23,16 +22,17 @@
 			},
 			"enable_attachables": true,
 			"animations": {
-				"move": "animation.goblin_ranger.walk",
-				"hold_crossbow": "animation.goblin_ranger.hold",
-				"look_at_target": "animation.common.look_at_target"
+				"move_legs": "animation.common_humanoid.move.legs",
+				"move_arms": "animation.common_humanoid.move.arms",
+				"wield": "animation.goblin_ranger.wield",
+				"bob": "animation.player.bob",
+				"look_at_target": "animation.common.look_at_target",
+				"setup": "controller.animation.goblin_ranger"
 			},
 			"scripts": {
 				"animate": [
-					{
-						"move": "query.modified_move_speed"
-					},
-					"hold_crossbow",
+					"setup",
+					"bob",
 					"look_at_target"
 				]
 			}

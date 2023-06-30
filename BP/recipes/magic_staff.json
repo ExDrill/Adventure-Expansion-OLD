@@ -1,0 +1,30 @@
+{
+	"format_version": "1.12",
+	"minecraft:recipe_shaped": {
+		"description": {
+			"identifier": "exdrill:magic_staff"
+		},
+		"tags": [
+			"magic"
+		],
+		"pattern": [
+			"E  ",
+			" S ",
+			"  S"
+		],
+		"key": {
+			"E": {
+				"item": "exdrill:energy"
+			},
+			"S": {
+				"item": "minecraft:stick"
+			}
+		},
+		"result": [
+			{
+				"item": "exdrill:magic_staff",
+				"count": 1
+			}
+		]
+	}
+}

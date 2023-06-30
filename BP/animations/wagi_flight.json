@@ -1,0 +1,14 @@
+{
+    "format_version": "1.10.0",
+    "animations": {
+        "animation.fly_system": {
+            "loop": true,
+            "timeline": {
+                "0.0": [
+                    "/function wagi_fly_system"
+                ]
+            },
+            "animation_length": 0.01
+        }
+    }
+}

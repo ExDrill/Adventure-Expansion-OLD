@@ -1,0 +1,17 @@
+{
+	"format_version": "1.10.0",
+	"render_controllers": {
+		"controller.render.glow": {
+			"textures": [
+				"Texture.default"
+			],
+			"materials": [
+				{
+					"*": "Material.default"
+				}
+			],
+			"geometry": "Geometry.default",
+			"ignore_lighting": true
+		}
+	}
+}

@@ -1,0 +1,223 @@
+{
+	"format_version": "1.17.0",
+	"minecraft:entity": {
+		"description": {
+			"identifier": "exdrill:goblin_renegade",
+			"is_summonable": true,
+			"is_spawnable": true,
+			"animations": {
+				"stealth_potion": "animation.stealth_potion"
+			},
+			"scripts": {
+				"animate": [
+					{
+						"stealth_potion": "query.variant == 1"
+					}
+				]
+			}
+		},
+		"component_groups": {
+			"spawn_for_raid": {
+				"minecraft:on_death": {
+					"event": "award_point_to_banner",
+					"target": "self"
+				}
+			},
+			"ranged_mode": {
+				"minecraft:variant": {
+					"value": 0
+				},
+				"minecraft:movement": {
+					"value": 0.23
+				},
+				"minecraft:on_hurt_by_player": {
+					"event": "stealth_mode",
+					"target": "self"
+				},
+				"minecraft:behavior.ranged_attack": {
+					"priority": 0,
+					"speed_multiplier": 1.2,
+					"attack_interval": 1,
+					"attack_radius": 20
+				}
+			},
+			"stealth_mode": {
+				"minecraft:variant": {
+					"value": 1
+				},
+				"minecraft:movement": {
+					"value": 0.0
+				},
+				"minecraft:timer": {
+					"time": 1,
+					"looping": true,
+					"time_down_event": {
+						"event": "ranged_mode",
+						"target": "self"
+					}
+				}
+			}
+		},
+		"components": {
+			"minecraft:equipment": {
+				"table": "loot_tables/equipment/goblin_renegade_equipment.json",
+				"slot_drop_chance": [
+					{
+						"slot": "slot.weapon.mainhand",
+						"drop_chance": 0
+					}
+				]
+			},
+			"minecraft:health": {
+				"value": 25,
+				"max": 25
+			},
+			"minecraft:shooter": {
+				"def": "exdrill:weighted_dart"
+			},
+			"minecraft:physics": {},
+			"minecraft:pushable": {},
+			"minecraft:nameable": {},
+			"minecraft:breathable": {
+				"total_supply": 20,
+				"suffocate_time": 15
+			},
+			"minecraft:type_family": {
+				"family": [
+					"goblin",
+					"mob",
+					"monster"
+				]
+			},
+			"minecraft:behavior.float": {
+				"priority": 0
+			},
+			"minecraft:behavior.look_at_target": {
+				"look_time": [ 5, 7 ],
+				"priority": 1,
+				"probablity": 1,
+				"look_distance": 10
+			},
+			"minecraft:follow_range": {
+				"value": 64
+			},
+			"minecraft:jump.static": {},
+			"minecraft:navigation.generic": {},
+			"minecraft:movement.generic": {},
+			"minecraft:behavior.nearest_attackable_target": {
+				"priority": 0,
+				"must_see": false,
+				"entity_types": {
+					"max_dist": 128,
+					"filters": {
+						"any_of": [
+							{
+								"test": "is_family",
+								"subject": "other",
+								"value": "player"
+							},
+							{
+								"test": "is_family",
+								"subject": "other",
+								"value": "irongolem"
+							},
+							{
+								"test": "is_family",
+								"subject": "other",
+								"value": "snowgolem"
+							}
+						]
+					}
+				}
+			},
+			"minecraft:collision_box": {
+				"height": 1.9,
+				"width": 0.5
+			},
+			"minecraft:persistent": {},
+			"minecraft:behavior.random_stroll": {
+				"priority": 2,
+				"interval": 3,
+				"speed_multiplier": 1.2,
+				"xz_dist": 5,
+				"y_dist": 2
+			},
+			"minecraft:dweller": {
+				"dwelling_type": "village",
+				"can_migrate": false,
+				"can_find_poi": false,
+				"dweller_role": "hostile",
+				"first_founding_reward": 0,
+				"update_interval_base": 60,
+				"update_interval_variant": 40
+			},
+			"minecraft:behavior.move_to_village": {
+				"priority": 1,
+				"goal_radius": 2.0,
+				"speed_multiplier": 1
+			}
+		},
+		"events": {
+			"award_point_to_banner": {
+				"run_command": {
+					"command": [
+						"scoreboard players add @e[type=exdrill:goblin_banner] KillCount 1"
+					]
+				}
+			},
+			"spawn_for_raid": {
+				"add": {
+					"component_groups": [
+						"spawn_for_raid",
+						"ranged_mode"
+					]
+				},
+				"run_command": {
+					"command": [
+						"spreadplayers ~ ~ 0 35 @s"
+					]
+				}
+			},
+			"minecraft:entity_spawned": {
+				"add": {
+					"component_groups": [
+						"ranged_mode"
+					]
+				}
+			},
+			"ranged_mode": {
+				"add": {
+					"component_groups": [
+						"ranged_mode"
+					]
+				},
+				"remove": {
+					"component_groups": [
+						"stealth_mode"
+					]
+				}
+			},
+			"stealth_mode": {
+				"randomize": [
+					{
+						"add": {
+							"component_groups": [
+								"stealth_mode"
+							]
+						},
+						"remove": {
+							"component_groups": [
+								"ranged_mode"
+							]
+						},
+						"weight": 1
+					},
+					{
+						"weight": 4
+					}
+				],
+				
+			}
+		}
+	}
+}

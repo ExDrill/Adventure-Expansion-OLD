@@ -1,0 +1,71 @@
+{
+	"format_version": "1.17.0",
+	"minecraft:entity": {
+		"description": {
+			"identifier": "exdrill:soul_split_up",
+			"is_summonable": true,
+			"is_spawnable": false
+		},
+		"component_groups": {
+			"despawn": {
+				"minecraft:instant_despawn": {}
+			}
+		},
+		"components": {
+			"minecraft:interact": {
+				"interactions": [
+					{
+						"transform_to_item": "exdrill:bottled_soul",
+						"on_interact": {
+							"event": "despawn",
+							"filters": {
+								"test": "has_equipment",
+								"subject": "other",
+								"domain": "hand",
+								"value": "minecraft:glass_bottle"
+							}
+						},
+						"swing": true,
+						"use_item": true,
+						"play_sounds": "bottle.dragonbreath"
+					}
+				]
+			},
+			"minecraft:timer": {
+				"looping": false,
+				"time": 3.2,
+				"time_down_event": {
+					"event": "despawn",
+					"target": "self"
+				}
+			},
+			"minecraft:collision_box": {
+				"height": 2,
+				"width": 2
+			},
+			"minecraft:physics": {},
+			"minecraft:damage_sensor": {
+				"triggers": {
+					"cause": "all",
+					"deals_damage": false
+				}
+			}
+		},
+		"events": {
+			"despawn": {
+				"add": {
+					"component_groups": [
+						"despawn"
+					]
+				}
+			},
+			"minecraft:entity_spawned": {
+				"run_command": {
+					"command": [
+						"effect @s levitation 3 1 true"
+					]
+				}
+			}
+		}
+	}
+}

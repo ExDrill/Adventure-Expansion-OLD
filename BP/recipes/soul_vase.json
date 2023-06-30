@@ -1,0 +1,29 @@
+{
+	"format_version": "1.12",
+	"minecraft:recipe_shaped": {
+		"description": {
+			"identifier": "exdrill:soul_vase"
+		},
+		"tags": [
+			"magic"
+		],
+		"pattern": [
+			"CSC",
+			" C "
+		],
+		"key": {
+			"C": {
+				"item": "minecraft:brick"
+			},
+			"S": {
+				"item": "exdrill:bottled_soul"
+			}
+		},
+		"result": [
+			{
+				"item": "exdrill:soul_vase",
+				"count": 1
+			}
+		]
+	}
+}

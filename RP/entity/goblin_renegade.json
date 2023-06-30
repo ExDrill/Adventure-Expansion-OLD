@@ -1,0 +1,44 @@
+{
+	"format_version": "1.10.0",
+	"minecraft:client_entity": {
+		"description": {
+			"identifier": "exdrill:goblin_renegade",
+			"materials": {
+				"default": "entity_alphatest"
+			},
+			"textures": {
+				"default": "textures/entity/goblin_renegade"
+			},
+			"geometry": {
+				"default": "geometry.goblin_renegade"
+			},
+			"scripts": {
+				"animate": [
+					"setup",
+					"bob"
+				]
+			},
+			"particle_effects": {
+				"potion_blast": "minecraft:egg_destroy_emitter"
+			},
+			"animations": {
+				"move_arms": "animation.common_humanoid.move.arms",
+				"move_legs": "animation.common_humanoid.move.legs",
+				"wield": "animation.goblin_renegade.wield",
+				"throw_potion": "animation.goblin_renegade.throw_potion",
+				"look_at_target": "animation.common.look_at_target",
+				"bob": "animation.player.bob",
+				"setup": "controller.animation.goblin_renegade"
+			},
+			"render_controllers": [
+				"controller.render.default"
+			],
+			"spawn_egg": {
+				"texture_index": 0,
+				"base_color": "#09631C",
+				"overlay_color": "#52361B"
+			},
+			"enable_attachables": true
+		}
+	}
+}

@@ -7,7 +7,9 @@
 		"components": {
 			"minecraft:destroy_time": 0.5,
 			"minecraft:loot": "loot_tables/blocks/platinum_ore_loot.json",
-			"tag:stone": {}
+			"tag:stone": {},
+			"tag:iron_pick_diggable": {}
+
 		}
 	}
 }

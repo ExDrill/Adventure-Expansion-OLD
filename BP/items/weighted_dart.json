@@ -1,0 +1,21 @@
+{
+	"format_version": "1.16.100",
+	"minecraft:item": {
+		"description": {
+			"identifier": "exdrill:weighted_dart"
+		},
+		"components": {
+			"minecraft:icon": {
+				"texture": "weighted_dart"
+			},
+			"minecraft:display_name": {
+				"value": "Weighted Dart"
+			},
+			"minecraft:projectile": {
+				"projectile_entity": "exdrill:weighted_dart"
+			},
+			"minecraft:allow_off_hand": true,
+			"tag:exdrill:dart": {}
+		}
+	}
+}

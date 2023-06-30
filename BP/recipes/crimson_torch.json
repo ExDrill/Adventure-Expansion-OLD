@@ -1,0 +1,30 @@
+{
+	"format_version": "1.12",
+	"minecraft:recipe_shaped": {
+		"description": {
+			"identifier": "exdrill:crimson_torch"
+		},
+		"tags": [
+			"magic"
+		],
+		"pattern": [
+			"  I",
+			" S ",
+			"S  "
+		],
+		"key": {
+			"I": {
+				"item": "exdrill:inferno_fragment"
+			},
+			"S": {
+				"item": "minecraft:crimson_planks"
+			}
+		},
+		"result": [
+			{
+				"item": "exdrill:crimson_torch",
+				"count": 1
+			}
+		]
+	}
+}

@@ -60,19 +60,9 @@
 				"textures/items/goblin_club"
 			]
 		},
-		"green_energy_staff": {
+		"energy": {
 			"textures": [
-				"textures/items/green_energy_staff"
-			]
-		},
-		"green_mana": {
-			"textures": [
-				"textures/items/green_mana"
-			]
-		},
-		"magic_cell": {
-			"textures": [
-				"textures/items/magic_cell"
+				"textures/items/energy"
 			]
 		},
 		"magic_berries": {
@@ -83,11 +73,6 @@
 		"tower_key_mold": {
 			"textures": [
 				"textures/items/tower_key_mold"
-			]
-		},
-		"flame_staff": {
-			"textures": [
-				"textures/items/flame_staff"
 			]
 		},
 		"exdrill_blue_dragon_helmet": {
@@ -175,14 +160,9 @@
 				"textures/items/slimy_bucket"
 			]
 		},
-		"wind_staff": {
+		"tornado_staff": {
 			"textures": [
-				"textures/items/wind_staff"
-			]
-		},
-		"blockling_staff": {
-			"textures": [
-				"textures/items/blockling_staff"
+				"textures/items/tornado_staff"
 			]
 		},
 		"jumper_bottle": {
@@ -212,7 +192,7 @@
 		},
 		"glow_crystal": {
 			"textures": [
-				"textures/blocks/glow_crystal"
+				"textures/items/glow_crystal"
 			]
 		},
 		"sana_berry_pips": {
@@ -221,14 +201,41 @@
 		"dungeon_crate_key": {
 			"textures": "textures/items/dungeon_crate_key"
 		},
-		"bone_wand": {
-			"textures": "textures/items/bone_wand"
+		"vigor_anchor": {
+			"textures": "textures/items/vigor_anchor"
 		},
 		"paladin_blade": {
 			"textures": "textures/items/paladin_blade"
 		},
 		"grand_boulder_hammer": {
 			"textures": "textures/items/grand_boulder_hammer"
+		},
+		"magic_staff": {
+			"textures": "textures/items/magic_staff"
+		},
+		"blowdart": {
+			"textures": "textures/items/blowdart"
+		},
+		"dart": {
+			"textures": "textures/items/dart"
+		},
+		"bottled_soul": {
+			"textures": "textures/items/bottled_soul"
+		},
+		"weighted_dart": {
+			"textures": "textures/items/weighted_dart"
+		},
+		"soul_vase": {
+			"textures": "textures/items/soul_vase"
+		},
+		"energy_harness": {
+			"textures": "textures/items/energy_harness"
+		},
+		"energy_ball": {
+			"textures": "textures/items/energy_ball"
+		},
+		"crimson_torch": {
+			"textures": "textures/items/crimson_torch"
 		}
 	}
 }

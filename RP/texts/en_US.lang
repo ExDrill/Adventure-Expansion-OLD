@@ -1,8 +1,3 @@
-##bridge-file-version: #55
-###pack.name=Adventure! RP
-pack.description=Created by ExDrill
-
-
 entity.exdrill:wagi.name=Wagi
 action.hint.exit.exdrill:wagi=Crouch to get off!
 entity.exdrill:blue_dragon.name=Blue Dragon
@@ -86,3 +81,12 @@ tile.exdrill:replica_cracked_shadow_stone_bricks.name=Replica Cracked Shadow Sto
 tile.exdrill:replica_chiseled_shadow_stone_bricks.name=Replica Cracked Shadow Stone Bricks
 tile.exdrill:shadow_binder.name=Shadow Binder
 tile.exdrill:crate.name=Dungeon Crate
+action.interact.activate=Active Normal Mode
+action.interact.hard_mode_active=Activate Hard Mode
+tile.exdrill:thorn_block.name=Thorn Block
+entity.exdrill:goblin_renegade.name=Goblin Renegade
+item.spawn_egg.entity.exdrill:goblin_renegade.name=Spawn Goblin Renegade
+tile.exdrill:magician_workbench.name=Magician's Workbench
+tile.exdrill:energy_ball.name=Energy Ball
+entity.exdrill:revenant.name=Revenant
+item.spawn_egg.entity.exdrill:revenant.name=Spawn Revenant

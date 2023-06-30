@@ -56,10 +56,10 @@
 	},
 	"version_info": {
 		"type": "label",
-		"text": "Beta v1.7",
+		"text": "Beta v1.8",
 		"shadow": true,
 		"layer": 3,
-		"color": [ 0.7, 0.7, 1 ],
+		"color": [ 0.5, 0.7, 1 ],
 		"font_type": "MinecraftTen",
 		"anchor_from": "bottom_left",
 		"anchor_to": "bottom_left",

@@ -1,177 +1,338 @@
-//bridge-file-version: #28
 {
-	"format_version": "1.16.100",
+	"format_version": "1.17.0",
 	"minecraft:entity": {
 		"description": {
 			"identifier": "exdrill:goblin_banner",
-			"is_summonable": true,
-			"is_spawnable": true
+			"is_spawnable": true,
+			"is_summonable": true
 		},
 		"component_groups": {
-			"interact": {
+			"configuration": {
 				"minecraft:interact": {
 					"interactions": [
 						{
-							"interact_text": "Start the Raid",
+							"swing": true,
+							"interact_text": "action.interact.activate",
 							"on_interact": {
-								"event": "exdrill:begin_normalmode",
-								"target": "self",
+								"event": "normal_mode",
 								"filters": {
-									"all_of": [
-										{
-											"test": "has_equipment",
-											"subject": "other",
-											"domain": "hand",
-											"operator": "!=",
-											"value": "exdrill:totem_of_enraging"
-										},
-										{
-											"test": "is_family",
-											"subject": "other",
-											"value": "player"
-										}
-									]
+									"test": "has_equipment",
+									"subject": "other",
+									"domain": "hand",
+									"operator": "not",
+									"value": "exdrill:totem_of_enraging"
 								}
-							},
-							"swing": true
+							}
 						},
 						{
 							"use_item": true,
-							"interact_text": "Start the Hardmode Raid",
 							"swing": true,
+							"interact_text": "action.interact.hard_mode_active",
 							"on_interact": {
-								"event": "exdrill:begin_hardmode",
-								"target": "self",
+								"event": "hard_mode",
 								"filters": {
-									"all_of": [
-										{
-											"test": "has_equipment",
-											"subject": "other",
-											"domain": "hand",
-											"value": "exdrill:totem_of_enraging"
-										},
-										{
-											"test": "is_family",
-											"subject": "other",
-											"value": "player"
-										}
-									]
+									"test": "has_equipment",
+									"subject": "other",
+									"domain": "hand",
+									"operator": "equals",
+									"value": "exdrill:totem_of_enraging"
 								}
 							}
 						}
 					]
 				}
 			},
-			"hardmode": {
-				"minecraft:timer": {
-					"looping": false,
-					"time": 300,
-					"time_down_event": {
-						"event": "exdrill:summon_boss"
-					}
-				},
+			// Normal Mode Waves
+			"wave_1": {
 				"minecraft:spawn_entity": {
 					"entities": [
 						{
-							"spawn_entity": "exdrill:goblin_warrior",
+							"single_use": true,
+							"min_wait_time": 5,
+							"max_wait_time": 5,
 							"num_to_spawn": 2,
-							"spawn_event": "exdrill:hardmode_configuration",
-							"min_wait_time": 8,
-							"max_wait_time": 10,
-							"single_use": false
+							"spawn_entity": "exdrill:goblin_warrior",
+							"spawn_event": "spawn_for_raid"
 						},
 						{
+							"single_use": true,
+							"min_wait_time": 5,
+							"max_wait_time": 5,
+							"num_to_spawn": 2,
 							"spawn_entity": "exdrill:goblin_ranger",
-							"num_to_spawn": 1,
-							"spawn_event": "exdrill:hardmode_configuration",
-							"min_wait_time": 8,
-							"max_wait_time": 10,
-							"single_use": false
+							"spawn_event": "spawn_for_raid"
 						},
 						{
+							"single_use": true,
+							"min_wait_time": 5,
+							"max_wait_time": 5,
+							"num_to_spawn": 2,
 							"spawn_entity": "exdrill:goblin_grunt",
-							"num_to_spawn": 1,
-							"spawn_event": "exdrill:hardmode_configuration",
-							"min_wait_time": 12,
-							"max_wait_time": 15,
-							"single_use": false
-						},
-						{
-							"spawn_entity": "exdrill:goblin_summoner",
-							"num_to_spawn": 1,
-							"spawn_event": "exdrill:hardmode_configuration",
-							"min_wait_time": 15,
-							"max_wait_time": 20,
-							"single_use": false
+							"spawn_event": "spawn_for_raid"
 						}
 					]
 				}
 			},
-			"normalmode": {
-				"minecraft:timer": {
-					"looping": false,
-					"time": 300,
-					"time_down_event": {
-						"event": "exdrill:summon_boss"
-					}
-				},
+			"wave_2": {
 				"minecraft:spawn_entity": {
 					"entities": [
 						{
+							"single_use": true,
+							"min_wait_time": 5,
+							"max_wait_time": 5,
+							"num_to_spawn": 3,
 							"spawn_entity": "exdrill:goblin_warrior",
-							"num_to_spawn": 2,
-							"spawn_event": "exdrill:spread",
-							"min_wait_time": 8,
-							"max_wait_time": 10,
-							"single_use": false
+							"spawn_event": "spawn_for_raid"
 						},
 						{
+							"single_use": true,
+							"min_wait_time": 5,
+							"max_wait_time": 5,
+							"num_to_spawn": 3,
 							"spawn_entity": "exdrill:goblin_ranger",
-							"num_to_spawn": 1,
-							"spawn_event": "exdrill:spread",
-							"min_wait_time": 8,
-							"max_wait_time": 10,
-							"single_use": false
+							"spawn_event": "spawn_for_raid"
 						},
 						{
+							"single_use": true,
+							"min_wait_time": 5,
+							"max_wait_time": 5,
+							"num_to_spawn": 2,
 							"spawn_entity": "exdrill:goblin_grunt",
-							"num_to_spawn": 1,
-							"spawn_event": "exdrill:spread",
-							"min_wait_time": 12,
-							"max_wait_time": 15,
-							"single_use": false
-						},
-						{
-							"spawn_entity": "exdrill:goblin_summoner",
-							"num_to_spawn": 1,
-							"spawn_event": "exdrill:spread",
-							"min_wait_time": 15,
-							"max_wait_time": 20,
-							"single_use": false
+							"spawn_event": "spawn_for_raid"
 						}
 					]
 				}
-			}
+			},
+			"wave_3": {
+				"minecraft:spawn_entity": {
+					"entities": [
+						{
+							"single_use": true,
+							"min_wait_time": 5,
+							"max_wait_time": 5,
+							"num_to_spawn": 4,
+							"spawn_entity": "exdrill:goblin_warrior",
+							"spawn_event": "spawn_for_raid"
+						},
+						{
+							"single_use": true,
+							"min_wait_time": 5,
+							"max_wait_time": 5,
+							"num_to_spawn": 3,
+							"spawn_entity": "exdrill:goblin_ranger",
+							"spawn_event": "spawn_for_raid"
+						},
+						{
+							"single_use": true,
+							"min_wait_time": 5,
+							"max_wait_time": 5,
+							"num_to_spawn": 3,
+							"spawn_entity": "exdrill:goblin_renegade",
+							"spawn_event": "spawn_for_raid"
+						}
+					]
+				}
+			},
+			"wave_4": {
+				"minecraft:spawn_entity": {
+					"entities": [
+						{
+							"single_use": true,
+							"min_wait_time": 5,
+							"max_wait_time": 5,
+							"num_to_spawn": 3,
+							"spawn_entity": "exdrill:goblin_warrior",
+							"spawn_event": "spawn_for_raid"
+						},
+						{
+							"single_use": true,
+							"min_wait_time": 5,
+							"max_wait_time": 5,
+							"num_to_spawn": 3,
+							"spawn_entity": "exdrill:goblin_ranger",
+							"spawn_event": "spawn_for_raid"
+						},
+						{
+							"single_use": true,
+							"min_wait_time": 5,
+							"max_wait_time": 5,
+							"num_to_spawn": 4,
+							"spawn_entity": "exdrill:goblin_renegade",
+							"spawn_event": "spawn_for_raid"
+						},
+						{
+							"single_use": true,
+							"min_wait_time": 5,
+							"max_wait_time": 5,
+							"num_to_spawn": 2,
+							"spawn_entity": "exdrill:goblin_grunt",
+							"spawn_event": "spawn_for_raid"
+						}
+					]
+				}
+			},
+			"wave_5": {
+				"minecraft:spawn_entity": {
+					"entities": [
+						{
+							"single_use": true,
+							"min_wait_time": 5,
+							"max_wait_time": 5,
+							"num_to_spawn": 4,
+							"spawn_entity": "exdrill:goblin_warrior",
+							"spawn_event": "spawn_for_raid"
+						},
+						{
+							"single_use": true,
+							"min_wait_time": 5,
+							"max_wait_time": 5,
+							"num_to_spawn": 4,
+							"spawn_entity": "exdrill:goblin_ranger",
+							"spawn_event": "spawn_for_raid"
+						},
+						{
+							"single_use": true,
+							"min_wait_time": 5,
+							"max_wait_time": 5,
+							"num_to_spawn": 3,
+							"spawn_entity": "exdrill:goblin_renegade",
+							"spawn_event": "spawn_for_raid"
+						},
+						{
+							"single_use": true,
+							"min_wait_time": 5,
+							"max_wait_time": 5,
+							"num_to_spawn": 1,
+							"spawn_entity": "exdrill:goblin_summoner",
+							"spawn_event": "spawn_for_raid"
+			
+						}
+					]
+				}
+			},
+			"wave_6": {
+				"minecraft:spawn_entity": {
+					"entities": [
+						{
+							"single_use": true,
+							"min_wait_time": 5,
+							"max_wait_time": 5,
+							"num_to_spawn": 4,
+							"spawn_entity": "exdrill:goblin_warrior",
+							"spawn_event": "spawn_for_raid"
+						},
+						{
+							"single_use": true,
+							"min_wait_time": 5,
+							"max_wait_time": 5,
+							"num_to_spawn": 4,
+							"spawn_entity": "exdrill:goblin_ranger",
+							"spawn_event": "spawn_for_raid"
+						},
+						{
+							"single_use": true,
+							"min_wait_time": 5,
+							"max_wait_time": 5,
+							"num_to_spawn": 3,
+							"spawn_entity": "exdrill:goblin_renegade",
+							"spawn_event": "spawn_for_raid"
+						},
+						{
+							"single_use": true,
+							"min_wait_time": 5,
+							"max_wait_time": 5,
+							"num_to_spawn": 2,
+							"spawn_entity": "exdrill:goblin_grunt",
+							"spawn_event": "spawn_for_raid"
+						},
+						{
+							"single_use": true,
+							"min_wait_time": 5,
+							"max_wait_time": 5,
+							"num_to_spawn": 1,
+							"spawn_entity": "exdrill:goblin_summoner",
+							"spawn_event": "spawn_for_raid"
+			
+						}
+					]
+				}
+			},
+			"wave_7": {
+				"minecraft:spawn_entity": {
+					"entities": [
+						{
+							"single_use": true,
+							"min_wait_time": 5,
+							"max_wait_time": 5,
+							"num_to_spawn": 5,
+							"spawn_entity": "exdrill:goblin_warrior",
+							"spawn_event": "spawn_for_raid"
+						},
+						{
+							"single_use": true,
+							"min_wait_time": 5,
+							"max_wait_time": 5,
+							"num_to_spawn": 3,
+							"spawn_entity": "exdrill:goblin_ranger",
+							"spawn_event": "spawn_for_raid"
+						},
+						{
+							"single_use": true,
+							"min_wait_time": 5,
+							"max_wait_time": 5,
+							"num_to_spawn": 4,
+							"spawn_entity": "exdrill:goblin_renegade",
+							"spawn_event": "spawn_for_raid"
+						},
+						{
+							"single_use": true,
+							"min_wait_time": 5,
+							"max_wait_time": 5,
+							"num_to_spawn": 4,
+							"spawn_entity": "exdrill:goblin_grunt",
+							"spawn_event": "spawn_for_raid"
+						},
+						{
+							"single_use": true,
+							"min_wait_time": 5,
+							"max_wait_time": 5,
+							"num_to_spawn": 3,
+							"spawn_entity": "exdrill:goblin_summoner",
+							"spawn_event": "spawn_for_raid"
+			
+						},
+						{
+							"single_use": true,
+							"min_wait_time": 5,
+							"max_wait_time": 5,
+							"num_to_spawn": 1,
+							"spawn_entity": "exdrill:goblin_beast",
+							"spawn_event": "spawn_for_raid"
+						}
+					]
+				}
+			},
+			// Hard Mode Waves
+			"wave_8": {},
+			"wave_9": {},
+			"wave_10": {},
+			"normal_finish": {
+				"minecraft:loot": {
+					"table": "loot_tables/goblin_banner_normal.json"
+				}
+			},
+			"hard_finish": {}
 		},
 		"components": {
-			"minecraft:collision_box": {
-				"width": 0.5,
-				"height": 1.8
-			},
+			"minecraft:physics": {},
 			"minecraft:health": {
-				"value": 10,
-				"max": 10
-			},
-			"minecraft:boss": {
-				"should_darken_sky": false,
-				"hud_range": 50,
-				"name": "Goblin Raid"
+				"value": 999,
+				"max": 999
 			},
 			"minecraft:persistent": {},
-			"minecraft:physics": {},
-			"minecraft:knockback_resistance": {
-				"value": 10,
-				"max": 10
+			"minecraft:tick_world": {
+				"never_despawn": true,
+				"radius": 5
 			},
 			"minecraft:damage_sensor": {
 				"triggers": [
@@ -180,54 +341,194 @@
 						"deals_damage": false
 					}
 				]
+			},
+			"minecraft:timer": {
+				"looping": true,
+				"time": 0.01,
+				"time_down_event": {
+					"event": "scoreboard_detection",
+					"target": "self"
+				}
 			}
 		},
 		"events": {
-			"exdrill:summon_boss": {
-				"run_command": {
-					"command": [
-						"summon exdrill:goblin_beast ~ ~ ~",
-						"kill @s"
-					]
-				}
-			},
 			"minecraft:entity_spawned": {
 				"add": {
 					"component_groups": [
-						"interact"
-					]
-				}
-			},
-			"exdrill:begin_hardmode": {
-				"add": {
-					"component_groups": [
-						"hardmode"
+						"configuration"
 					]
 				},
-				"remove": {
-					"component_groups": [
-						"interact"
-					]
-				},
-				"trigger": "sound"
-			},
-			"exdrill:begin_normalmode": {
-				"add": {
-					"component_groups": [
-						"normalmode"
-					]
-				},
-				"remove": {
-					"component_groups": [
-						"interact"
-					]
-				}
-			},
-			"sound": {
 				"run_command": {
 					"command": [
-						"title @a[r=20] title Hardmode Raid!",
-						"playsound mob.wither.spawn @a ~ ~ ~"
+						"scoreboard objectives add KillCount dummy",
+						"scoreboard players set @s KillCount 0"
+					]
+				}
+			},
+			"normal_mode": {
+				"run_command": {
+					"command": [
+						"tag @s add start",
+						"tag @s add normal_mode"
+					]
+				},
+				"remove": {
+					"component_groups": [
+						"configuration"
+					]
+				}
+			},
+			"hard_mode": {
+				"run_command": {
+					"command": [
+						"tag @s add start",
+						"tag @s add hard_mode",
+						"title @a[r=25] title Hard Mode!"
+					]
+				},
+				"remove": {
+					"component_groups": [
+						"configuration"
+					]
+				},
+			},
+			"scoreboard_detection": {
+				"run_command": {
+					"command": [
+						"function goblin_banner_scoreboard_detection"
+					]
+				}
+			},
+			"wave_1": {
+				"add": {
+					"component_groups": [
+						"wave_1"
+					]
+				},
+				"run_command": {
+					"command": [
+						"title @a[r=25] actionbar Wave 1!"
+					]
+				}
+			},
+			"wave_2": {
+				"add": {
+					"component_groups": [
+						"wave_2"
+					]
+				},
+				"run_command": {
+					"command": [
+						"title @a[r=25] actionbar Wave 2!"
+					]
+				}
+			},
+			"wave_3": {
+				"add": {
+					"component_groups": [
+						"wave_3"
+					]
+				},
+				"run_command": {
+					"command": [
+						"title @a[r=25] actionbar Wave 3!"
+					]
+				}
+			},
+			"wave_4": {
+				"add": {
+					"component_groups": [
+						"wave_4"
+					]
+				},
+				"run_command": {
+					"command": [
+						"title @a[r=25] actionbar Wave 4!"
+					]
+				}
+			},
+			"wave_5": {
+				"add": {
+					"component_groups": [
+						"wave_5"
+					]
+				},
+				"run_command": {
+					"command": [
+						"title @a[r=25] actionbar Wave 5!"
+					]
+				}
+			},
+			"wave_6": {
+				"add": {
+					"component_groups": [
+						"wave_6"
+					]
+				},
+				"run_command": {
+					"command": [
+						"title @a[r=25] actionbar Wave 6!"
+					]
+				}
+			},
+			"wave_7": {
+				"add": {
+					"component_groups": [
+						"wave_7"
+					]
+				},
+				"run_command": {
+					"command": [
+						"title @a[r=25] actionbar Wave 7!"
+					]
+				}
+			},
+			"wave_8": {
+				"add": {
+					"component_groups": [
+						"wave_8"
+					]
+				},
+				"run_command": {
+					"command": [
+						"title @a[r=25] actionbar Wave 8!"
+					]
+				}
+			},
+			"wave_9": {
+				"add": {
+					"component_groups": [
+						"wave_9"
+					]
+				},
+				"run_command": {
+					"command": [
+						"title @a[r=25] actionbar Wave 9!"
+					]
+				}
+			},
+			"wave_10": {
+				"add": {
+					"component_groups": [
+						"wave_10"
+					]
+				},
+				"run_command": {
+					"command": [
+						"title @a[r=25] actionbar Wave 10!"
+					]
+				}
+			},
+			"normal_finish": {
+				"add": {
+					"component_groups": [
+						"normal_finish"
+					]
+				},
+				"run_command": {
+					"command": [
+						"title @a[r=25] actionbar Finish!",
+						"kill @s"
 					]
 				}
 			}

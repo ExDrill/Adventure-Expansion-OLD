@@ -38,8 +38,7 @@
           "variable.item_use_normalized = query.main_hand_item_use_duration / query.main_hand_item_max_duration;"
         ],
         "animate": [
-          "root",
-          {"test": "query.get_equipped_item_name('off_hand') == 'magic_cell'"}
+          "root"
         ]
       },
       "animations": {
@@ -93,7 +92,8 @@
         "shield_block_main_hand": "animation.player.shield_block_main_hand",
         "shield_block_off_hand": "animation.player.shield_block_off_hand",
         "blink": "controller.animation.persona.blink",
-        "test": "animation.player.hold_book"
+        "test": "animation.player.hold_book",
+        "equipped_item_controller": "controller.animation.player.equipped_item"
       },
       "render_controllers": [
         { "controller.render.player.first_person": "variable.is_first_person" },

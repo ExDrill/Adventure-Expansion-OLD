@@ -1,0 +1,50 @@
+{
+	"format_version": "1.16.100",
+	"minecraft:block": {
+		"description": {
+			"identifier": "exdrill:magician_workbench"
+		},
+		"components": {
+			"minecraft:destroy_time": 0.5,
+			"minecraft:block_light_emission": 0.1,
+			"minecraft:geometry": "geometry.magician_workbench",
+			"minecraft:material_instances": {
+				"*": {
+					"texture": "magician_workbench",
+					"render_method": "opaque"
+				}
+			},
+			"minecraft:crafting_table": {
+				"crafting_tags": [
+					"magic"
+				],
+				"custom_description": "Magician Workbench",
+				"grid_size": 3
+			},
+			"minecraft:pick_collision": {
+				"origin": [
+					-8,
+					0,
+					-8
+				],
+				"size": [
+					16,
+					8,
+					16
+				]
+			},
+			"minecraft:entity_collision": {
+				"origin": [
+					-8,
+					0,
+					-8
+				],
+				"size": [
+					16,
+					8,
+					16
+				]
+			}
+		}
+	}
+}

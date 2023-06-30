@@ -1,0 +1,197 @@
+{
+	"format_version": "1.17.0",
+	"minecraft:entity": {
+		"description": {
+			"identifier": "exdrill:weighted_dart",
+			"is_summonable": true,
+			"is_spawnable": false,
+			"runtime_identifier": "minecraft:arrow"
+		},
+		"component_groups": {
+			"drop_item": {
+				"minecraft:instant_despawn": {},
+				"minecraft:spawn_entity": {
+					"entities": [
+						{
+							"spawn_item": "exdrill:weighted_dart",
+							"min_wait_time": 0,
+							"max_wait_time": 0,
+							"num_to_spawn": 1,
+							"single_use": true
+						}
+					]
+				}
+			},
+			"goblin_dart": {
+				"minecraft:variant": {
+					"value": 1
+				}
+			},
+			"first_round": {
+				"minecraft:projectile": {
+					"power": 1.5,
+					"gravity": 0.09,
+					"uncertainty_base": 1,
+					"uncertainty_multiplier": 0,
+					"anchor": 1,
+					"should_bounce": true,
+					"offset": [ 0, -0.1, 0 ],
+					"on_hit": {
+						"impact_damage": {
+							"damage": 4
+						},
+						"stick_in_ground": {
+							"shake_time": 0.35
+						},
+						"definition_event": {
+							"event_trigger": {
+								"event": "second_round",
+								"target": "self"
+							}
+						}
+					}	
+				}
+			},
+			"second_round": {
+				"minecraft:projectile": {
+					"power": 1.5,
+					"gravity": 0.08,
+					"uncertainty_base": 1,
+					"uncertainty_multiplier": 0,
+					"anchor": 1,
+					"should_bounce": true,
+					"offset": [ 0, -0.1, 0 ],
+					"on_hit": {
+						"impact_damage": {
+							"damage": 3
+						},
+						"stick_in_ground": {
+							"shake_time": 0.35
+						},
+						"definition_event": {
+							"event_trigger": {
+								"event": "third_round",
+								"target": "self"
+							}
+						}
+					}	
+				}
+			},
+			"third_round": {
+				"minecraft:projectile": {
+					"power": 1.5,
+					"gravity": 0.08,
+					"uncertainty_base": 1,
+					"uncertainty_multiplier": 0,
+					"anchor": 1,
+					"should_bounce": true,
+					"offset": [ 0, -0.1, 0 ],
+					"on_hit": {
+						"impact_damage": {
+							"damage": 2,
+							"destroy_on_hit": true
+						},
+						"stick_in_ground": {
+							"shake_time": 0.35
+						}
+					}	
+				}
+			}
+		},
+		"components": {
+			"minecraft:collision_box": {
+				"height": 0.3,
+				"width": 0.3
+			},
+			"minecraft:physics": {},
+			"minecraft:environment_sensor": {
+				"triggers": {
+					"event": "drop_item",
+					"filters": {
+						"test": "on_ground",
+						"subject": "self",
+						"value": true
+					},
+					"target": "self"
+				}
+			}
+		},
+		"events": {
+			"drop_item": {
+				"sequence": [
+					{
+						"add": {
+							"component_groups": [
+								"drop_item"
+							]
+						},
+						"filters": {
+							"any_of": [
+								{
+									"test": "is_variant",
+									"subject": "self",
+									"operator": "not",
+									"value": 1
+								}
+							]
+						}
+					}
+				]
+			},
+			"minecraft:entity_spawned": {
+				"sequence": [
+					{
+						"add": {
+							"component_groups": [
+								"first_round"
+							]
+						},
+						"filters": {
+							"test": "is_family",
+							"subject": "other",
+							"operator": "not",
+							"value": "goblin"
+						}
+					},
+					{
+						"add": {
+							"component_groups": [
+								"first_round",
+								"goblin_dart"
+							]
+						},
+						"filters": {
+							"test": "is_family",
+							"subject": "other",
+							"value": "goblin"
+						}
+					}
+				]
+			},
+			"second_round": {
+				"add": {
+					"component_groups": [
+						"second_round"
+					]
+				},
+				"remove": {
+					"component_groups": [
+						"first_round"
+					]
+				}
+			},
+			"third_round": {
+				"add": {
+					"component_groups": [
+						"third_round"
+					]
+				},
+				"remove": {
+					"component_groups": [
+						"second_round"
+					]
+				}
+			}
+		}
+	}
+}

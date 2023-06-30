@@ -1,0 +1,125 @@
+{
+	"format_version": "1.16.100",
+	"minecraft:entity": {
+		"description": {
+			"identifier": "exdrill:revenant",
+			"is_summonable": true,
+			"is_spawnable": true
+		},
+		"component_groups": {},
+		"components": {
+			"minecraft:health": {
+				"value": 50,
+				"max": 50
+			},
+			"minecraft:physics": {},
+			"minecraft:collision_box": {
+				"width": 0.9,
+				"height": 2.8
+			},
+			"minecraft:nameable": {},
+			"minecraft:type_family": {
+				"family": [
+					"mob",
+					"monster",
+					"revenant",
+					"soul"
+				]
+			},
+			"minecraft:behavior.float": {
+				"priority": 0
+			},
+			"minecraft:damage_sensor": {
+				"triggers": [
+					{
+						"cause": "fall",
+						"deals_damage": false
+					},
+					{
+						"cause": "fire",
+						"deals_damage": false
+					}
+				]
+			},
+			"minecraft:attack": {
+				"damage": 8
+			},
+			"minecraft:on_death": {
+				"event": "particle",
+				"target": "self"
+			},
+			"minecraft:knockback_resistance": {
+				"value": 0.8
+			},
+			"minecraft:navigation.hover": {
+				"can_path_over_water": true,
+				"can_sink": false,
+				"can_pass_doors": false,
+				"can_path_from_air": true,
+				"avoid_water": true,
+				"avoid_damage_blocks": true,
+				"avoid_sun": false
+			},
+			"minecraft:movement.hover": {},
+			"minecraft:jump.static": {},
+			"minecraft:movement": {
+				"value": 0.2
+			},
+			"minecraft:flying_speed": {
+				"value": 0.25
+			},
+			"minecraft:can_fly": true,
+			"minecraft:behavior.random_hover": {
+				"priority": 1,
+				"xz_dist": 30,
+				"y_dist": 30,
+				"speed_multiplier": 1.5,
+				"y_offset": 2,
+				"interval": 1,
+				"hover_height": [
+					6,
+					12
+				]
+			},
+			"minecraft:behavior.nearest_attackable_target": {
+				"priority": 0,
+				"entity_types": {
+					"filters": {
+						"any_of": [
+							{
+								"test": "is_family",
+								"subject": "other",
+								"value": "player"
+							},
+							{
+								"test": "is_family",
+								"subject": "other",
+								"value": "irongolem"
+							},
+							{
+								"test": "is_family",
+								"subject": "other",
+								"value": "snowgolem"
+							}
+						]
+					}
+				}
+			},
+			"minecraft:behavior.melee_attack": {
+				"priority": 0,
+				"reach_multiplier": 1.1,
+				"speed_multiplier": 1.5
+			}
+		},
+		"events": {
+			"particle": {
+				"run_command": {
+					"command": [
+						"particle exdrill:soul_split_up ~ ~ ~",
+						"summon exdrill:soul_split_up ~ ~ ~"
+					]
+				}
+			}
+		}
+	}
+}

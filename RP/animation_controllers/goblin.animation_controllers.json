@@ -1,0 +1,152 @@
+{
+    "format_version": "1.10.0",
+    "animation_controllers": {
+        "controller.animation.goblin_warrior": {
+            "initial_state": "default",
+            "states": {
+                "default": {
+                    "animations": [
+                        {
+                            "attack_positions": "variable.attack_time > 0"
+                        },
+                        {
+                            "attack_rotations": "variable.attack_time > 0"
+                        },
+                        "move_arms",
+                        "move_legs"
+                    ],
+                    "transitions": [
+                        {
+                            "block": "query.variant == 1"
+                        }
+                    ]
+                },
+                "block": {
+                    "animations": [
+                        "block",
+                        "move_legs",
+                        {
+                            "attack_positions": "variable.attack_time > 0"
+                        },
+                        {
+                            "attack_rotations": "variable.attack_time > 0"
+                        }
+                    ],
+                    "transitions": [
+                        {
+                            "default": "query.variant == 0"
+                        }
+                    ]
+                }
+            }
+        },
+        "controller.animation.goblin_summoner": {
+            "initial_state": "default",
+            "states": {
+                "default": {
+                    "animations": [
+                        "move_arms",
+                        "move_legs"
+                    ],
+                    "transitions": [
+                        {
+                            "casting": "query.is_casting"
+                        }
+                    ]
+                },
+                "casting": {
+                    "animations": [
+                        "casting"
+                    ],
+                    "transitions": [
+                        {
+                            "default": "!query.is_casting"
+                        }
+                    ],
+                    "particle_effects": [
+                        {
+                            "effect": "spell",
+                            "locator": "left_hand"
+                        },
+                        {
+                            "effect": "spell",
+                            "locator": "right_hand"
+                        }
+                    ]
+                }
+            }
+        },
+        "controller.animation.goblin_renegade": {
+            "initial_state": "default",
+            "states": {
+                "default": {
+                    "animations": [
+                        "move_arms",
+                        "move_legs",
+                        "look_at_target"
+                    ],
+                    "transitions": [
+                        {
+                            "has_target": "query.has_target"
+                        },
+                        {
+                            "throw_potion": "query.variant == 1"
+                        }
+                    ]
+                },
+                "has_target": {
+                    "animations": [
+                        "wield",
+                        "move_legs",
+                        "look_at_target"
+                    ],
+                    "transitions": [
+                        {
+                            "default": "!query.has_target"
+                        },
+                        {
+                            "throw_potion": "query.variant == 1"
+                        }
+                    ]
+                },
+                "throw_potion": {
+                    "animations": [
+                        "throw_potion"
+                    ],
+                    "transitions": [
+                        {
+                            "default": "query.variant == 0"
+                        }
+                    ]
+                }
+            }
+        },
+        "controller.animation.goblin_ranger": {
+            "initial_state": "default",
+            "states": {
+                "default": {
+                    "animations": [
+                        "move_arms",
+                        "move_legs"
+                    ],
+                    "transitions": [
+                        {
+                            "wield": "query.has_target"
+                        }
+                    ]
+                },
+                "wield": {
+                    "animations": [
+                        "wield",
+                        "move_legs"
+                    ],
+                    "transitions": [
+                        {
+                            "default": "!query.has_target"
+                        }
+                    ]
+                }
+            }
+        }
+    }
+}

@@ -9,7 +9,7 @@
 				"texture": "grand_boulder_hammer"
 			},
 			"minecraft:display_name": {
-				"value": "Grand Boulder"
+				"value": "Landslide"
 			},
 			"minecraft:damage": 6,
 			"minecraft:hand_equipped": true,

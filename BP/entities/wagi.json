@@ -1,17 +1,16 @@
-//bridge-file-version: #38
 {
-	"format_version": "1.16.100",
+	"format_version": "1.17.0",
 	"minecraft:entity": {
 		"description": {
 			"identifier": "exdrill:wagi",
 			"is_summonable": true,
 			"is_spawnable": true,
 			"animations": {
-				"fly_system": "controller.animation.wagi"
+				"fly": "animation.fly_system"
 			},
 			"scripts": {
 				"animate": [
-					"fly_system"
+					"fly"
 				]
 			}
 		},

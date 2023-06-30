@@ -1,4 +1,3 @@
-//bridge-file-version: #7
 {
 	"tiers": [
 		{
@@ -6,25 +5,7 @@
 				{
 					"wants": [
 						{
-							"item": "exdrill:green_mana",
-							"quantity": 32
-						},
-						{
-							"item": "minecraft:gold_ingot",
-							"quantity": 10
-						}
-					],
-					"gives": [
-						{
-							"item": "exdrill:green_energy_staff",
-							"quantity": 1
-						}
-					]
-				},
-				{
-					"wants": [
-						{
-							"item": "exdrill:orange_sapphire",
+							"item": "minecraft:emerald",
 							"quantity": 2
 						}
 					],
@@ -38,7 +19,7 @@
 				{
 					"wants": [
 						{
-							"item": "exdrill:orange_sapphire",
+							"item": "minecraft:emerald",
 							"quantity": 5
 						}
 					],
@@ -52,7 +33,7 @@
 				{
 					"wants": [
 						{
-							"item": "exdrill:orange_sapphire",
+							"item": "minecraft:emerald",
 							"quantity": 15
 						}
 					],
@@ -67,16 +48,26 @@
 					"wants": [
 						{
 							"item": "minecraft:emerald",
-							"quantity": 10
-						},
+							"quantity": 1
+						}
+					],
+					"gives": [
 						{
-							"item": "minecraft:glass",
+							"item": "exdrill:energy_harness",
+							"quantity": 1
+						}
+					]
+				},
+				{
+					"wants": [
+						{
+							"item": "minecraft:emerald",
 							"quantity": 5
 						}
 					],
 					"gives": [
 						{
-							"item": "exdrill:mana_generator",
+							"item": "exdrill:magician_workbench",
 							"quantity": 1
 						}
 					]

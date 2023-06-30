@@ -2,7 +2,6 @@
 	"type": "minecraftBedrock",
 	"name": "Adventure Expansion",
 	"namespace": "exdrill",
-	"author": "ExDrill",
 	"targetVersion": "1.17.10",
 	"description": "",
 	"packs": {
@@ -16,5 +15,24 @@
 		"creationOfCustomBiomes": true,
 		"upcomingCreatorFeatures": true,
 		"enableGameTestFramework": true
+	},
+	"authors": [
+		"ExDrill"
+	],
+	"bridge": {
+		"darkTheme": "frederox.moonlight_dark"
+	},
+	"compiler": {
+		"plugins": [
+			"typeScript",
+			"entityIdentifierAlias",
+			"moLang",
+			[
+				"simpleRewrite",
+				{
+					"packName": "Adventure Expansion"
+				}
+			]
+		]
 	}
 }

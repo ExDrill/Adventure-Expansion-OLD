@@ -1,0 +1,39 @@
+{
+	"format_version": "1.16.100",
+	"minecraft:item": {
+		"description": {
+			"identifier": "exdrill:tornado_staff"
+		},
+		"components": {
+			"minecraft:max_stack_size": 1,
+			"minecraft:icon": {
+				"texture": "tornado_staff"
+			},
+			"minecraft:display_name": {
+				"value": "Tornado Staff"
+			},
+			"minecraft:hand_equipped": true,
+			"minecraft:on_use": {
+				"on_use": {
+					"event": "summon_tornado",
+					"target": "self"
+				}
+			},
+			"minecraft:cooldown": {
+				"category": "tornado_staff",
+				"duration": 10
+			}
+		},
+		"events": {
+			"summon_tornado": {
+				"run_command": {
+					"command": [
+						"summon exdrill:tornado ~ ~ ~"
+					],
+					"target": "holder"
+				},
+				"swing": {}
+			}
+		}
+	}
+}
